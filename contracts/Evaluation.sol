@@ -1,63 +1,66 @@
 pragma solidity ^0.5.0;
 
-import "./ProcessData.sol";
+import "./Enums.sol";
 
 contract  Evaluation {
 
-    function evaluate(ProcessData Data) public payable  returns (ProcessData){    
-        if(Data.isProofProvided()){
-            evaluationWithProof(Data);
+	address private OwningContract;
+	address private TargetAddress;
+	address private MitigatorAddress;
+	
+	constructor(address owner,address _TargetAddress,address _MitigatorAddress) public{
+		OwningContract = owner;
+		TargetAddress= _TargetAddress;
+		MitigatorAddress= _MitigatorAddress;
+	}
+
+    function evaluate(bool _ProofWasProvided, Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address,Enums.State){    
+        if(_ProofWasProvided){
+            return evaluationWithProof(TargetRating,MitigatorRating);
         }else{
-            evaluationWithoutProof(Data);
+            return evaluationWithoutProof(TargetRating);
         }
-        
-        return Data;
     }
     
-    function evaluationWithoutProof(ProcessData Data) public payable  {    
-        if(Data.getTargetRating()==ProcessData.Rating.REJ){
-                Data.transferFunds(Data.getTarget());
-                Data.setState(ProcessData.State.COMPLETE);
+    function evaluationWithoutProof(Enums.Rating TargetRating) public view returns (address,Enums.State){    
+        if(TargetRating==Enums.Rating.REJ){
+				return(TargetAddress,Enums.State.COMPLETE);
             }else{
-                Data.setState(ProcessData.State.ABORT);
+                return(address(0),Enums.State.ABORT);
             }
     }
     
-    function evaluationWithProof(ProcessData Data) public payable  {    
-        if(Data.getTargetRating()==ProcessData.Rating.ACK){
-            evaluationWithProofAcknowledged(Data);
-        }else if(Data.getTargetRating()==ProcessData.Rating.REJ){
-            evaluationWithProofRejected(Data);
+    function evaluationWithProof(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address,Enums.State){    
+        if(TargetRating==Enums.Rating.ACK){
+            return evaluationWithProofAcknowledged(MitigatorRating);
+        }else if(TargetRating==Enums.Rating.REJ){
+            return evaluationWithProofRejected(MitigatorRating);
         }else{
-            evaluationWithProofSelfish(Data);
+            return evaluationWithProofSelfish(MitigatorRating);
         }
     }
     
-    function evaluationWithProofAcknowledged(ProcessData Data) public payable  {    
-        if(Data.getMitigatorRating()==ProcessData.Rating.ACK){
-            Data.transferFunds(Data.getMitigator());
-            Data.setState(ProcessData.State.COMPLETE);
+    function evaluationWithProofAcknowledged(Enums.Rating MitigatorRating) public view returns (address,Enums.State){    
+        if(MitigatorRating==Enums.Rating.ACK){
+			return(MitigatorAddress,Enums.State.COMPLETE);
         }else{
-            Data.setState(ProcessData.State.ABORT);
+            return(address(0),Enums.State.ABORT);
         }
     }
     
-    function evaluationWithProofSelfish(ProcessData Data) public payable  {    
-        if(Data.getMitigatorRating()==ProcessData.Rating.ACK){
-            Data.transferFunds(Data.getMitigator());
-            Data.setState(ProcessData.State.COMPLETE);
+    function evaluationWithProofSelfish(Enums.Rating MitigatorRating) public view returns (address,Enums.State){    
+        if(MitigatorRating==Enums.Rating.ACK){
+            return(MitigatorAddress,Enums.State.COMPLETE);
         }else{
-            Data.setState(ProcessData.State.ABORT);
+            return(address(0),Enums.State.ABORT);
         }
     }
     
-    function evaluationWithProofRejected(ProcessData Data) public payable  {    
-        if(Data.getMitigatorRating()==ProcessData.Rating.ACK){
-            Data.transferFunds(Data.getTarget());
-            Data.setState(ProcessData.State.ESCALATE);
+    function evaluationWithProofRejected(Enums.Rating MitigatorRating) public view returns (address,Enums.State){    
+        if(MitigatorRating==Enums.Rating.ACK){
+            return(address(0),Enums.State.ESCALATE);
         }else{
-            Data.transferFunds(Data.getTarget());
-            Data.setState(ProcessData.State.COMPLETE);
+            return(TargetAddress,Enums.State.COMPLETE);
         }
     }
 }

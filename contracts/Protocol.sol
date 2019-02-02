@@ -3,15 +3,14 @@ pragma experimental ABIEncoderV2;
 
 import "./ProcessData.sol";
 import "./IActor.sol";
-import "./Evaluation.sol";
+import "./Enums.sol";
 
 contract Protocol {
 
     address[] private Mitigators;
 	address[] private Targets;
     address[] private CurrentProcesses;
-    Evaluation evaluation = new Evaluation();
-	
+
     event ProcessDataCreated(address _from, ProcessData addr);
 	event MitigatorCreated(address _from, IActor addr);
 	event TargetCreated(address _from, IActor addr);
@@ -52,15 +51,15 @@ contract Protocol {
     returns (ProcessData){
         
         require(isProcess(process),"Process does not exist");
-        require(canSenderAdvance(process,ProcessData.State.APPROVE),"Sender is not allowed");
+        require(canSenderAdvance(process,Enums.State.APPROVE),"Sender is not allowed");
         
         ProcessData ProcessToUse = ProcessData(process);
         
         if(descision){
-            ProcessToUse.setState(ProcessData.State.FUNDING);
+            ProcessToUse.setState(Enums.State.FUNDING);
             ProcessToUse.setNextActor(ProcessToUse.getTarget());
         }else{
-            ProcessToUse.setState(ProcessData.State.ABORT);
+            ProcessToUse.setState(Enums.State.ABORT);
 			ProcessToUse.setNextActor(ProcessToUse.getTarget());
         }
   
@@ -73,102 +72,115 @@ contract Protocol {
     returns (ProcessData){
         
         require(isProcess(process),"Process does not exist");
-        require(canSenderAdvance(process,ProcessData.State.FUNDING),"Sender is not allowed");
+        require(canSenderAdvance(process,Enums.State.FUNDING),"Sender is not allowed");
         
         ProcessData ProcessToUse = ProcessData(process);
         
         ProcessToUse.receiveFunds(msg.value);
         ProcessToUse.setNextActor(ProcessToUse.getMitigator());
-        ProcessToUse.setState(ProcessData.State.PROOF);
+        ProcessToUse.setState(Enums.State.PROOF);
         ProcessToUse.setNextDeadline();
         
         return ProcessToUse;
     }
     
     
-    function proofUploaded(address payable process,string memory _Proof) 
+    function uploadProof(address payable process,string memory _Proof) 
     public
     payable
     returns (ProcessData){
         
         require(isProcess(process),"Process does not exist");
-        require(canSenderAdvance(process,ProcessData.State.PROOF),"Sender is not allowed");
+        require(canSenderAdvance(process,Enums.State.PROOF),"Sender is not allowed");
         
         ProcessData ProcessToUse = ProcessData(process);
         ProcessToUse.setProof(_Proof);
         ProcessToUse.setNextActor(ProcessToUse.getTarget());
-        ProcessToUse.setState(ProcessData.State.TRATE);
+        ProcessToUse.setState(Enums.State.TRATE);
         ProcessToUse.setNextDeadline();
         
         return ProcessToUse;
     }
     
-    function ratingByTarget(address payable process,ProcessData.Rating rating) 
+    function ratingByTarget(address payable process,Enums.Rating rating) 
     public
     payable
     returns (ProcessData){
         
         require(isProcess(process),"Process does not exist");
-        require(canSenderAdvance(process,ProcessData.State.TRATE),"Sender is not allowed");
+        require(canSenderAdvance(process,Enums.State.TRATE),"Sender is not allowed");
         
         ProcessData ProcessToUse = ProcessData(process);
         
-        if(ProcessToUse.isProofProvided()){
+        if(!ProcessToUse.isProofProvided()){
             ProcessToUse.setTargetRating(rating);
-            evaluation.evaluate(ProcessToUse);
+			ProcessToUse.setNextActor(ProcessToUse.getTarget());
+			ProcessToUse.setState(Enums.State.COMPLETE);
+            ProcessToUse.executeEvaluation();
             return ProcessToUse;
         }
         
         ProcessToUse.setTargetRating(rating);
         ProcessToUse.setNextActor(ProcessToUse.getMitigator());
-        ProcessToUse.setState(ProcessData.State.MRATE);
+        ProcessToUse.setState(Enums.State.MRATE);
         ProcessToUse.setNextDeadline();
         
         return ProcessToUse;
          
     }
     
-    function ratingByMitigator(address payable process,ProcessData.Rating rating) 
+    function ratingByMitigator(address payable process,Enums.Rating rating) 
     public
     payable
     returns (ProcessData){
         
         require(isProcess(process),"Process does not exist");
-        require(canSenderAdvance(process,ProcessData.State.MRATE),"Sender is not allowed to advance due to: ");
+		
+        require(canSenderAdvance(process,Enums.State.MRATE),"Sender is not allowed to advance due to: ");
         
         ProcessData ProcessToUse = ProcessData(process);
         ProcessToUse.setMitigatorRating(rating);
-        evaluation.evaluate(ProcessToUse);
+		ProcessToUse.setNextActor(ProcessToUse.getTarget());
+        ProcessToUse.executeEvaluation();
 
         return ProcessToUse;
     }
+	
+	function canCurrentStateBeSkipped(address payable process) private returns(bool){
+		return false;
+	}
    
     /*Checks where the sender of the message is the next actor and the state 
     of the action to be performed is the one immediately following in the process
     and if deadline is exceeded*/
-    function canSenderAdvance(address payable process,ProcessData.State newState) 
+    function canSenderAdvance(address payable process,Enums.State newState) 
     private 
     view
     returns(bool){
         
-        ProcessData CurrentProcess;
-        bool processFound;
-        for (uint i = 0 ; i < CurrentProcesses.length; i++) {
-            if(CurrentProcesses[i]==process){
-                processFound= true;
-                CurrentProcess = ProcessData(process);
-            }
-        }
-        require(processFound,"Process not found");
+		require(isProcess(process),"Process not found");
+        ProcessData CurrentProcess = getProcess(process);
+
         require(CurrentProcess.getNextActor().getOwner() == msg.sender,"NextActor != Sender");
-        require(uint(newState)>=CurrentProcess.getState(),"Next state would be lower");
-        if(CurrentProcess.getState()<uint(ProcessData.State.FUNDING)){
+        require(uint(newState)==uint(CurrentProcess.getState()),"Next state would be lower");
+        if(CurrentProcess.getState()<uint(Enums.State.FUNDING)){
             require(now>CurrentProcess.getDeadline(),"state >=start && now > deadline");
         }
         
         return true;
     }
-
+	
+	function getProcess(address payable process) 
+    public view 
+    returns(ProcessData){
+        for (uint i = 0 ; i < CurrentProcesses.length; i++) {
+            if(CurrentProcesses[i]==process){
+                return ProcessData(process);
+            }
+        }
+		return ProcessData(0);
+    }
+	
     function getProcesses() 
     public view 
     returns(address[] memory){

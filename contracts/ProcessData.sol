@@ -1,42 +1,46 @@
 pragma solidity ^0.5.0;
 
 import "./IActor.sol";
+import "./Evaluation.sol";
+import "./Enums.sol";
 
 contract  ProcessData {
 
-    enum State {REQUEST,APPROVE,FUNDING,PROOF,TRATE,MRATE,COMPLETE,ABORT,ESCALATE}
-    enum Rating {REJ,NA,ACK}
-    
     IActor Target;
     IActor Mitigator;
     IActor NextActor;
-    uint private PotentialFunds = 0;
+	address private OwnedByContract;
+    uint private OfferedFunds = 0;
     uint private Funds = 0;
     uint private DeadlineInterval;
     uint private Deadline;
-    
-    State CurrentState; 
+    Evaluation private _Evaluation;
+	
+    Enums.State CurrentState; 
     string Proof;
     string ListOfAddresses;
-    Rating TargetRating;
-    Rating MitigatorRating;
+    Enums.Rating TargetRating;
+    Enums.Rating MitigatorRating;
 	
-    constructor (address _Target,address _Mitigator,uint Interval,uint256 _PotentialFunds,string memory _ListOfAddresses) public payable
+    constructor (address _Target,address _Mitigator,uint Interval,uint256 _OfferedFunds,string memory _ListOfAddresses) public payable
     {
-        PotentialFunds = _PotentialFunds;
+		OwnedByContract = msg.sender;
+        OfferedFunds = _OfferedFunds;
         Target = IActor(_Target);
         Mitigator = IActor(_Mitigator);
         NextActor = Mitigator;
-        CurrentState = State.APPROVE;
+        CurrentState = Enums.State.APPROVE;
         DeadlineInterval = Interval;
         ListOfAddresses=_ListOfAddresses;
     }
-
+	
     function receiveFunds(uint256 amount) public payable{    
-        Funds = amount;
+        require(amount >= OfferedFunds,"Please provide at least the funds you initially offered");
+		Funds = amount;
     }
     
-    function transferFunds(IActor receiver) public {    
+    function transferFunds(IActor receiver) public {   
+		require(msg.sender==OwnedByContract,"Funds can only be transferred by the owning contract");
         receiver.getOwner().transfer(Funds);
     }
     
@@ -59,6 +63,20 @@ contract  ProcessData {
     returns (IActor){
         return Target;
     }
+	
+	function executeEvaluation() 
+    public{
+		address actor;
+		Enums.State stateToSet;
+		_Evaluation = new Evaluation(this.getAddress(),Target.getAddress(),Mitigator.getAddress());
+		
+        (actor,stateToSet) = _Evaluation.evaluate(isProofProvided(),getTargetRating(), getMitigatorRating());
+		
+		if(actor!=address(0)){
+			//transferFunds(IActor(actor));
+		}
+		setState(stateToSet);
+    }
     
     function getDeadline() 
     public view
@@ -78,7 +96,7 @@ contract  ProcessData {
         return Funds;
     }
     
-    function getPotentialFunds() 
+    function getOfferedFunds() 
     public view
     returns (uint){
         return Funds;
@@ -86,13 +104,13 @@ contract  ProcessData {
     
     function getTargetRating() 
     public view
-    returns (Rating){
+    returns (Enums.Rating){
         return TargetRating;
     }
     
     function getMitigatorRating() 
     public view
-    returns (Rating){
+    returns (Enums.Rating){
         return MitigatorRating;
     }
     
@@ -116,31 +134,38 @@ contract  ProcessData {
 	
     function setNextDeadline() 
     public {
+		require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
         Deadline = now+ (DeadlineInterval * 1 seconds);
     }
     
     function setNextActor(IActor _NextActor) 
     public {
+		//require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
         NextActor = _NextActor;
     }
 
     function setProof(string memory _Proof) 
     public{
+		//require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
+		require(bytes(_Proof).length > 0,"Empty string cannot be accepted as a proof");
         Proof = _Proof;
     }
     
-    function setState(State state) 
+    function setState(Enums.State state) 
     public{
+		//require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
         CurrentState = state;
     }
     
-    function setTargetRating(Rating rating) 
+    function setTargetRating(Enums.Rating rating) 
     public{
+		//require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
         TargetRating = rating;
     }
     
-    function setMitigatorRating(Rating rating) 
+    function setMitigatorRating(Enums.Rating rating) 
     public{
+		//require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
         MitigatorRating = rating;
     }
     

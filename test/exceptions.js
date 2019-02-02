@@ -1,4 +1,4 @@
-const PREFIX = "Returned error: ";
+const PREFIX = "Returned error: VM Exception while processing transaction: ";
 
 async function tryCatch(promise, message) {
     try {
@@ -12,7 +12,7 @@ async function tryCatch(promise, message) {
 };
 
 module.exports = {
-    catchRevert            : async function(promise) {await tryCatch(promise, "VM Exception while processing transaction: revert");},
+    catchRevert            : async function(promise) {await tryCatch(promise, "revert"             );},
     catchOutOfGas          : async function(promise) {await tryCatch(promise, "out of gas"         );},
     catchInvalidJump       : async function(promise) {await tryCatch(promise, "invalid JUMP"       );},
     catchInvalidOpcode     : async function(promise) {await tryCatch(promise, "invalid opcode"     );},
