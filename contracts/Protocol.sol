@@ -151,7 +151,34 @@ contract Protocol {
         return ProcessToUse;
     }
 	
-	function canCurrentStateBeSkipped(address payable process) private returns(bool){
+	function skipCurrentState(address payable process) private returns(bool){
+		require(isProcess(process),"Process not found");
+        ProcessData CurrentProcess = getProcess(process);
+		
+		if(CurrentProcess.getDeadline()>now){
+			if(CurrentProcess.getNextActor()==CurrentProcess.getTarget()){
+				CurrentProcess.setNextActor(CurrentProcess.getMitigator());
+			}else{
+				CurrentProcess.setNextActor(CurrentProcess.getTarget());				
+			}
+
+			if(CurrentProcess.getState()==uint(Enums.State.PROOF)){
+				CurrentProcess.setState(Enums.State.TRATE);
+				CurrentProcess.setProof("");
+			}
+			
+			if(CurrentProcess.getState() == uint(Enums.State.TRATE)){
+				CurrentProcess.setState(Enums.State.MRATE);
+				CurrentProcess.setTargetRating(Enums.Rating.NA);
+			}
+			
+			if(CurrentProcess.getState() == uint(Enums.State.MRATE)){
+				CurrentProcess.setMitigatorRating(Enums.Rating.NA);
+				CurrentProcess.executeEvaluation();
+			}
+			return true;
+		}
+
 		return false;
 	}
    
@@ -165,13 +192,12 @@ contract Protocol {
         
 		require(isProcess(process),"Process not found");
         ProcessData CurrentProcess = getProcess(process);
-
-        require(CurrentProcess.getNextActor().getOwner() == msg.sender,"NextActor != Sender");
-        require(uint(newState)==uint(CurrentProcess.getState()),"Next state would be lower");
-        if(CurrentProcess.getState()<uint(Enums.State.FUNDING)){
-            require(now>CurrentProcess.getDeadline(),"state >=start && now > deadline");
-        }
-        
+		
+		require(CurrentProcess.getNextActor().getOwner() == msg.sender,"NextActor != Sender");
+		require(uint(newState)==uint(CurrentProcess.getState()),"Next state would be lower");
+		if(CurrentProcess.getState()<uint(Enums.State.FUNDING)){
+			require(now>CurrentProcess.getDeadline(),"state >=start && now > deadline");
+		}
         return true;
     }
 	
