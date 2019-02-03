@@ -121,6 +121,7 @@ contract("Protocol", async function(accounts) {
 		//Will work
 		await protocol.sendFunds(process, {from: TargetOwner,value: 2002});	
 		await ProcessData.at(process).then(async function (result){
+			//await web3.eth.sendTransaction({from:TargetOwner,to:await result.getAddress(), value:1000});
 			assert.equal(await result.getState(), 3, "State is wrong");
 			assert.equal(await result.getFunds(), 2002, "Contract has wrong funds");
 			assert.equal(await result.getNextActor(), MitigatorAddress, "NextActor is wrong");

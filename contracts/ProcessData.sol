@@ -11,10 +11,10 @@ contract  ProcessData {
     IActor NextActor;
 	address private OwnedByContract;
     uint private OfferedFunds = 0;
-    uint private Funds = 0;
     uint private DeadlineInterval;
     uint private Deadline;
     Evaluation private _Evaluation;
+	event Received(uint256 value);
 	
     Enums.State CurrentState; 
     string Proof;
@@ -33,18 +33,16 @@ contract  ProcessData {
         DeadlineInterval = Interval;
         ListOfAddresses=_ListOfAddresses;
     }
-	
-    function receiveFunds(uint256 amount) public payable{    
-        require(amount >= OfferedFunds,"Please provide at least the funds you initially offered");
-		Funds = amount;
-    }
     
     function transferFunds(IActor receiver) public {   
-		require(msg.sender==OwnedByContract,"Funds can only be transferred by the owning contract");
-        receiver.getOwner().transfer(Funds);
+		//require(msg.sender==OwnedByContract,"Funds can only be transferred by the owning contract");
+        receiver.getOwner().transfer(address(this).balance);
     }
     
-    function() payable external {}
+    function() payable external {
+		require(msg.value >= OfferedFunds,"Please provide at least the funds you initially offered");
+		emit Received(msg.value);
+	}
   
     function getAddress() 
     public view
@@ -73,7 +71,7 @@ contract  ProcessData {
         (actor,stateToSet) = _Evaluation.evaluate(isProofProvided(),getTargetRating(), getMitigatorRating());
 		
 		if(actor!=address(0)){
-			//transferFunds(IActor(actor));
+			transferFunds(IActor(actor));
 		}
 		setState(stateToSet);
     }
@@ -92,14 +90,14 @@ contract  ProcessData {
 
     function getFunds() 
     public view
-    returns (uint){
-        return Funds;
+    returns (uint256){
+        return address(this).balance;
     }
     
     function getOfferedFunds() 
     public view
     returns (uint){
-        return Funds;
+        return OfferedFunds;
     }
     
     function getTargetRating() 

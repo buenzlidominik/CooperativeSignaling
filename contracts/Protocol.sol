@@ -14,6 +14,12 @@ contract Protocol {
     event ProcessDataCreated(address _from, ProcessData addr);
 	event MitigatorCreated(address _from, IActor addr);
 	event TargetCreated(address _from, IActor addr);
+	event FundsReceived(uint256 value);
+	
+	function() external payable{
+		emit FundsReceived(msg.value);
+	}
+	
 	
     function registerMitigator(address payable _MitigatorOwner,uint256 PricePerUnit,string memory NetworkName) public returns(address){
         IActor Mitigator = new IActor(_MitigatorOwner,PricePerUnit,NetworkName);
@@ -76,7 +82,7 @@ contract Protocol {
         
         ProcessData ProcessToUse = ProcessData(process);
         
-        ProcessToUse.receiveFunds(msg.value);
+        ProcessToUse.getAddress().transfer(msg.value);
         ProcessToUse.setNextActor(ProcessToUse.getMitigator());
         ProcessToUse.setState(Enums.State.PROOF);
         ProcessToUse.setNextDeadline();
@@ -87,7 +93,6 @@ contract Protocol {
     
     function uploadProof(address payable process,string memory _Proof) 
     public
-    payable
     returns (ProcessData){
         
         require(isProcess(process),"Process does not exist");
