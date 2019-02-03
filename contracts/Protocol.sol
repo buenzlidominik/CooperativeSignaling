@@ -151,35 +151,44 @@ contract Protocol {
         return ProcessToUse;
     }
 	
-	function skipCurrentState(address payable process) private returns(bool){
+	function skipCurrentState(address payable process) public returns(ProcessData){
+		
 		require(isProcess(process),"Process not found");
         ProcessData CurrentProcess = getProcess(process);
+		require(CurrentProcess.getState()<uint(Enums.State.COMPLETE),"Process is already aborted, completed or escalated");
 		
-		if(CurrentProcess.getDeadline()>now){
-			if(CurrentProcess.getNextActor()==CurrentProcess.getTarget()){
-				CurrentProcess.setNextActor(CurrentProcess.getMitigator());
-			}else{
-				CurrentProcess.setNextActor(CurrentProcess.getTarget());				
-			}
-
-			if(CurrentProcess.getState()==uint(Enums.State.PROOF)){
-				CurrentProcess.setState(Enums.State.TRATE);
-				CurrentProcess.setProof("");
-			}
-			
-			if(CurrentProcess.getState() == uint(Enums.State.TRATE)){
-				CurrentProcess.setState(Enums.State.MRATE);
-				CurrentProcess.setTargetRating(Enums.Rating.NA);
-			}
-			
-			if(CurrentProcess.getState() == uint(Enums.State.MRATE)){
-				CurrentProcess.setMitigatorRating(Enums.Rating.NA);
-				CurrentProcess.executeEvaluation();
-			}
-			return true;
+		if(CurrentProcess.getState()<uint(Enums.State.PROOF)){
+			require(msg.sender== CurrentProcess.getTarget().getOwner(),"In this state, the process can only be aborted by the initiator");
+			CurrentProcess.setState(Enums.State.ABORT);
+			CurrentProcess.setNextActor(CurrentProcess.getTarget());
+			return CurrentProcess;
+		}
+		
+		require(now>CurrentProcess.getDeadline(),"Deadline not yet exceeded, please wait");
+	
+		if(CurrentProcess.getNextActor()==CurrentProcess.getTarget()){
+			CurrentProcess.setNextActor(CurrentProcess.getMitigator());
+		}else{
+			CurrentProcess.setNextActor(CurrentProcess.getTarget());				
 		}
 
-		return false;
+		if(CurrentProcess.getState()==uint(Enums.State.PROOF)){
+			CurrentProcess.setState(Enums.State.TRATE);
+		}
+			
+		if(CurrentProcess.getState() == uint(Enums.State.TRATE)){
+			CurrentProcess.setState(Enums.State.MRATE);
+			CurrentProcess.setTargetRating(Enums.Rating.NA);
+		}
+			
+		if(CurrentProcess.getState() == uint(Enums.State.MRATE)){
+			CurrentProcess.setMitigatorRating(Enums.Rating.NA);
+			CurrentProcess.executeEvaluation();
+		}
+		
+		CurrentProcess.setNextDeadline();
+		
+		return CurrentProcess;
 	}
    
     /*Checks where the sender of the message is the next actor and the state 

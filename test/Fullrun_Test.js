@@ -6,7 +6,7 @@ var ProcessData = artifacts.require("./ProcessData.sol");
 let catchRevert = require("./exceptions.js").catchRevert;
 let senderAccountNotRecognized = require("./exceptions.js").senderAccountNotRecognized;
 
-contract("Protocol", async function(accounts) {
+contract("Full Run Test", async function(accounts) {
 	
 	var protocol;
     var process;
@@ -74,6 +74,9 @@ contract("Protocol", async function(accounts) {
 		//Sender is not allowed to advance
 		await catchRevert(protocol.init(MitigatorAddress,120,2002,listOfAddresses,2, {from: MitigatorOwner}));
 		
+		//Sender is not a registered target
+		await catchRevert(protocol.init(MitigatorAddress,120,2002,listOfAddresses,2, {from: accounts[2]}));
+		
 		//This init is accepted
 		await protocol.init(MitigatorAddress,120,2002,listOfAddresses,2, {from: TargetOwner});
 		return await ProcessData.at(process).then(async function (result){
@@ -112,6 +115,8 @@ contract("Protocol", async function(accounts) {
 	
 	it("Send Funds", async function() {
 		
+		var fundsTarget = await web3.eth.getBalance(TargetOwner);
+		
 		//Funds are too low, will be reverted
 		await catchRevert(protocol.sendFunds(process, {from: TargetOwner,value: 2000}));	
 		
@@ -120,12 +125,15 @@ contract("Protocol", async function(accounts) {
 		
 		//Will work
 		await protocol.sendFunds(process, {from: TargetOwner,value: 2002});	
-		await ProcessData.at(process).then(async function (result){
+		return await ProcessData.at(process).then(async function (result){
 			//await web3.eth.sendTransaction({from:TargetOwner,to:await result.getAddress(), value:1000});
 			assert.equal(await result.getState(), 3, "State is wrong");
 			assert.equal(await result.getFunds(), 2002, "Contract has wrong funds");
 			assert.equal(await result.getNextActor(), MitigatorAddress, "NextActor is wrong");
+			assert.equal(isAtMost(await web3.eth.getBalance(TargetOwner), fundsTarget-2002),true, "Funds not taken away from Target");
 		});
+		
+		
     });
 	
 	it("Upload Proof", async function() {
@@ -144,7 +152,7 @@ contract("Protocol", async function(accounts) {
 		
 		//Will work
 		await protocol.uploadProof(process,"I've done my job", {from: MitigatorOwner});	
-		await ProcessData.at(process).then(async function (result){
+		return await ProcessData.at(process).then(async function (result){
 			assert.equal(await result.getState(), 4, "State is wrong");
 			assert.equal(await result.getProof(), "I've done my job", "Proof is wrong");
 			assert.equal(await result.getNextActor(), TargetAddress, "NextActor is wrong");
@@ -168,7 +176,7 @@ contract("Protocol", async function(accounts) {
 		});
 		
 		//Called state function twice, will be reverted
-		await catchRevert(protocol.ratingByTarget(process,2, {from: TargetOwner}));	
+		return await catchRevert(protocol.ratingByTarget(process,2, {from: TargetOwner}));	
     });
 	
 	it("Rate By Mitigator", async function() {
@@ -188,7 +196,15 @@ contract("Protocol", async function(accounts) {
 		});
 		
 		//Called state function twice, will be reverted
-		await catchRevert(protocol.ratingByMitigator(process,2, {from: MitigatorOwner}));	
+		return await catchRevert(protocol.ratingByMitigator(process,2, {from: MitigatorOwner}));	
     });
 	
 });
+
+
+function isAtMost(a,b){
+	if(a<=b){
+		return true;
+	}	
+	return false;
+}

@@ -566,7 +566,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1818,
+                        "referencedDeclaration": 1871,
                         "src": "550:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_IActor_$328",
@@ -789,10 +789,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1804,
-                        1805
+                        1857,
+                        1858
                       ],
-                      "referencedDeclaration": 1805,
+                      "referencedDeclaration": 1858,
                       "src": "688:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1573,7 +1573,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1818,
+                        "referencedDeclaration": 1871,
                         "src": "550:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_IActor_$328",
@@ -1796,10 +1796,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1804,
-                        1805
+                        1857,
+                        1858
                       ],
-                      "referencedDeclaration": 1805,
+                      "referencedDeclaration": 1858,
                       "src": "688:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2126,7 +2126,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-02-03T15:57:54.358Z",
+  "updatedAt": "2019-02-03T19:13:05.284Z",
   "devdoc": {
     "methods": {}
   },
