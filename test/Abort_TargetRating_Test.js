@@ -111,7 +111,7 @@ contract("Abort during target rating", async function(accounts) {
 		
 		await protocol.skipCurrentState(process,{from: MitigatorOwner});
 		await ProcessData.at(process).then(async function (result){
-			assert.equal(await result.getState(), 7, "State is wrong");
+			assert.equal(await result.getState(), 5, "State is wrong");
 			assert.equal(await result.getTargetRating(), 1, "Rating is wrong");
 			assert.equal(await result.getNextActor(), MitigatorAddress, "NextActor is wrong");
 		});

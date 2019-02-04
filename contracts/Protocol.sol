@@ -120,7 +120,6 @@ contract Protocol {
         if(!ProcessToUse.isProofProvided()){
             ProcessToUse.setTargetRating(rating);
 			ProcessToUse.setNextActor(ProcessToUse.getTarget());
-			ProcessToUse.setState(Enums.State.COMPLETE);
             ProcessToUse.executeEvaluation();
             return ProcessToUse;
         }
@@ -174,27 +173,22 @@ contract Protocol {
 
 		if(CurrentProcess.getState()==uint(Enums.State.PROOF)){
 			CurrentProcess.setState(Enums.State.TRATE);
-		}
-			
-		if(CurrentProcess.getState() == uint(Enums.State.TRATE)){
+		}else if(CurrentProcess.getState() == uint(Enums.State.TRATE)){
 			CurrentProcess.setState(Enums.State.MRATE);
 			CurrentProcess.setTargetRating(Enums.Rating.NA);
-		}
-			
-		if(CurrentProcess.getState() == uint(Enums.State.MRATE)){
+		}else if(CurrentProcess.getState() == uint(Enums.State.MRATE)){
 			CurrentProcess.setMitigatorRating(Enums.Rating.NA);
 			CurrentProcess.executeEvaluation();
 		}
 		
 		CurrentProcess.setNextDeadline();
-		
 		return CurrentProcess;
 	}
    
     /*Checks where the sender of the message is the next actor and the state 
     of the action to be performed is the one immediately following in the process
     and if deadline is exceeded*/
-    function canSenderAdvance(address payable process,Enums.State newState) 
+    function canSenderAdvance(address payable process,Enums.State stateOfOperation) 
     private 
     view
     returns(bool){
@@ -203,9 +197,9 @@ contract Protocol {
         ProcessData CurrentProcess = getProcess(process);
 		
 		require(CurrentProcess.getNextActor().getOwner() == msg.sender,"NextActor != Sender");
-		require(uint(newState)==uint(CurrentProcess.getState()),"Next state would be lower");
-		if(CurrentProcess.getState()<uint(Enums.State.FUNDING)){
-			require(now>CurrentProcess.getDeadline(),"state >=start && now > deadline");
+		require(uint(stateOfOperation)==uint(CurrentProcess.getState()),"State of operation does not match");
+		if(CurrentProcess.getState()>uint(Enums.State.FUNDING)){
+			require(now<CurrentProcess.getDeadline(),"state >=start && now > deadline");
 		}
         return true;
     }

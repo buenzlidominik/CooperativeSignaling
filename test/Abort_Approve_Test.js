@@ -28,7 +28,6 @@ contract("Abort during approve", async function(accounts) {
 					console.log(error);
 				}
 			});
-			
 			await protocol.registerMitigator(MitigatorOwner,1000,"Mitigator1", {from: TargetOwner});
 			return await IActor.at(MitigatorAddress).then(async function(owner) { 
 				assert.equal(MitigatorOwner, await owner.getOwner(), "Mitigator Address is wrong");

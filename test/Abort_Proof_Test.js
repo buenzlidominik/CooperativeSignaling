@@ -102,7 +102,7 @@ contract("Abort during proof", async function(accounts) {
 		
 		await protocol.skipCurrentState(process,{from: TargetOwner});
 		await ProcessData.at(process).then(async function (result){
-			assert.equal(await result.getState(), 7, "State is wrong");
+			assert.equal(await result.getState(), 4, "State is wrong");
 			assert.equal(await result.getProof(), "", "Proof is wrong");
 			assert.equal(await result.getNextActor(), TargetAddress, "NextActor is wrong");
 		});
