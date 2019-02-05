@@ -15,6 +15,7 @@ contract("Full Run Test", async function(accounts) {
 	var MitigatorOwner = accounts[1];
 	var MitigatorAddress;
 	var TargetAddress;
+	var listOfAddresses = "Network1,Network2";
 	
     it("Mitigator Creation", async function() {
         return await Protocol.deployed().then(async function(instance) {          
@@ -56,12 +57,12 @@ contract("Full Run Test", async function(accounts) {
 		var event = protocol.ProcessDataCreated(function(error, response) {
 			if (!error) {
 				process = response.args.addr;
+				console.log(response.args.addr);
 			}else{
 				console.log(error);
 			}
 		});
-		var listOfAddresses = "Network1,Network2";
-		
+
 		//Funds are too low, as our Mitigator needs 1000 per address but we want to block 2 addresses for 1000
 		await catchRevert(protocol.init(MitigatorAddress,120,1000,listOfAddresses,2, {from: TargetOwner}));
 		
@@ -89,9 +90,19 @@ contract("Full Run Test", async function(accounts) {
 	
 	it("Approve", async function() {
 		
+		var event = protocol.ProcessDataCreated(function(error, response) {
+			if (!error) {
+				process = response.args.addr;
+				console.log(response.args.addr);
+			}else{
+				console.log(error);
+			}
+		});
+
 		//Sender is not allowed to advance
 		await catchRevert(protocol.approve(process,true, {from: TargetOwner}));
 		
+		/*
 		//State should be aborted
 		await protocol.approve(process,false, {from: MitigatorOwner});	
 		await ProcessData.at(process).then(async function (result){
@@ -99,12 +110,15 @@ contract("Full Run Test", async function(accounts) {
 			assert.equal(await result.getNextActor(), TargetAddress, "NextActor is wrong");
 		});
 		
-		//Reset state and next actor to init
-		await ProcessData.at(process).then(async function (result){
-			await result.setState(1);
-			await result.setNextActor(MitigatorAddress);
+		//Reinstantiate proces
+		await protocol.init(MitigatorAddress,120,2002,listOfAddresses,2, {from: TargetOwner});
+		return await ProcessData.at(process).then(async function (result){
+			assert.equal(await result.getState(), 1, "State is wrong");
+			assert.equal(await result.getNextActor(), MitigatorAddress, "NextActor is wrong");
+			assert.equal(await result.getListOfAddresses(), listOfAddresses, "List of addresses is wrong");
 		});
-
+		/*
+		
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		return await ProcessData.at(process).then(async function (result){
 			assert.equal(await result.getState(), 2, "State is wrong");
@@ -115,6 +129,7 @@ contract("Full Run Test", async function(accounts) {
 	
 	it("Send Funds", async function() {
 		
+		console.log(process);
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);
 		
 		//Funds are too low, will be reverted
@@ -124,20 +139,20 @@ contract("Full Run Test", async function(accounts) {
 		await catchRevert(protocol.sendFunds(process, {from: MitigatorOwner,value: 2002}));	
 		
 		//Will work
-		await protocol.sendFunds(process, {from: TargetOwner,value: 2002});	
+		await protocol.sendFunds(process, {from: TargetOwner,value: await web3.utils.toWei('2.0', "ether")});	
 		return await ProcessData.at(process).then(async function (result){
-			//await web3.eth.sendTransaction({from:TargetOwner,to:await result.getAddress(), value:1000});
 			assert.equal(await result.getState(), 3, "State is wrong");
-			assert.equal(await result.getFunds(), 2002, "Contract has wrong funds");
+			assert.equal(await result.getFunds(), await web3.utils.toWei('2.0', "ether"), "Contract has wrong funds");
 			assert.equal(await result.getNextActor(), MitigatorAddress, "NextActor is wrong");
-			assert.equal(isAtMost(await web3.eth.getBalance(TargetOwner), fundsTarget-2002),true, "Funds not taken away from Target");
+			assert.equal(isAtMost(await web3.eth.getBalance(TargetOwner),subtraction(fundsTarget,await web3.utils.toWei('2.0', "ether"))),true, "Funds not taken away from Target");
 		});
 		
 		
     });
 	
 	it("Upload Proof", async function() {
-	
+		
+		console.log(process);
 		//Try to use wrong state operation
 		await catchRevert(protocol.ratingByMitigator(process,2, {from: MitigatorOwner}));	
 		
@@ -201,6 +216,9 @@ contract("Full Run Test", async function(accounts) {
 	
 });
 
+function subtraction(a,b){
+	return parseInt(a)-parseInt(b);
+}
 
 function isAtMost(a,b){
 	if(a<=b){

@@ -71,11 +71,12 @@ contract("Abort during approve", async function(accounts) {
     });
 	
 	
-	it("Skip State", async function() {
+	it("Skip Approve State", async function() {
+		
 		//Sender is not allowed to advance
 		await catchRevert(protocol.skipCurrentState(process,{from: MitigatorOwner}));
 		
-		wait(2000); 
+		wait(3000); 
 		
 		await protocol.skipCurrentState(process,{from: TargetOwner});
 		await ProcessData.at(process).then(async function (result){

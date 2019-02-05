@@ -62,11 +62,9 @@ contract Protocol {
         ProcessData ProcessToUse = ProcessData(process);
         
         if(descision){
-            ProcessToUse.setState(Enums.State.FUNDING);
-            ProcessToUse.setNextActor(ProcessToUse.getTarget());
+            ProcessToUse.advanceState();
         }else{
-            ProcessToUse.setState(Enums.State.ABORT);
-			ProcessToUse.setNextActor(ProcessToUse.getTarget());
+            ProcessToUse.endProcess(Enums.State.ABORT);
         }
   
         return ProcessToUse;
@@ -83,9 +81,8 @@ contract Protocol {
         ProcessData ProcessToUse = ProcessData(process);
         
         ProcessToUse.getAddress().transfer(msg.value);
-        ProcessToUse.setNextActor(ProcessToUse.getMitigator());
-        ProcessToUse.setState(Enums.State.PROOF);
-        ProcessToUse.setNextDeadline();
+		
+        ProcessToUse.advanceState();
         
         return ProcessToUse;
     }
@@ -100,9 +97,8 @@ contract Protocol {
         
         ProcessData ProcessToUse = ProcessData(process);
         ProcessToUse.setProof(_Proof);
-        ProcessToUse.setNextActor(ProcessToUse.getTarget());
-        ProcessToUse.setState(Enums.State.TRATE);
-        ProcessToUse.setNextDeadline();
+		
+        ProcessToUse.advanceState();
         
         return ProcessToUse;
     }
@@ -116,21 +112,16 @@ contract Protocol {
         require(canSenderAdvance(process,Enums.State.TRATE),"Sender is not allowed");
         
         ProcessData ProcessToUse = ProcessData(process);
+        ProcessToUse.setTargetRating(rating);
         
-        if(!ProcessToUse.isProofProvided()){
-            ProcessToUse.setTargetRating(rating);
-			ProcessToUse.setNextActor(ProcessToUse.getTarget());
+		if(!ProcessToUse.isProofProvided()){
             ProcessToUse.executeEvaluation();
             return ProcessToUse;
         }
-        
-        ProcessToUse.setTargetRating(rating);
-        ProcessToUse.setNextActor(ProcessToUse.getMitigator());
-        ProcessToUse.setState(Enums.State.MRATE);
-        ProcessToUse.setNextDeadline();
-        
+		
+        ProcessToUse.advanceState();
+		
         return ProcessToUse;
-         
     }
     
     function ratingByMitigator(address payable process,Enums.Rating rating) 
@@ -144,7 +135,6 @@ contract Protocol {
         
         ProcessData ProcessToUse = ProcessData(process);
         ProcessToUse.setMitigatorRating(rating);
-		ProcessToUse.setNextActor(ProcessToUse.getTarget());
         ProcessToUse.executeEvaluation();
 
         return ProcessToUse;
@@ -158,30 +148,20 @@ contract Protocol {
 		
 		if(CurrentProcess.getState()<uint(Enums.State.PROOF)){
 			require(msg.sender== CurrentProcess.getTarget().getOwner(),"In this state, the process can only be aborted by the initiator");
-			CurrentProcess.setState(Enums.State.ABORT);
-			CurrentProcess.setNextActor(CurrentProcess.getTarget());
+			CurrentProcess.endProcess(Enums.State.ABORT);
 			return CurrentProcess;
 		}
 		
 		require(now>CurrentProcess.getDeadline(),"Deadline not yet exceeded, please wait");
-	
-		if(CurrentProcess.getNextActor()==CurrentProcess.getTarget()){
-			CurrentProcess.setNextActor(CurrentProcess.getMitigator());
-		}else{
-			CurrentProcess.setNextActor(CurrentProcess.getTarget());				
-		}
 
-		if(CurrentProcess.getState()==uint(Enums.State.PROOF)){
-			CurrentProcess.setState(Enums.State.TRATE);
-		}else if(CurrentProcess.getState() == uint(Enums.State.TRATE)){
-			CurrentProcess.setState(Enums.State.MRATE);
+		if(CurrentProcess.getState() == uint(Enums.State.TRATE)){
 			CurrentProcess.setTargetRating(Enums.Rating.NA);
 		}else if(CurrentProcess.getState() == uint(Enums.State.MRATE)){
 			CurrentProcess.setMitigatorRating(Enums.Rating.NA);
-			CurrentProcess.executeEvaluation();
 		}
 		
-		CurrentProcess.setNextDeadline();
+		CurrentProcess.advanceState();
+		
 		return CurrentProcess;
 	}
    
@@ -199,13 +179,13 @@ contract Protocol {
 		require(CurrentProcess.getNextActor().getOwner() == msg.sender,"NextActor != Sender");
 		require(uint(stateOfOperation)==uint(CurrentProcess.getState()),"State of operation does not match");
 		if(CurrentProcess.getState()>uint(Enums.State.FUNDING)){
-			require(now<CurrentProcess.getDeadline(),"state >=start && now > deadline");
+			require(now<CurrentProcess.getDeadline(),"State > Funding && now > deadline, please skip the state");
 		}
         return true;
     }
 	
 	function getProcess(address payable process) 
-    public view 
+    private view 
     returns(ProcessData){
         for (uint i = 0 ; i < CurrentProcesses.length; i++) {
             if(CurrentProcesses[i]==process){
