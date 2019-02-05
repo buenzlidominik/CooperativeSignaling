@@ -13,73 +13,67 @@ contract("Full Run Test", async function(accounts) {
 	
     var TargetOwner = accounts[0];
 	var MitigatorOwner = accounts[1];
+	var listOfAddresses = "Network1,Network2";
+	var Address;
 	var MitigatorAddress;
 	var TargetAddress;
-	var listOfAddresses = "Network1,Network2";
 	
-    it("Mitigator Creation", async function() {
+    it("Actor Creation", async function() {
         return await Protocol.deployed().then(async function(instance) {          
 			//Get the deployed protocol instance
 			protocol = instance;
 			//Define the fallback for the event which gives us the address of the created mitigator
-			var event = protocol.MitigatorCreated(function(error, response) {
+			var event = protocol.ActorCreated(function(error, response) {
 				if (!error) {
-					MitigatorAddress = response.args.addr;
+					Address = response.args.addr;
 				}else{
 					console.log(error);
 				}
 			});
-			
-			await protocol.registerMitigator(MitigatorOwner,1000,"Mitigator1", {from: TargetOwner});
-			return await IActor.at(MitigatorAddress).then(async function(owner) { 
+	
+			await protocol.registerActor(MitigatorOwner,1000,"Mitigator1", {from: MitigatorOwner});
+			MitigatorAddress = Address;
+			await IActor.at(MitigatorAddress).then(async function(owner) { 
 				assert.equal(MitigatorOwner, await owner.getOwner(), "Mitigator Address is wrong");
 			});
-		});
-    });
-	
-	it("Target Creation", async function() {
-			//Define the fallback for the event which gives us the address of the created mitigator
-			var event = protocol.TargetCreated(function(error, response) {
-				if (!error) {
-					TargetAddress = response.args.addr;
-				}else{
-					console.log(error);
-				}
-			});
 			
-			await protocol.registerTarget(TargetOwner,1000,"Target1", {from: TargetOwner});
+			
+			await protocol.registerActor(TargetOwner,1000,"Target1", {from: TargetOwner});
+			TargetAddress = Address;
 			return await IActor.at(TargetAddress).then(async function(owner) { 
 				assert.equal(TargetOwner, await owner.getOwner(), "Target Address is wrong");
 			});
+
+		});
     });
 	
 	it("Instantiation", async function() {
 		var event = protocol.ProcessDataCreated(function(error, response) {
 			if (!error) {
 				process = response.args.addr;
-				console.log(response.args.addr);
 			}else{
 				console.log(error);
 			}
 		});
 
+		
 		//Funds are too low, as our Mitigator needs 1000 per address but we want to block 2 addresses for 1000
-		await catchRevert(protocol.init(MitigatorAddress,120,1000,listOfAddresses,2, {from: TargetOwner}));
+		await catchRevert(protocol.init(MitigatorOwner,120,1000,listOfAddresses,2, {from: TargetOwner}));
 		
 		//List of addresses is not provided and thus reverted
-		await catchRevert(protocol.init(MitigatorAddress,120,2002,"",2, {from: TargetOwner}));
+		await catchRevert(protocol.init(MitigatorOwner,120,2002,"",2, {from: TargetOwner}));
 		
 		//Address is not a registered mitigator
 		await catchRevert(protocol.init(accounts[5],120,2002,listOfAddresses,2, {from: TargetOwner}));
 		
 		//Sender is not allowed to advance
-		await catchRevert(protocol.init(MitigatorAddress,120,2002,listOfAddresses,2, {from: MitigatorOwner}));
+		await catchRevert(protocol.init(MitigatorOwner,120,2002,listOfAddresses,2, {from: MitigatorOwner}));
 		
 		//Sender is not a registered target
-		await catchRevert(protocol.init(MitigatorAddress,120,2002,listOfAddresses,2, {from: accounts[2]}));
+		await catchRevert(protocol.init(MitigatorOwner,120,2002,listOfAddresses,2, {from: accounts[2]}));
 		
 		//This init is accepted
-		await protocol.init(MitigatorAddress,120,2002,listOfAddresses,2, {from: TargetOwner});
+		await protocol.init(MitigatorOwner,120,2002,listOfAddresses,2, {from: TargetOwner});
 		return await ProcessData.at(process).then(async function (result){
 			assert.equal(await result.getState(), 1, "State is wrong");
 			assert.equal(await result.getNextActor(), MitigatorAddress, "NextActor is wrong");
@@ -93,7 +87,6 @@ contract("Full Run Test", async function(accounts) {
 		var event = protocol.ProcessDataCreated(function(error, response) {
 			if (!error) {
 				process = response.args.addr;
-				console.log(response.args.addr);
 			}else{
 				console.log(error);
 			}
@@ -101,8 +94,7 @@ contract("Full Run Test", async function(accounts) {
 
 		//Sender is not allowed to advance
 		await catchRevert(protocol.approve(process,true, {from: TargetOwner}));
-		
-		/*
+
 		//State should be aborted
 		await protocol.approve(process,false, {from: MitigatorOwner});	
 		await ProcessData.at(process).then(async function (result){
@@ -111,14 +103,13 @@ contract("Full Run Test", async function(accounts) {
 		});
 		
 		//Reinstantiate proces
-		await protocol.init(MitigatorAddress,120,2002,listOfAddresses,2, {from: TargetOwner});
-		return await ProcessData.at(process).then(async function (result){
+		await protocol.init(MitigatorOwner,120,2002,listOfAddresses,2, {from: TargetOwner});
+		await ProcessData.at(process).then(async function (result){
 			assert.equal(await result.getState(), 1, "State is wrong");
 			assert.equal(await result.getNextActor(), MitigatorAddress, "NextActor is wrong");
 			assert.equal(await result.getListOfAddresses(), listOfAddresses, "List of addresses is wrong");
 		});
-		/*
-		
+
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		return await ProcessData.at(process).then(async function (result){
 			assert.equal(await result.getState(), 2, "State is wrong");
@@ -127,9 +118,21 @@ contract("Full Run Test", async function(accounts) {
 
     });
 	
+	it("Try to delete actor although in process", async function() {
+	
+		//Will be reverted because mid process and wrong sender
+		await catchRevert(protocol.deleteActor(MitigatorOwner, {from: TargetOwner}));
+
+		//Will be reverted because mid process
+		await catchRevert(protocol.deleteActor(MitigatorOwner, {from: MitigatorOwner}));
+		
+		//Will be reverted because mid process
+		await catchRevert(protocol.deleteActor(TargetOwner, {from: TargetOwner}));
+		
+    });
+	
 	it("Send Funds", async function() {
 		
-		console.log(process);
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);
 		
 		//Funds are too low, will be reverted
@@ -152,7 +155,6 @@ contract("Full Run Test", async function(accounts) {
 	
 	it("Upload Proof", async function() {
 		
-		console.log(process);
 		//Try to use wrong state operation
 		await catchRevert(protocol.ratingByMitigator(process,2, {from: MitigatorOwner}));	
 		
@@ -213,6 +215,25 @@ contract("Full Run Test", async function(accounts) {
 		//Called state function twice, will be reverted
 		return await catchRevert(protocol.ratingByMitigator(process,2, {from: MitigatorOwner}));	
     });
+	
+	it("Delete Mitigator", async function() {
+	
+		//Will work
+		await protocol.deleteActor(MitigatorOwner, {from: MitigatorOwner});	
+		await protocol.getActors().then(async function (result){
+			assert.equal(result.includes(MitigatorOwner), false, "Actor not deleted");
+		});	
+    });
+	
+	it("Delete Target", async function() {
+	
+		//Will work
+		await protocol.deleteActor(TargetOwner, {from: TargetOwner});	
+		await protocol.getActors().then(async function (result){
+			assert.equal(result.includes(TargetOwner), false, "Actor not deleted");
+		});	
+    });
+	
 	
 });
 

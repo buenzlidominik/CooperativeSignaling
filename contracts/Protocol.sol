@@ -7,46 +7,64 @@ import "./Enums.sol";
 
 contract Protocol {
 
-    address[] private Mitigators;
-	address[] private Targets;
-    address[] private CurrentProcesses;
+    address[] private Actors;
+    address payable[] private CurrentProcesses;
 
     event ProcessDataCreated(address _from, ProcessData addr);
-	event MitigatorCreated(address _from, IActor addr);
-	event TargetCreated(address _from, IActor addr);
+	event ActorCreated(address _from, address addr);
 	event FundsReceived(uint256 value);
 	
 	function() external payable{
 		emit FundsReceived(msg.value);
 	}
-	
-	
-    function registerMitigator(address payable _MitigatorOwner,uint256 PricePerUnit,string memory NetworkName) public returns(address){
-        IActor Mitigator = new IActor(_MitigatorOwner,PricePerUnit,NetworkName);
-        Mitigators.push(Mitigator.getAddress());
-		emit MitigatorCreated(msg.sender,Mitigator);
-        return Mitigator.getAddress();
-    }
-	
-	function registerTarget(address payable _TargetOwner,uint256 PricePerUnit,string memory NetworkName) public returns(address){
-        IActor Target = new IActor(_TargetOwner,PricePerUnit,NetworkName);
-        Targets.push(Target.getAddress());
-		emit TargetCreated(msg.sender,Target);
-        return Target.getAddress();
-    }
 
-    function init(address _Mitigator,uint _DeadlineInterval,uint256 _OfferedFunds,string memory _ListOfAddresses, uint _NumberOfAddresses) 
+    function registerActor(address payable _Owner,uint256 PricePerUnit,string memory NetworkName) public returns(address){
+        require(!ownerIsActor(_Owner),"The provided address is already registered as an actor");
+		IActor _Actor = new IActor(_Owner,PricePerUnit,NetworkName);
+        Actors.push(address(_Actor));
+		emit ActorCreated(msg.sender,address(_Actor));
+        return address(_Actor);
+    }
+	
+	function deleteActor(address payable _Owner) public{
+		require(_Owner == msg.sender,"The sender is not the owner of the actor");
+		require(notInActiveProcesses(_Owner),"The sender is involved in an active process");
+		uint id = getActorIndexFromOwner(_Owner);
+		require(CurrentProcesses.length > 0,"Empty actor list");
+		Actors[id] = Actors[Actors.length-1];
+		Actors.length = Actors.length-1;
+    }
+	
+	function notInActiveProcesses(address payable _Owner) private view returns(bool){
+		require(ownerIsActor(_Owner),"Owner is not an actor");
+		IActor actor = IActor(getActor(_Owner));
+		for (uint i = 0 ; i < CurrentProcesses.length; i++) {
+			ProcessData CurrentProcess = getProcess(CurrentProcesses[i]);
+			if(CurrentProcess.getState()<uint(Enums.State.COMPLETE)){
+				if(CurrentProcess.getTarget()==actor){
+					return false;
+				}
+				if(CurrentProcess.getMitigator()==actor){
+					return false;
+				}
+			} 
+        }
+		return true;
+	}
+	
+    function init(address payable _MitigatorOwner,uint _DeadlineInterval,uint256 _OfferedFunds,string memory _ListOfAddresses, uint _NumberOfAddresses) 
     public 
     returns (ProcessData){
         
         require(bytes(_ListOfAddresses).length >0,"no addresses provided");
-        require(isMitigator(_Mitigator),"no mitigator");
+        require(ownerIsActor(_MitigatorOwner),"No registered actor");
+		require(ownerIsActor(msg.sender),"Sender is not registered as an actor");
+		require(msg.sender!=_MitigatorOwner,"Sender and target cannot be the same");
+		IActor _Mitigator = IActor(getActor(_MitigatorOwner));
         require(IActor(_Mitigator).isOfferAcceptable(_OfferedFunds,_NumberOfAddresses),"Funds too low");
-        require(senderIsTarget(msg.sender),"Sender is not registered as a Target");
 		
-        IActor _Target = IActor(getTarget(msg.sender));
-        ProcessData newProcessData = new ProcessData(_Target.getAddress(),_Mitigator,_DeadlineInterval,_OfferedFunds,_ListOfAddresses);
-        CurrentProcesses.push(newProcessData.getAddress());
+        ProcessData newProcessData = new ProcessData(address(getActor(msg.sender)),address(_Mitigator),_DeadlineInterval,_OfferedFunds,_ListOfAddresses);
+        CurrentProcesses.push(address(newProcessData));
 		emit ProcessDataCreated(msg.sender,newProcessData);
 		
         return newProcessData;
@@ -80,7 +98,7 @@ contract Protocol {
         
         ProcessData ProcessToUse = ProcessData(process);
         
-        ProcessToUse.getAddress().transfer(msg.value);
+        address(ProcessToUse).transfer(msg.value);
 		
         ProcessToUse.advanceState();
         
@@ -177,7 +195,7 @@ contract Protocol {
         ProcessData CurrentProcess = getProcess(process);
 		
 		require(CurrentProcess.getNextActor().getOwner() == msg.sender,"NextActor != Sender");
-		require(uint(stateOfOperation)==uint(CurrentProcess.getState()),"State of operation does not match");
+		require(uint(stateOfOperation)==CurrentProcess.getState(),"State of operation does not match");
 		if(CurrentProcess.getState()>uint(Enums.State.FUNDING)){
 			require(now<CurrentProcess.getDeadline(),"State > Funding && now > deadline, please skip the state");
 		}
@@ -197,10 +215,15 @@ contract Protocol {
 	
     function getProcesses() 
     public view 
-    returns(address[] memory){
+    returns(address payable[] memory){
         return CurrentProcesses;
     }
-    
+	
+	function getActors() 
+    public view 
+    returns(address[] memory){
+        return Actors;
+    }
 
     function getStateOfProcess(address payable process) 
     public view 
@@ -222,34 +245,45 @@ contract Protocol {
         return false;
     }
     
-    function isMitigator(address mitigator) 
+    function addressIsActor(address actor) 
     private view 
     returns(bool){
-        for (uint i = 0 ; i < Mitigators.length; i++) {
-            if(Mitigators[i]==mitigator){
+        for (uint i = 0 ; i < Actors.length; i++) {
+            if(Actors[i]==actor){
                 return true;
             }
         }
         return false;
     }
 	
-	function senderIsTarget(address payable owner) 
+	function getActorIndexFromOwner(address payable owner) 
+    private view 
+    returns(uint){
+        for (uint i = 0 ; i < Actors.length; i++) {
+            if(IActor(Actors[i]).getOwner()==owner){
+                return i;
+            }
+        }
+        return 0;
+    }
+	
+	function ownerIsActor(address payable owner) 
     private view 
     returns(bool){
-        for (uint i = 0 ; i < Targets.length; i++) {
-            if(IActor(Targets[i]).getOwner()==owner){
+        for (uint i = 0 ; i < Actors.length; i++) {
+            if(IActor(Actors[i]).getOwner()==owner){
                 return true;
             }
         }
         return false;
     }
 	
-	function getTarget(address payable owner) 
+	function getActor(address payable owner) 
     private view 
     returns(address){
-        for (uint i = 0 ; i < Targets.length; i++) {
-            if(IActor(Targets[i]).getOwner()==owner){
-                return Targets[i];
+        for (uint i = 0 ; i < Actors.length; i++) {
+            if(IActor(Actors[i]).getOwner()==owner){
+                return Actors[i];
             }
         }
 		return address(0);

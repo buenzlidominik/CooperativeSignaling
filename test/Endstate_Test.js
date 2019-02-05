@@ -13,45 +13,36 @@ contract("Endstate_Test", async function(accounts) {
 	
     var TargetOwner = accounts[0];
 	var MitigatorOwner = accounts[1];
+	var Address;
 	var MitigatorAddress;
 	var TargetAddress;
-
-    it("Mitigator Creation", async function() {
-		return await Protocol.deployed().then(async function(instance) {          
-			
+	
+    it("Actor Creation", async function() {
+        return await Protocol.deployed().then(async function(instance) {          
 			//Get the deployed protocol instance
 			protocol = instance;
-			
-			var event = protocol.MitigatorCreated(function(error, response) {
+			//Define the fallback for the event which gives us the address of the created mitigator
+			var event = protocol.ActorCreated(function(error, response) {
 				if (!error) {
-					MitigatorAddress = response.args.addr;
+					Address = response.args.addr;
 				}else{
 					console.log(error);
 				}
 			});
-
-			//Define the fallback for the event which gives us the address of the created mitigator
-
-			await protocol.registerMitigator(MitigatorOwner,1000,"Mitigator1", {from: TargetOwner});
-			return await IActor.at(MitigatorAddress).then(async function(owner) { 
+	
+			await protocol.registerActor(MitigatorOwner,1000,"Mitigator1", {from: MitigatorOwner});
+			MitigatorAddress = Address;
+			await IActor.at(MitigatorAddress).then(async function(owner) { 
 				assert.equal(MitigatorOwner, await owner.getOwner(), "Mitigator Address is wrong");
 			});
-		});
-    });
-		
-	it("Target Creation", async function() {
 			
-		//Define the fallback for the event which gives us the address of the created mitigator
-		var event = protocol.TargetCreated(function(error, response) {
-			if (!error) {
-				TargetAddress = response.args.addr;
-			}else{
-				console.log(error);
-			}
-		});
-		await protocol.registerTarget(TargetOwner,1000,"Target1", {from: TargetOwner});
-		return await IActor.at(TargetAddress).then(async function(owner) { 
-			assert.equal(TargetOwner, await owner.getOwner(), "Target Address is wrong");
+			
+			await protocol.registerActor(TargetOwner,1000,"Target1", {from: TargetOwner});
+			TargetAddress = Address;
+			return await IActor.at(TargetAddress).then(async function(owner) { 
+				assert.equal(TargetOwner, await owner.getOwner(), "Target Address is wrong");
+			});
+
 		});
     });
 	
@@ -68,7 +59,7 @@ contract("Endstate_Test", async function(accounts) {
 		var listOfAddresses = "Network1,Network2";
 		
 		//This init is accepted
-		await protocol.init(MitigatorAddress,2,2002,listOfAddresses,2, {from: TargetOwner});
+		await protocol.init(MitigatorOwner,2,2002,listOfAddresses,2, {from: TargetOwner});
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);
@@ -106,7 +97,7 @@ contract("Endstate_Test", async function(accounts) {
 		var listOfAddresses = "Network1,Network2";
 
 		//This init is accepted
-		await protocol.init(MitigatorAddress,2,2002,listOfAddresses,2, {from: TargetOwner});
+		await protocol.init(MitigatorOwner,2,2002,listOfAddresses,2, {from: TargetOwner});
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);
@@ -144,7 +135,7 @@ contract("Endstate_Test", async function(accounts) {
 		var listOfAddresses = "Network1,Network2";
 		
 		//This init is accepted
-		await protocol.init(MitigatorAddress,2,2002,listOfAddresses,2, {from: TargetOwner});
+		await protocol.init(MitigatorOwner,2,2002,listOfAddresses,2, {from: TargetOwner});
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);
@@ -184,7 +175,7 @@ contract("Endstate_Test", async function(accounts) {
 		var listOfAddresses = "Network1,Network2";
 		
 		//This init is accepted
-		await protocol.init(MitigatorAddress,2,2002,listOfAddresses,2, {from: TargetOwner});
+		await protocol.init(MitigatorOwner,2,2002,listOfAddresses,2, {from: TargetOwner});
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);
@@ -227,7 +218,7 @@ contract("Endstate_Test", async function(accounts) {
 		var listOfAddresses = "Network1,Network2";
 		
 		//This init is accepted
-		await protocol.init(MitigatorAddress,2,2002,listOfAddresses,2, {from: TargetOwner});
+		await protocol.init(MitigatorOwner,2,2002,listOfAddresses,2, {from: TargetOwner});
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);
@@ -271,7 +262,7 @@ contract("Endstate_Test", async function(accounts) {
 		var listOfAddresses = "Network1,Network2";
 		
 		//This init is accepted
-		await protocol.init(MitigatorAddress,2,2002,listOfAddresses,2, {from: TargetOwner});
+		await protocol.init(MitigatorOwner,2,2002,listOfAddresses,2, {from: TargetOwner});
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);
@@ -316,7 +307,7 @@ contract("Endstate_Test", async function(accounts) {
 		var listOfAddresses = "Network1,Network2";
 		
 		//This init is accepted
-		await protocol.init(MitigatorAddress,2,2002,listOfAddresses,2, {from: TargetOwner});
+		await protocol.init(MitigatorOwner,2,2002,listOfAddresses,2, {from: TargetOwner});
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);
@@ -358,7 +349,7 @@ contract("Endstate_Test", async function(accounts) {
 		var listOfAddresses = "Network1,Network2";
 		
 		//This init is accepted
-		await protocol.init(MitigatorAddress,2,2002,listOfAddresses,2, {from: TargetOwner});
+		await protocol.init(MitigatorOwner,2,2002,listOfAddresses,2, {from: TargetOwner});
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);

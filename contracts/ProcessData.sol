@@ -45,11 +45,7 @@ contract  ProcessData {
 		require(msg.value >= OfferedFunds,"Please provide at least the funds you initially offered");
 		emit Received(msg.value);
 	}
-  
-    function getAddress() public view returns (address payable){
-        return address(this);
-    }
-    
+	
     function getNextActor() public view returns (IActor){
         return NextActor;
     }
@@ -61,7 +57,7 @@ contract  ProcessData {
 	function executeEvaluation() public{
 		address actor;
 		Enums.State stateToSet;
-		Evaluation _Evaluation = new Evaluation(this.getAddress(),Target.getAddress(),Mitigator.getAddress());
+		Evaluation _Evaluation = new Evaluation(address(this),address(Target),address(Mitigator));
 		
         (actor,stateToSet) = _Evaluation.evaluate(isProofProvided(),getTargetRating(), getMitigatorRating());
 		

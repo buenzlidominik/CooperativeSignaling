@@ -19,13 +19,7 @@ contract IActor {
     returns (address payable){
         return Owner;
     }
-    
-    function getAddress()
-    public view
-    returns (address){
-        return address(this);
-    }
-    
+	
     function isOfferAcceptable(uint256 offer,uint amountOfAddresses) 
     public view
     returns (bool){
