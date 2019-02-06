@@ -37,7 +37,7 @@ contract  ProcessData {
     }
     
     function transferFunds(IActor receiver) public {   
-		require(msg.sender==OwnedByContract,"Funds can only be transferred by the owning contract");
+		require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
         receiver.getOwner().transfer(address(this).balance);
     }
     
@@ -55,6 +55,7 @@ contract  ProcessData {
     }
 	
 	function executeEvaluation() public{
+		require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
 		address actor;
 		Enums.State stateToSet;
 		Evaluation _Evaluation = new Evaluation(address(this),address(Target),address(Mitigator));
@@ -99,7 +100,12 @@ contract  ProcessData {
         return Proof;
     }
 	
+	function getStartTime() public view returns (uint256){
+        return StartTime;
+    }
+	
 	function getStartAndEndTime() public view returns (uint256,uint256){
+		require(getState()>=uint(Enums.State.COMPLETE),"Process not completed, no endtime given");
         return (StartTime,EndTime);
     }
     

@@ -20,6 +20,7 @@ contract Protocol {
 
     function registerActor(address payable _Owner,uint256 PricePerUnit,string memory NetworkName) public returns(address){
         require(!ownerIsActor(_Owner),"The provided address is already registered as an actor");
+		require(_Owner==msg.sender,"The sender is not the owner of the address");
 		IActor _Actor = new IActor(_Owner,PricePerUnit,NetworkName);
         Actors.push(address(_Actor));
 		emit ActorCreated(msg.sender,address(_Actor));

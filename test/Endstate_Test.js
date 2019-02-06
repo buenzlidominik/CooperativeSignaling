@@ -74,6 +74,14 @@ contract("Endstate_Test", async function(accounts) {
 		
 		await protocol.skipCurrentState(process,{from: TargetOwner});
 		await protocol.ratingByTarget(process,0, {from: TargetOwner});	
+		
+		await ProcessData.at(process).then(async function (result){
+			await result.getStartAndEndTime().then( async function (response){
+				console.log("Starttime:"+ response[0])
+				console.log("Endtime:"+ response[1]);
+				assert.equal(isBiggerOrEqualThan(response[1],response[0]),true, "StartTime >= Endtime");
+			});
+		});	
 
 		return await ProcessData.at(process).then(async function (result){
 			assert.equal(isAtMost(await web3.eth.getBalance(TargetOwner),fundsTarget),true, "Endstate Target Funding not correct");
@@ -114,6 +122,14 @@ contract("Endstate_Test", async function(accounts) {
 	
 		await protocol.ratingByTarget(process,1, {from: TargetOwner});	
 		
+		await ProcessData.at(process).then(async function (result){
+			await result.getStartAndEndTime().then( async function (response){
+				console.log("Starttime:"+ response[0])
+				console.log("Endtime:"+ response[1]);
+				assert.equal(isBiggerOrEqualThan(response[1],response[0]),true, "StartTime >= Endtime");
+			});
+		});	
+		
 		return await ProcessData.at(process).then(async function (result){
 			assert.equal(await result.getState(),7,"State is not abort");
 			assert.equal(isAtMost( await web3.eth.getBalance(TargetOwner),subtraction(fundsTarget,await web3.utils.toWei('2.0', "ether"))),true, "Endstate Target Funding not correct");
@@ -153,6 +169,15 @@ contract("Endstate_Test", async function(accounts) {
 		var fundsMitigator = await web3.eth.getBalance(MitigatorOwner);
 		
 		await protocol.ratingByMitigator(process,2, {from: MitigatorOwner});
+		
+		await ProcessData.at(process).then(async function (result){
+			await result.getStartAndEndTime().then( async function (response){
+				console.log("Starttime:"+ response[0])
+				console.log("Endtime:"+ response[1]);
+				assert.equal(isBiggerOrEqualThan(response[1],response[0]),true, "StartTime >= Endtime");
+			});
+		});	
+		
 		return await ProcessData.at(process).then(async function (result){
 		
 			assert.equal(isAtMost( await web3.eth.getBalance(TargetOwner),subtraction(fundsTarget,await web3.utils.toWei('2.0', "ether"))),true, "Endstate Funding Target not correct");
@@ -195,6 +220,14 @@ contract("Endstate_Test", async function(accounts) {
 		wait(3000); 
 		
 		await protocol.skipCurrentState(process,{from: TargetOwner});
+		
+		await ProcessData.at(process).then(async function (result){
+			await result.getStartAndEndTime().then( async function (response){
+				console.log("Starttime:"+ response[0])
+				console.log("Endtime:"+ response[1]);
+				assert.equal(isBiggerOrEqualThan(response[1],response[0]),true, "StartTime >= Endtime");
+			});
+		});	
 		
 		return await ProcessData.at(process).then(async function (result){
 		
@@ -239,6 +272,14 @@ contract("Endstate_Test", async function(accounts) {
 		var fundsMitigator = await web3.eth.getBalance(MitigatorOwner);
 	
 		await protocol.ratingByMitigator(process,2, {from: MitigatorOwner});
+		
+		await ProcessData.at(process).then(async function (result){
+			await result.getStartAndEndTime().then( async function (response){
+				console.log("Starttime:"+ response[0])
+				console.log("Endtime:"+ response[1]);
+				assert.equal(isBiggerOrEqualThan(response[1],response[0]),true, "StartTime >= Endtime");
+			});
+		});	
 		
 		return await ProcessData.at(process).then(async function (result){
 		
@@ -285,6 +326,14 @@ contract("Endstate_Test", async function(accounts) {
 		wait(3000); 
 		await protocol.skipCurrentState(process,{from: TargetOwner});
 		
+		await ProcessData.at(process).then(async function (result){
+			await result.getStartAndEndTime().then( async function (response){
+				console.log("Starttime:"+ response[0])
+				console.log("Endtime:"+ response[1]);
+				assert.equal(isBiggerOrEqualThan(response[1],response[0]),true, "StartTime >= Endtime");
+			});
+		});	
+		
 		return await ProcessData.at(process).then(async function (result){
 		
 			assert.equal(isAtMost( await web3.eth.getBalance(TargetOwner),fundsTarget),true, "Endstate Funding Target not correct");
@@ -326,6 +375,14 @@ contract("Endstate_Test", async function(accounts) {
 		var fundsMitigator = await web3.eth.getBalance(MitigatorOwner);
 		
 		await protocol.ratingByMitigator(process,2, {from: MitigatorOwner});
+		
+		await ProcessData.at(process).then(async function (result){
+			await result.getStartAndEndTime().then( async function (response){
+				console.log("Starttime:"+ response[0])
+				console.log("Endtime:"+ response[1]);
+				assert.equal(isBiggerOrEqualThan(response[1],response[0]),true, "StartTime >= Endtime");
+			});
+		});	
 		
 		return await ProcessData.at(process).then(async function (result){
 		
@@ -371,6 +428,14 @@ contract("Endstate_Test", async function(accounts) {
 		
 		await protocol.skipCurrentState(process,{from: TargetOwner});
 		
+		await ProcessData.at(process).then(async function (result){
+			await result.getStartAndEndTime().then( async function (response){
+				console.log("Starttime:"+ response[0])
+				console.log("Endtime:"+ response[1]);
+				assert.equal(isBiggerOrEqualThan(response[1],response[0]),true, "StartTime >= Endtime");
+			});
+		});	
+		
 		return await ProcessData.at(process).then(async function (result){
 		
 			assert.equal(isAtMost( await web3.eth.getBalance(TargetOwner),fundsTarget),true, "Endstate Funding Target not correct");
@@ -391,6 +456,13 @@ function subtraction(a,b){
 
 function isAtMost(a,b){
 	if(a<=b){
+		return true;
+	}	
+	return false;
+}
+
+function isBiggerOrEqualThan(a,b){
+	if(a>=b){
 		return true;
 	}	
 	return false;

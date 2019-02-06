@@ -213,7 +213,15 @@ contract("Full Run Test", async function(accounts) {
 		});
 		
 		//Called state function twice, will be reverted
-		return await catchRevert(protocol.ratingByMitigator(process,2, {from: MitigatorOwner}));	
+		await catchRevert(protocol.ratingByMitigator(process,2, {from: MitigatorOwner}));
+
+		await ProcessData.at(process).then(async function (result){
+			await result.getStartAndEndTime().then( async function (response){
+				console.log("Starttime:"+ response[0])
+				console.log("Endtime:"+ response[1]);
+				assert.equal(isBiggerOrEqualThan(response[1],response[0]),true, "StartTime >= Endtime");
+			});
+		});		
     });
 	
 	it("Delete Mitigator", async function() {
@@ -236,6 +244,13 @@ contract("Full Run Test", async function(accounts) {
 	
 	
 });
+
+function isBiggerOrEqualThan(a,b){
+	if(a>=b){
+		return true;
+	}	
+	return false;
+}
 
 function subtraction(a,b){
 	return parseInt(a)-parseInt(b);
