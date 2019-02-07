@@ -10,7 +10,7 @@ contract  ProcessData {
     IActor Mitigator;
     IActor NextActor;
 	address private OwnedByContract;
-    uint private OfferedFunds = 0;
+    uint256 private OfferedFunds = 0;
     uint256 private DeadlineInterval;
     uint256 private Deadline;
 	uint256 private StartTime;
