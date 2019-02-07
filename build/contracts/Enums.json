@@ -1,14 +1,14 @@
 {
   "contractName": "Enums",
   "abi": [],
-  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820b183c39dd6f96da8c9247dad3d2f1cabe633786f02a8a005c1a500d1e9e782a90029",
-  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820b183c39dd6f96da8c9247dad3d2f1cabe633786f02a8a005c1a500d1e9e782a90029",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058205b2eab8e9bb55bc11a1dafd8116e90f134d1b339ada2e81aecf68526af298f780029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058205b2eab8e9bb55bc11a1dafd8116e90f134d1b339ada2e81aecf68526af298f780029",
   "sourceMap": "27:133:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:133:0;;;;;;;",
   "deployedSourceMap": "27:133:0:-;;;;;",
   "source": "pragma solidity ^0.5.0;\r\n\r\ncontract  Enums {\r\n\r\n\tenum State {REQUEST,APPROVE,FUNDING,PROOF,TRATE,MRATE,COMPLETE,ABORT,ESCALATE}\r\n    enum Rating {REJ,NA,ACK}\r\n}",
-  "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\Enums.sol",
+  "sourcePath": "C:\\Code\\Private\\MBM\\contracts\\Enums.sol",
   "ast": {
-    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+    "absolutePath": "/C/Code/Private/MBM/contracts/Enums.sol",
     "exportedSymbols": {
       "Enums": [
         16
@@ -139,7 +139,7 @@
     "src": "0:160:0"
   },
   "legacyAST": {
-    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+    "absolutePath": "/C/Code/Private/MBM/contracts/Enums.sol",
     "exportedSymbols": {
       "Enums": [
         16
@@ -275,7 +275,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-02-05T20:40:44.297Z",
+  "updatedAt": "2019-02-07T21:19:52.010Z",
   "devdoc": {
     "methods": {}
   },

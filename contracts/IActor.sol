@@ -5,21 +5,26 @@ contract IActor {
     address payable private Owner;
     uint private PricePerUnit;
     string private Network;
-	
-    constructor (address payable ActorAddress,uint256 price, string memory net) 
+
+    constructor (address payable _Owner,uint256 price, string memory net) 
+	payable
     public
     {
-        Owner = ActorAddress;
+        Owner = _Owner;
         PricePerUnit = price;
         Network = net;
     }
 
     function getOwner() 
-    public view
+    external view
     returns (address payable){
         return Owner;
     }
 	
+	function() payable external {
+		Owner.transfer(address(this).balance);
+	}
+
     function isOfferAcceptable(uint256 offer,uint amountOfAddresses) 
     public view
     returns (bool){

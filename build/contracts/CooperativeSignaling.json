@@ -1,0 +1,3619 @@
+{
+  "contractName": "CooperativeSignaling",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "CurrentProcesses",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xf0f7843d"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "M",
+          "type": "address"
+        }
+      ],
+      "name": "init",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x19ab453c"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "process",
+          "type": "address"
+        },
+        {
+          "name": "descision",
+          "type": "bool"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x3d140d21"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "process",
+          "type": "address"
+        }
+      ],
+      "name": "findProcess",
+      "outputs": [
+        {
+          "components": [
+            {
+              "name": "FoundProcess",
+              "type": "address"
+            },
+            {
+              "name": "existing",
+              "type": "bool"
+            }
+          ],
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x3d92d67a"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506111cc806100206000396000f3fe608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806319ab453c146100675780633d140d21146100a45780633d92d67a146100e1578063f0f7843d1461011e575b600080fd5b34801561007357600080fd5b5061008e60048036036100899190810190610841565b61015b565b60405161009b91906109d2565b60405180910390f35b3480156100b057600080fd5b506100cb60048036036100c69190810190610893565b6103d9565b6040516100d891906109d2565b60405180910390f35b3480156100ed57600080fd5b5061010860048036036101039190810190610841565b610567565b6040516101159190610a5e565b60405180910390f35b34801561012a57600080fd5b50610145600480360361014091908101906108f8565b61075d565b6040516101529190610a08565b60405180910390f35b60008061016661079b565b604051809103906000f080158015610182573d6000803e3d6000fd5b5073ffffffffffffffffffffffffffffffffffffffff1663d25ee2e2336040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004016101d791906109ed565b602060405180830381600087803b1580156101f157600080fd5b505af1158015610205573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525061022991908101906108cf565b73ffffffffffffffffffffffffffffffffffffffff166380d2646e846040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040161027d91906109d2565b602060405180830381600087803b15801561029757600080fd5b505af11580156102ab573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052506102cf91908101906108cf565b905060008190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550508073ffffffffffffffffffffffffffffffffffffffff166338cc48316040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b15801561039957600080fd5b505afa1580156103ad573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052506103d1919081019061086a565b915050919050565b60006103e36107ab565b6103ec84610567565b905080602001511515610434576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161042b90610a3e565b60405180910390fd5b806000015173ffffffffffffffffffffffffffffffffffffffff166356de96db60076040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040161048e9190610a23565b600060405180830381600087803b1580156104a857600080fd5b505af11580156104bc573d6000803e3d6000fd5b50505050806000015173ffffffffffffffffffffffffffffffffffffffff166338cc48316040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b15801561052657600080fd5b505afa15801561053a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525061055e919081019061086a565b91505092915050565b61056f6107ab565b60006105796107ab565b60408051908101604052808373ffffffffffffffffffffffffffffffffffffffff16815260200160001515815250905060008090505b600080549050811015610752578473ffffffffffffffffffffffffffffffffffffffff166000828154811015156105e257fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166338cc48316040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b15801561066e57600080fd5b505afa158015610682573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052506106a6919081019061086a565b73ffffffffffffffffffffffffffffffffffffffff161415610745576000818154811015156106d157fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16826000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505060018260200190151590811515815250505b80806001019150506105af565b508092505050919050565b60008181548110151561076c57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60405161061f80610b7483390190565b6040805190810160405280600073ffffffffffffffffffffffffffffffffffffffff1681526020016000151581525090565b60006107e98235610acd565b905092915050565b60006107fd8251610acd565b905092915050565b60006108118235610adf565b905092915050565b60006108258251610aeb565b905092915050565b60006108398235610afd565b905092915050565b60006020828403121561085357600080fd5b6000610861848285016107dd565b91505092915050565b60006020828403121561087c57600080fd5b600061088a848285016107f1565b91505092915050565b600080604083850312156108a657600080fd5b60006108b4858286016107dd565b92505060206108c585828601610805565b9150509250929050565b6000602082840312156108e157600080fd5b60006108ef84828501610819565b91505092915050565b60006020828403121561090a57600080fd5b60006109188482850161082d565b91505092915050565b61092a81610b07565b82525050565b61093981610a79565b82525050565b61094881610a8b565b82525050565b61095781610b19565b82525050565b61096681610b3d565b82525050565b6000601482527f50726f63657373206e6f74206578697374696e670000000000000000000000006020830152604082019050919050565b6040820160008201516109b9600085018261094e565b5060208201516109cc602085018261093f565b50505050565b60006020820190506109e76000830184610930565b92915050565b6000602082019050610a026000830184610921565b92915050565b6000602082019050610a1d600083018461094e565b92915050565b6000602082019050610a38600083018461095d565b92915050565b60006020820190508181036000830152610a578161096c565b9050919050565b6000604082019050610a7360008301846109a3565b92915050565b6000610a8482610aad565b9050919050565b60008115159050919050565b6000600882101515610aa557fe5b819050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610ad882610aad565b9050919050565b60008115159050919050565b6000610af682610a79565b9050919050565b6000819050919050565b6000610b1282610b4f565b9050919050565b6000610b2482610b2b565b9050919050565b6000610b3682610aad565b9050919050565b6000610b4882610a97565b9050919050565b6000610b5a82610b61565b9050919050565b6000610b6c82610aad565b905091905056fe60806040526000600360016101000a81548160ff0219169083600781111561002357fe5b021790555060006002819055506000600360006101000a81548160ff0219169083151502179055506105c58061005a6000396000f3fe6080604052600436106100af576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631865c57d146100b457806338cc48311461010b5780634d9b37351461016257806350b1be261461018d57806356de96db146101c65780635e7e0d3c1461020457806380d2646e14610233578063822db559146102c4578063cce8962f146102ff578063d25ee2e21461033c578063f00e6a2a146103cd575b600080fd5b3480156100c057600080fd5b506100c9610424565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561011757600080fd5b5061012061044e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016e57600080fd5b50610177610456565b6040518082815260200191505060405180910390f35b34801561019957600080fd5b506101a2610460565b604051808260078111156101b257fe5b60ff16815260200191505060405180910390f35b3480156101d257600080fd5b50610202600480360360208110156101e957600080fd5b81019080803560ff169060200190929190505050610477565b005b34801561021057600080fd5b5061021961049d565b604051808215151515815260200191505060405180910390f35b34801561023f57600080fd5b506102826004803603602081101561025657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104b4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156102d057600080fd5b506102fd600480360360208110156102e757600080fd5b81019080803590602001909291905050506104ff565b005b34801561030b57600080fd5b5061033a6004803603602081101561032257600080fd5b81019080803515159060200190929190505050610509565b005b34801561034857600080fd5b5061038b6004803603602081101561035f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610526565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156103d957600080fd5b506103e2610570565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b600030905090565b6000600254905090565b6000600360019054906101000a900460ff16905090565b80600360016101000a81548160ff0219169083600781111561049557fe5b021790555050565b6000600360009054906101000a900460ff16905090565b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550309050919050565b8060028190555050565b80600360006101000a81548160ff02191690831515021790555050565b6000816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550309050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690509056fea165627a7a72305820c225f70d504c3e4056de63e6f4dd9debe81be793887a22be63fa5477e4e23e590029a265627a7a72305820a406bff90a5fa91f002fe23cb65645530843b85e5af4d8f92d2b330799b31bff6c6578706572696d656e74616cf50037",
+  "deployedBytecode": "0x608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806319ab453c146100675780633d140d21146100a45780633d92d67a146100e1578063f0f7843d1461011e575b600080fd5b34801561007357600080fd5b5061008e60048036036100899190810190610841565b61015b565b60405161009b91906109d2565b60405180910390f35b3480156100b057600080fd5b506100cb60048036036100c69190810190610893565b6103d9565b6040516100d891906109d2565b60405180910390f35b3480156100ed57600080fd5b5061010860048036036101039190810190610841565b610567565b6040516101159190610a5e565b60405180910390f35b34801561012a57600080fd5b50610145600480360361014091908101906108f8565b61075d565b6040516101529190610a08565b60405180910390f35b60008061016661079b565b604051809103906000f080158015610182573d6000803e3d6000fd5b5073ffffffffffffffffffffffffffffffffffffffff1663d25ee2e2336040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004016101d791906109ed565b602060405180830381600087803b1580156101f157600080fd5b505af1158015610205573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525061022991908101906108cf565b73ffffffffffffffffffffffffffffffffffffffff166380d2646e846040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040161027d91906109d2565b602060405180830381600087803b15801561029757600080fd5b505af11580156102ab573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052506102cf91908101906108cf565b905060008190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550508073ffffffffffffffffffffffffffffffffffffffff166338cc48316040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b15801561039957600080fd5b505afa1580156103ad573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052506103d1919081019061086a565b915050919050565b60006103e36107ab565b6103ec84610567565b905080602001511515610434576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161042b90610a3e565b60405180910390fd5b806000015173ffffffffffffffffffffffffffffffffffffffff166356de96db60076040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040161048e9190610a23565b600060405180830381600087803b1580156104a857600080fd5b505af11580156104bc573d6000803e3d6000fd5b50505050806000015173ffffffffffffffffffffffffffffffffffffffff166338cc48316040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b15801561052657600080fd5b505afa15801561053a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525061055e919081019061086a565b91505092915050565b61056f6107ab565b60006105796107ab565b60408051908101604052808373ffffffffffffffffffffffffffffffffffffffff16815260200160001515815250905060008090505b600080549050811015610752578473ffffffffffffffffffffffffffffffffffffffff166000828154811015156105e257fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166338cc48316040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b15801561066e57600080fd5b505afa158015610682573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052506106a6919081019061086a565b73ffffffffffffffffffffffffffffffffffffffff161415610745576000818154811015156106d157fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16826000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505060018260200190151590811515815250505b80806001019150506105af565b508092505050919050565b60008181548110151561076c57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60405161061f80610b7483390190565b6040805190810160405280600073ffffffffffffffffffffffffffffffffffffffff1681526020016000151581525090565b60006107e98235610acd565b905092915050565b60006107fd8251610acd565b905092915050565b60006108118235610adf565b905092915050565b60006108258251610aeb565b905092915050565b60006108398235610afd565b905092915050565b60006020828403121561085357600080fd5b6000610861848285016107dd565b91505092915050565b60006020828403121561087c57600080fd5b600061088a848285016107f1565b91505092915050565b600080604083850312156108a657600080fd5b60006108b4858286016107dd565b92505060206108c585828601610805565b9150509250929050565b6000602082840312156108e157600080fd5b60006108ef84828501610819565b91505092915050565b60006020828403121561090a57600080fd5b60006109188482850161082d565b91505092915050565b61092a81610b07565b82525050565b61093981610a79565b82525050565b61094881610a8b565b82525050565b61095781610b19565b82525050565b61096681610b3d565b82525050565b6000601482527f50726f63657373206e6f74206578697374696e670000000000000000000000006020830152604082019050919050565b6040820160008201516109b9600085018261094e565b5060208201516109cc602085018261093f565b50505050565b60006020820190506109e76000830184610930565b92915050565b6000602082019050610a026000830184610921565b92915050565b6000602082019050610a1d600083018461094e565b92915050565b6000602082019050610a38600083018461095d565b92915050565b60006020820190508181036000830152610a578161096c565b9050919050565b6000604082019050610a7360008301846109a3565b92915050565b6000610a8482610aad565b9050919050565b60008115159050919050565b6000600882101515610aa557fe5b819050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610ad882610aad565b9050919050565b60008115159050919050565b6000610af682610a79565b9050919050565b6000819050919050565b6000610b1282610b4f565b9050919050565b6000610b2482610b2b565b9050919050565b6000610b3682610aad565b9050919050565b6000610b4882610a97565b9050919050565b6000610b5a82610b61565b9050919050565b6000610b6c82610aad565b905091905056fe60806040526000600360016101000a81548160ff0219169083600781111561002357fe5b021790555060006002819055506000600360006101000a81548160ff0219169083151502179055506105c58061005a6000396000f3fe6080604052600436106100af576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631865c57d146100b457806338cc48311461010b5780634d9b37351461016257806350b1be261461018d57806356de96db146101c65780635e7e0d3c1461020457806380d2646e14610233578063822db559146102c4578063cce8962f146102ff578063d25ee2e21461033c578063f00e6a2a146103cd575b600080fd5b3480156100c057600080fd5b506100c9610424565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561011757600080fd5b5061012061044e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016e57600080fd5b50610177610456565b6040518082815260200191505060405180910390f35b34801561019957600080fd5b506101a2610460565b604051808260078111156101b257fe5b60ff16815260200191505060405180910390f35b3480156101d257600080fd5b50610202600480360360208110156101e957600080fd5b81019080803560ff169060200190929190505050610477565b005b34801561021057600080fd5b5061021961049d565b604051808215151515815260200191505060405180910390f35b34801561023f57600080fd5b506102826004803603602081101561025657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104b4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156102d057600080fd5b506102fd600480360360208110156102e757600080fd5b81019080803590602001909291905050506104ff565b005b34801561030b57600080fd5b5061033a6004803603602081101561032257600080fd5b81019080803515159060200190929190505050610509565b005b34801561034857600080fd5b5061038b6004803603602081101561035f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610526565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156103d957600080fd5b506103e2610570565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b600030905090565b6000600254905090565b6000600360019054906101000a900460ff16905090565b80600360016101000a81548160ff0219169083600781111561049557fe5b021790555050565b6000600360009054906101000a900460ff16905090565b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550309050919050565b8060028190555050565b80600360006101000a81548160ff02191690831515021790555050565b6000816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550309050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690509056fea165627a7a72305820c225f70d504c3e4056de63e6f4dd9debe81be793887a22be63fa5477e4e23e590029a265627a7a72305820a406bff90a5fa91f002fe23cb65645530843b85e5af4d8f92d2b330799b31bff6c6578706572696d656e74616cf50037",
+  "sourceMap": "89:1333:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;89:1333:0;;;;;;;",
+  "deployedSourceMap": "89:1333:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;170:243;;8:9:-1;5:2;;;30:1;27;20:12;5:2;170:243:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;421:373;;8:9:-1;5:2;;;30:1;27;20:12;5:2;421:373:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;802:520;;8:9:-1;5:2;;;30:1;27;20:12;5:2;802:520:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;128:33;;8:9:-1;5:2;;;30:1;27;20:12;5:2;128:33:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;170:243;223:7;244:18;265:13;;:::i;:::-;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;265:13:0;:24;;;290:10;265:36;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;265:36:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;265:36:0;;;;;;;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;265:36:0;;;;;;;;;:50;;;316:1;265:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;265:53:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;265:53:0;;;;;;;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;265:53:0;;;;;;;;;244:74;;329:16;351:10;329:33;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;329:33:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;382:10;:21;;;:23;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;382:23:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;382:23:0;;;;;;;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;382:23:0;;;;;;;;;375:30;;;170:243;;;:::o;421:373::-;497:7;516:39;;:::i;:::-;558:20;570:7;558:11;:20::i;:::-;516:62;;607:12;:21;;;599:53;;;;;;;;;;;;;;;;;;;;;;;;673:12;:25;;;:34;;;708:19;673:55;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;673:55:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;673:55:0;;;;748:12;:25;;;:36;;;:38;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;748:38:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;748:38:0;;;;;;;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;748:38:0;;;;;;;;;741:45;;;421:373;;;;:::o;802:520::-;872:26;;:::i;:::-;910:20;941:33;;:::i;:::-;977:63;;;;;;;;;1011:12;977:63;;;;;;1033:5;977:63;;;;;941:99;;1056:6;1065:1;1056:10;;1051:240;1073:16;:23;;;;1069:1;:27;1051:240;;;1155:7;1121:41;;:16;1138:1;1121:19;;;;;;;;;;;;;;;;;;;;;;;;;;;:30;;;:32;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1121:32:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1121:32:0;;;;;;;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;1121:32:0;;;;;;;;;:41;;;1118:162;;;1204:16;1221:1;1204:19;;;;;;;;;;;;;;;;;;;;;;;;;;;1182:6;:19;;:41;;;;;;;;;;;1260:4;1242:6;:15;;:22;;;;;;;;;;;1118:162;1098:3;;;;;;;1051:240;;;;1308:6;1301:13;;;;802:520;;;:::o;128:33::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;89:1333::-;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;:::o;5:118:-1:-;;72:46;110:6;97:20;72:46;;;63:55;;57:66;;;;;130:122;;208:39;239:6;233:13;208:39;;;199:48;;193:59;;;;;259:112;;323:43;358:6;345:20;323:43;;;314:52;;308:63;;;;;378:152;;471:54;517:6;511:13;471:54;;;462:63;;456:74;;;;;537:118;;604:46;642:6;629:20;604:46;;;595:55;;589:66;;;;;662:241;;766:2;754:9;745:7;741:23;737:32;734:2;;;782:1;779;772:12;734:2;817:1;834:53;879:7;870:6;859:9;855:22;834:53;;;824:63;;796:97;728:175;;;;;910:263;;1025:2;1013:9;1004:7;1000:23;996:32;993:2;;;1041:1;1038;1031:12;993:2;1076:1;1093:64;1149:7;1140:6;1129:9;1125:22;1093:64;;;1083:74;;1055:108;987:186;;;;;1180:360;;;1298:2;1286:9;1277:7;1273:23;1269:32;1266:2;;;1314:1;1311;1304:12;1266:2;1349:1;1366:53;1411:7;1402:6;1391:9;1387:22;1366:53;;;1356:63;;1328:97;1456:2;1474:50;1516:7;1507:6;1496:9;1492:22;1474:50;;;1464:60;;1435:95;1260:280;;;;;;1547:293;;1677:2;1665:9;1656:7;1652:23;1648:32;1645:2;;;1693:1;1690;1683:12;1645:2;1728:1;1745:79;1816:7;1807:6;1796:9;1792:22;1745:79;;;1735:89;;1707:123;1639:201;;;;;1847:241;;1951:2;1939:9;1930:7;1926:23;1922:32;1919:2;;;1967:1;1964;1957:12;1919:2;2002:1;2019:53;2064:7;2055:6;2044:9;2040:22;2019:53;;;2009:63;;1981:97;1913:175;;;;;2095:132;2176:45;2215:5;2176:45;;;2171:3;2164:58;2158:69;;;2234:110;2307:31;2332:5;2307:31;;;2302:3;2295:44;2289:55;;;2351:101;2418:28;2440:5;2418:28;;;2413:3;2406:41;2400:52;;;2459:146;2547:52;2593:5;2547:52;;;2542:3;2535:65;2529:76;;;2612:130;2692:44;2730:5;2692:44;;;2687:3;2680:57;2674:68;;;2750:296;;2905:2;2900:3;2893:15;2942:66;2937:2;2932:3;2928:12;2921:88;3037:2;3032:3;3028:12;3021:19;;2886:160;;;;3159:535;3314:4;3309:3;3305:14;3408:3;3401:5;3397:15;3391:22;3425:76;3496:3;3491;3487:13;3474:11;3425:76;;;3334:179;3593:4;3586:5;3582:16;3576:23;3611:56;3661:4;3656:3;3652:14;3639:11;3611:56;;;3523:156;3287:407;;;;3701:193;;3809:2;3798:9;3794:18;3786:26;;3823:61;3881:1;3870:9;3866:17;3857:6;3823:61;;;3780:114;;;;;3901:209;;4017:2;4006:9;4002:18;3994:26;;4031:69;4097:1;4086:9;4082:17;4073:6;4031:69;;;3988:122;;;;;4117:223;;4240:2;4229:9;4225:18;4217:26;;4254:76;4327:1;4316:9;4312:17;4303:6;4254:76;;;4211:129;;;;;4347:207;;4462:2;4451:9;4447:18;4439:26;;4476:68;4541:1;4530:9;4526:17;4517:6;4476:68;;;4433:121;;;;;4561:387;;4742:2;4731:9;4727:18;4719:26;;4792:9;4786:4;4782:20;4778:1;4767:9;4763:17;4756:47;4817:121;4933:4;4817:121;;;4809:129;;4713:235;;;;4955:337;;5135:2;5124:9;5120:18;5112:26;;5149:133;5279:1;5268:9;5264:17;5255:6;5149:133;;;5106:186;;;;;5299:105;;5368:31;5393:5;5368:31;;;5357:42;;5351:53;;;;5411:92;;5491:5;5484:13;5477:21;5466:32;;5460:43;;;;5510:126;;5597:1;5590:5;5587:12;5580:20;5577:2;;;5603:9;5577:2;5626:5;5615:16;;5571:65;;;;5643:128;;5723:42;5716:5;5712:54;5701:65;;5695:76;;;;5778:105;;5847:31;5872:5;5847:31;;;5836:42;;5830:53;;;;5890:92;;5970:5;5963:13;5956:21;5945:32;;5939:43;;;;5989:120;;6073:31;6098:5;6073:31;;;6062:42;;6056:53;;;;6116:79;;6185:5;6174:16;;6168:27;;;;6202:129;;6289:37;6320:5;6289:37;;;6276:50;;6270:61;;;;6338:151;;6432:52;6478:5;6432:52;;;6419:65;;6413:76;;;;6496:130;;6590:31;6615:5;6590:31;;;6577:44;;6571:55;;;;6633:131;;6719:40;6753:5;6719:40;;;6706:53;;6700:64;;;;6771:121;;6850:37;6881:5;6850:37;;;6837:50;;6831:61;;;;6899:115;;6978:31;7003:5;6978:31;;;6965:44;;6959:55;;;",
+  "source": "pragma solidity ^0.5.0;\r\npragma experimental ABIEncoderV2;\r\n\r\nimport \"./Process.sol\";\r\n\r\ncontract CooperativeSignaling {\r\n\r\n    Process[] public CurrentProcesses;\r\n\r\n    function init(address M) \r\n    public \r\n    returns (address){\r\n\r\n        Process newProcess = new Process().withTarget(msg.sender).withMitigator(M);\r\n        CurrentProcesses.push(newProcess);\r\n\r\n        return newProcess.getAddress();\r\n    }\r\n\r\n    function approve(address process,bool descision) \r\n    public\r\n    returns (address){\r\n        ProcessSearchResult memory ProcessToUse = findProcess(process);\r\n        \r\n        require(ProcessToUse.existing,\"Process not existing\");\r\n        \r\n        ProcessToUse.FoundProcess.setState(Process.State.ABORT);\r\n\r\n        return ProcessToUse.FoundProcess.getAddress();\r\n    }\r\n\r\n    function findProcess(address process) \r\n    public view \r\n    returns(ProcessSearchResult memory){\r\n        Process FoundProcess;\r\n        ProcessSearchResult memory result = ProcessSearchResult({FoundProcess:FoundProcess,existing:false});\r\n        for (uint i = 0 ; i < CurrentProcesses.length; i++) {\r\n            if(CurrentProcesses[i].getAddress()==process){\r\n                result.FoundProcess = CurrentProcesses[i];\r\n                result.existing = true;\r\n            }\r\n        }\r\n        return result;\r\n    }\r\n\r\n    struct ProcessSearchResult{\r\n        Process FoundProcess;\r\n        bool existing;\r\n    }\r\n}",
+  "sourcePath": "C:/Users/Dominik Bünzli/Documents/GitHub/MBM/contracts/CooperativeSignaling.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/MBM/contracts/CooperativeSignaling.sol",
+    "exportedSymbols": {
+      "CooperativeSignaling": [
+        136
+      ]
+    },
+    "id": 137,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "25:33:0"
+      },
+      {
+        "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/MBM/contracts/Process.sol",
+        "file": "./Process.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 137,
+        "sourceUnit": 376,
+        "src": "62:23:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          375
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 136,
+        "linearizedBaseContracts": [
+          136
+        ],
+        "name": "CooperativeSignaling",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6,
+            "name": "CurrentProcesses",
+            "nodeType": "VariableDeclaration",
+            "scope": 136,
+            "src": "128:33:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage",
+              "typeString": "contract Process[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 4,
+                "name": "Process",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 375,
+                "src": "128:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Process_$375",
+                  "typeString": "contract Process"
+                }
+              },
+              "id": 5,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "128:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage_ptr",
+                "typeString": "contract Process[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 36,
+              "nodeType": "Block",
+              "src": "231:182:0",
+              "statements": [
+                {
+                  "assignments": [
+                    14
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14,
+                      "name": "newProcess",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36,
+                      "src": "244:18:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Process_$375",
+                        "typeString": "contract Process"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13,
+                        "name": "Process",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 375,
+                        "src": "244:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 25,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 23,
+                        "name": "M",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "316:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 19,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 425,
+                              "src": "290:3:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 20,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "290:10:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "id": 16,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "NewExpression",
+                              "src": "265:11:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_creation_payable$__$returns$_t_contract$_Process_$375_$",
+                                "typeString": "function () payable returns (contract Process)"
+                              },
+                              "typeName": {
+                                "contractScope": null,
+                                "id": 15,
+                                "name": "Process",
+                                "nodeType": "UserDefinedTypeName",
+                                "referencedDeclaration": 375,
+                                "src": "269:7:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Process_$375",
+                                  "typeString": "contract Process"
+                                }
+                              }
+                            },
+                            "id": 17,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "265:13:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Process_$375",
+                              "typeString": "contract Process"
+                            }
+                          },
+                          "id": 18,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "withTarget",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 330,
+                          "src": "265:24:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$_t_contract$_Process_$375_$",
+                            "typeString": "function (address) external returns (contract Process)"
+                          }
+                        },
+                        "id": 21,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "265:36:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "id": 22,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "withMitigator",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 344,
+                      "src": "265:50:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$_t_contract$_Process_$375_$",
+                        "typeString": "function (address) external returns (contract Process)"
+                      }
+                    },
+                    "id": 24,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "265:53:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Process_$375",
+                      "typeString": "contract Process"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "244:74:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 29,
+                        "name": "newProcess",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14,
+                        "src": "351:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 26,
+                        "name": "CurrentProcesses",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6,
+                        "src": "329:16:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage",
+                          "typeString": "contract Process[] storage ref"
+                        }
+                      },
+                      "id": 28,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "329:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Process_$375_$returns$_t_uint256_$",
+                        "typeString": "function (contract Process) returns (uint256)"
+                      }
+                    },
+                    "id": 30,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "329:33:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 31,
+                  "nodeType": "ExpressionStatement",
+                  "src": "329:33:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 32,
+                        "name": "newProcess",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14,
+                        "src": "382:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "id": 33,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 276,
+                      "src": "382:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                        "typeString": "function () view external returns (address)"
+                      }
+                    },
+                    "id": 34,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "382:23:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 12,
+                  "id": 35,
+                  "nodeType": "Return",
+                  "src": "375:30:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 37,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "init",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8,
+                  "name": "M",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 37,
+                  "src": "184:9:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "184:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "183:11:0"
+            },
+            "returnParameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 37,
+                  "src": "223:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "223:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "222:9:0"
+            },
+            "scope": 136,
+            "src": "170:243:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 73,
+              "nodeType": "Block",
+              "src": "505:289:0",
+              "statements": [
+                {
+                  "assignments": [
+                    47
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 47,
+                      "name": "ProcessToUse",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 73,
+                      "src": "516:39:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                        "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 46,
+                        "name": "ProcessSearchResult",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 135,
+                        "src": "516:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcessSearchResult_$135_storage_ptr",
+                          "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 51,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 49,
+                        "name": "process",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 39,
+                        "src": "570:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 48,
+                      "name": "findProcess",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 130,
+                      "src": "558:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_struct$_ProcessSearchResult_$135_memory_ptr_$",
+                        "typeString": "function (address) view returns (struct CooperativeSignaling.ProcessSearchResult memory)"
+                      }
+                    },
+                    "id": 50,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "558:20:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                      "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "516:62:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 53,
+                          "name": "ProcessToUse",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 47,
+                          "src": "607:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                            "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                          }
+                        },
+                        "id": 54,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "existing",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 134,
+                        "src": "607:21:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "50726f63657373206e6f74206578697374696e67",
+                        "id": 55,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "629:22:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_036e8377827b7c7cff098ba3b71a242ace43f08dd66c53f7e94e56f5aa27a21a",
+                          "typeString": "literal_string \"Process not existing\""
+                        },
+                        "value": "Process not existing"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_036e8377827b7c7cff098ba3b71a242ace43f08dd66c53f7e94e56f5aa27a21a",
+                          "typeString": "literal_string \"Process not existing\""
+                        }
+                      ],
+                      "id": 52,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        428,
+                        429
+                      ],
+                      "referencedDeclaration": 429,
+                      "src": "599:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 56,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "599:53:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 57,
+                  "nodeType": "ExpressionStatement",
+                  "src": "599:53:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 63,
+                            "name": "Process",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 375,
+                            "src": "708:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Process_$375_$",
+                              "typeString": "type(contract Process)"
+                            }
+                          },
+                          "id": 64,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "State",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 239,
+                          "src": "708:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_State_$239_$",
+                            "typeString": "type(enum Process.State)"
+                          }
+                        },
+                        "id": 65,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "ABORT",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "708:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_State_$239",
+                          "typeString": "enum Process.State"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_State_$239",
+                          "typeString": "enum Process.State"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 58,
+                          "name": "ProcessToUse",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 47,
+                          "src": "673:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                            "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                          }
+                        },
+                        "id": 61,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "FoundProcess",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 132,
+                        "src": "673:25:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "id": 62,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setState",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 374,
+                      "src": "673:34:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_enum$_State_$239_$returns$__$",
+                        "typeString": "function (enum Process.State) external"
+                      }
+                    },
+                    "id": 66,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "673:55:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 67,
+                  "nodeType": "ExpressionStatement",
+                  "src": "673:55:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 68,
+                          "name": "ProcessToUse",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 47,
+                          "src": "748:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                            "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                          }
+                        },
+                        "id": 69,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "FoundProcess",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 132,
+                        "src": "748:25:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "id": 70,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 276,
+                      "src": "748:36:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                        "typeString": "function () view external returns (address)"
+                      }
+                    },
+                    "id": 71,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "748:38:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 45,
+                  "id": 72,
+                  "nodeType": "Return",
+                  "src": "741:45:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 74,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approve",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 42,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 39,
+                  "name": "process",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 74,
+                  "src": "438:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 38,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "438:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41,
+                  "name": "descision",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 74,
+                  "src": "454:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 40,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "454:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "437:32:0"
+            },
+            "returnParameters": {
+              "id": 45,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 44,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 74,
+                  "src": "497:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 43,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "496:9:0"
+            },
+            "scope": 136,
+            "src": "421:373:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 129,
+              "nodeType": "Block",
+              "src": "899:423:0",
+              "statements": [
+                {
+                  "assignments": [
+                    82
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 82,
+                      "name": "FoundProcess",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 129,
+                      "src": "910:20:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Process_$375",
+                        "typeString": "contract Process"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 81,
+                        "name": "Process",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 375,
+                        "src": "910:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 83,
+                  "initialValue": null,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "910:20:0"
+                },
+                {
+                  "assignments": [
+                    85
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 85,
+                      "name": "result",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 129,
+                      "src": "941:33:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                        "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 84,
+                        "name": "ProcessSearchResult",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 135,
+                        "src": "941:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcessSearchResult_$135_storage_ptr",
+                          "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 90,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 87,
+                        "name": "FoundProcess",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 82,
+                        "src": "1011:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 88,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1033:5:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 86,
+                      "name": "ProcessSearchResult",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 135,
+                      "src": "977:19:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_ProcessSearchResult_$135_storage_ptr_$",
+                        "typeString": "type(struct CooperativeSignaling.ProcessSearchResult storage pointer)"
+                      }
+                    },
+                    "id": 89,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [
+                      "FoundProcess",
+                      "existing"
+                    ],
+                    "nodeType": "FunctionCall",
+                    "src": "977:63:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory",
+                      "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "941:99:0"
+                },
+                {
+                  "body": {
+                    "id": 125,
+                    "nodeType": "Block",
+                    "src": "1103:188:0",
+                    "statements": [
+                      {
+                        "condition": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 108,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "expression": {
+                                "argumentTypes": null,
+                                "baseExpression": {
+                                  "argumentTypes": null,
+                                  "id": 102,
+                                  "name": "CurrentProcesses",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 6,
+                                  "src": "1121:16:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage",
+                                    "typeString": "contract Process[] storage ref"
+                                  }
+                                },
+                                "id": 104,
+                                "indexExpression": {
+                                  "argumentTypes": null,
+                                  "id": 103,
+                                  "name": "i",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 92,
+                                  "src": "1138:1:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "IndexAccess",
+                                "src": "1121:19:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Process_$375",
+                                  "typeString": "contract Process"
+                                }
+                              },
+                              "id": 105,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "getAddress",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 276,
+                              "src": "1121:30:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                                "typeString": "function () view external returns (address)"
+                              }
+                            },
+                            "id": 106,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1121:32:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "id": 107,
+                            "name": "process",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 76,
+                            "src": "1155:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "1121:41:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": null,
+                        "id": 124,
+                        "nodeType": "IfStatement",
+                        "src": "1118:162:0",
+                        "trueBody": {
+                          "id": 123,
+                          "nodeType": "Block",
+                          "src": "1163:117:0",
+                          "statements": [
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 115,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 109,
+                                    "name": "result",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 85,
+                                    "src": "1182:6:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                                      "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                                    }
+                                  },
+                                  "id": 111,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "memberName": "FoundProcess",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 132,
+                                  "src": "1182:19:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_Process_$375",
+                                    "typeString": "contract Process"
+                                  }
+                                },
+                                "nodeType": "Assignment",
+                                "operator": "=",
+                                "rightHandSide": {
+                                  "argumentTypes": null,
+                                  "baseExpression": {
+                                    "argumentTypes": null,
+                                    "id": 112,
+                                    "name": "CurrentProcesses",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 6,
+                                    "src": "1204:16:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage",
+                                      "typeString": "contract Process[] storage ref"
+                                    }
+                                  },
+                                  "id": 114,
+                                  "indexExpression": {
+                                    "argumentTypes": null,
+                                    "id": 113,
+                                    "name": "i",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 92,
+                                    "src": "1221:1:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "IndexAccess",
+                                  "src": "1204:19:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_Process_$375",
+                                    "typeString": "contract Process"
+                                  }
+                                },
+                                "src": "1182:41:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Process_$375",
+                                  "typeString": "contract Process"
+                                }
+                              },
+                              "id": 116,
+                              "nodeType": "ExpressionStatement",
+                              "src": "1182:41:0"
+                            },
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 121,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 117,
+                                    "name": "result",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 85,
+                                    "src": "1242:6:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                                      "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                                    }
+                                  },
+                                  "id": 119,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "memberName": "existing",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 134,
+                                  "src": "1242:15:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  }
+                                },
+                                "nodeType": "Assignment",
+                                "operator": "=",
+                                "rightHandSide": {
+                                  "argumentTypes": null,
+                                  "hexValue": "74727565",
+                                  "id": 120,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "bool",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "1260:4:0",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  },
+                                  "value": "true"
+                                },
+                                "src": "1242:22:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              },
+                              "id": 122,
+                              "nodeType": "ExpressionStatement",
+                              "src": "1242:22:0"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 98,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 95,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 92,
+                      "src": "1069:1:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 96,
+                        "name": "CurrentProcesses",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6,
+                        "src": "1073:16:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage",
+                          "typeString": "contract Process[] storage ref"
+                        }
+                      },
+                      "id": 97,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1073:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1069:27:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 126,
+                  "initializationExpression": {
+                    "assignments": [
+                      92
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 92,
+                        "name": "i",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 126,
+                        "src": "1056:6:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 91,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1056:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "value": null,
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 94,
+                    "initialValue": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 93,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1065:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "1056:10:0"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 100,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "1098:3:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "id": 99,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 92,
+                        "src": "1098:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 101,
+                    "nodeType": "ExpressionStatement",
+                    "src": "1098:3:0"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "1051:240:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 127,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 85,
+                    "src": "1308:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                      "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                    }
+                  },
+                  "functionReturnParameters": 80,
+                  "id": 128,
+                  "nodeType": "Return",
+                  "src": "1301:13:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 130,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "findProcess",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 77,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 76,
+                  "name": "process",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 130,
+                  "src": "823:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 75,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "823:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "822:17:0"
+            },
+            "returnParameters": {
+              "id": 80,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 79,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 130,
+                  "src": "872:26:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                    "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 78,
+                    "name": "ProcessSearchResult",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 135,
+                    "src": "872:19:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_storage_ptr",
+                      "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "871:28:0"
+            },
+            "scope": 136,
+            "src": "802:520:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "CooperativeSignaling.ProcessSearchResult",
+            "id": 135,
+            "members": [
+              {
+                "constant": false,
+                "id": 132,
+                "name": "FoundProcess",
+                "nodeType": "VariableDeclaration",
+                "scope": 135,
+                "src": "1367:20:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Process_$375",
+                  "typeString": "contract Process"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 131,
+                  "name": "Process",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 375,
+                  "src": "1367:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Process_$375",
+                    "typeString": "contract Process"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 134,
+                "name": "existing",
+                "nodeType": "VariableDeclaration",
+                "scope": 135,
+                "src": "1398:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 133,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1398:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ProcessSearchResult",
+            "nodeType": "StructDefinition",
+            "scope": 136,
+            "src": "1330:89:0",
+            "visibility": "public"
+          }
+        ],
+        "scope": 137,
+        "src": "89:1333:0"
+      }
+    ],
+    "src": "0:1422:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/MBM/contracts/CooperativeSignaling.sol",
+    "exportedSymbols": {
+      "CooperativeSignaling": [
+        136
+      ]
+    },
+    "id": 137,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "25:33:0"
+      },
+      {
+        "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/MBM/contracts/Process.sol",
+        "file": "./Process.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 137,
+        "sourceUnit": 376,
+        "src": "62:23:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          375
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 136,
+        "linearizedBaseContracts": [
+          136
+        ],
+        "name": "CooperativeSignaling",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6,
+            "name": "CurrentProcesses",
+            "nodeType": "VariableDeclaration",
+            "scope": 136,
+            "src": "128:33:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage",
+              "typeString": "contract Process[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 4,
+                "name": "Process",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 375,
+                "src": "128:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Process_$375",
+                  "typeString": "contract Process"
+                }
+              },
+              "id": 5,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "128:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage_ptr",
+                "typeString": "contract Process[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 36,
+              "nodeType": "Block",
+              "src": "231:182:0",
+              "statements": [
+                {
+                  "assignments": [
+                    14
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14,
+                      "name": "newProcess",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36,
+                      "src": "244:18:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Process_$375",
+                        "typeString": "contract Process"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13,
+                        "name": "Process",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 375,
+                        "src": "244:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 25,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 23,
+                        "name": "M",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "316:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 19,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 425,
+                              "src": "290:3:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 20,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "290:10:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "id": 16,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "NewExpression",
+                              "src": "265:11:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_creation_payable$__$returns$_t_contract$_Process_$375_$",
+                                "typeString": "function () payable returns (contract Process)"
+                              },
+                              "typeName": {
+                                "contractScope": null,
+                                "id": 15,
+                                "name": "Process",
+                                "nodeType": "UserDefinedTypeName",
+                                "referencedDeclaration": 375,
+                                "src": "269:7:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Process_$375",
+                                  "typeString": "contract Process"
+                                }
+                              }
+                            },
+                            "id": 17,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "265:13:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Process_$375",
+                              "typeString": "contract Process"
+                            }
+                          },
+                          "id": 18,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "withTarget",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 330,
+                          "src": "265:24:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$_t_contract$_Process_$375_$",
+                            "typeString": "function (address) external returns (contract Process)"
+                          }
+                        },
+                        "id": 21,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "265:36:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "id": 22,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "withMitigator",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 344,
+                      "src": "265:50:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$_t_contract$_Process_$375_$",
+                        "typeString": "function (address) external returns (contract Process)"
+                      }
+                    },
+                    "id": 24,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "265:53:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Process_$375",
+                      "typeString": "contract Process"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "244:74:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 29,
+                        "name": "newProcess",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14,
+                        "src": "351:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 26,
+                        "name": "CurrentProcesses",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6,
+                        "src": "329:16:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage",
+                          "typeString": "contract Process[] storage ref"
+                        }
+                      },
+                      "id": 28,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "329:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Process_$375_$returns$_t_uint256_$",
+                        "typeString": "function (contract Process) returns (uint256)"
+                      }
+                    },
+                    "id": 30,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "329:33:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 31,
+                  "nodeType": "ExpressionStatement",
+                  "src": "329:33:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 32,
+                        "name": "newProcess",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14,
+                        "src": "382:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "id": 33,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 276,
+                      "src": "382:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                        "typeString": "function () view external returns (address)"
+                      }
+                    },
+                    "id": 34,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "382:23:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 12,
+                  "id": 35,
+                  "nodeType": "Return",
+                  "src": "375:30:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 37,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "init",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8,
+                  "name": "M",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 37,
+                  "src": "184:9:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "184:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "183:11:0"
+            },
+            "returnParameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 37,
+                  "src": "223:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "223:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "222:9:0"
+            },
+            "scope": 136,
+            "src": "170:243:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 73,
+              "nodeType": "Block",
+              "src": "505:289:0",
+              "statements": [
+                {
+                  "assignments": [
+                    47
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 47,
+                      "name": "ProcessToUse",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 73,
+                      "src": "516:39:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                        "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 46,
+                        "name": "ProcessSearchResult",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 135,
+                        "src": "516:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcessSearchResult_$135_storage_ptr",
+                          "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 51,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 49,
+                        "name": "process",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 39,
+                        "src": "570:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 48,
+                      "name": "findProcess",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 130,
+                      "src": "558:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_struct$_ProcessSearchResult_$135_memory_ptr_$",
+                        "typeString": "function (address) view returns (struct CooperativeSignaling.ProcessSearchResult memory)"
+                      }
+                    },
+                    "id": 50,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "558:20:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                      "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "516:62:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 53,
+                          "name": "ProcessToUse",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 47,
+                          "src": "607:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                            "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                          }
+                        },
+                        "id": 54,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "existing",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 134,
+                        "src": "607:21:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "50726f63657373206e6f74206578697374696e67",
+                        "id": 55,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "629:22:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_036e8377827b7c7cff098ba3b71a242ace43f08dd66c53f7e94e56f5aa27a21a",
+                          "typeString": "literal_string \"Process not existing\""
+                        },
+                        "value": "Process not existing"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_036e8377827b7c7cff098ba3b71a242ace43f08dd66c53f7e94e56f5aa27a21a",
+                          "typeString": "literal_string \"Process not existing\""
+                        }
+                      ],
+                      "id": 52,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        428,
+                        429
+                      ],
+                      "referencedDeclaration": 429,
+                      "src": "599:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 56,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "599:53:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 57,
+                  "nodeType": "ExpressionStatement",
+                  "src": "599:53:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 63,
+                            "name": "Process",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 375,
+                            "src": "708:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Process_$375_$",
+                              "typeString": "type(contract Process)"
+                            }
+                          },
+                          "id": 64,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "State",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 239,
+                          "src": "708:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_State_$239_$",
+                            "typeString": "type(enum Process.State)"
+                          }
+                        },
+                        "id": 65,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "ABORT",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "708:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_State_$239",
+                          "typeString": "enum Process.State"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_State_$239",
+                          "typeString": "enum Process.State"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 58,
+                          "name": "ProcessToUse",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 47,
+                          "src": "673:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                            "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                          }
+                        },
+                        "id": 61,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "FoundProcess",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 132,
+                        "src": "673:25:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "id": 62,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setState",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 374,
+                      "src": "673:34:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_enum$_State_$239_$returns$__$",
+                        "typeString": "function (enum Process.State) external"
+                      }
+                    },
+                    "id": 66,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "673:55:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 67,
+                  "nodeType": "ExpressionStatement",
+                  "src": "673:55:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 68,
+                          "name": "ProcessToUse",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 47,
+                          "src": "748:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                            "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                          }
+                        },
+                        "id": 69,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "FoundProcess",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 132,
+                        "src": "748:25:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "id": 70,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 276,
+                      "src": "748:36:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                        "typeString": "function () view external returns (address)"
+                      }
+                    },
+                    "id": 71,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "748:38:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 45,
+                  "id": 72,
+                  "nodeType": "Return",
+                  "src": "741:45:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 74,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approve",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 42,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 39,
+                  "name": "process",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 74,
+                  "src": "438:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 38,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "438:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41,
+                  "name": "descision",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 74,
+                  "src": "454:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 40,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "454:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "437:32:0"
+            },
+            "returnParameters": {
+              "id": 45,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 44,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 74,
+                  "src": "497:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 43,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "496:9:0"
+            },
+            "scope": 136,
+            "src": "421:373:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 129,
+              "nodeType": "Block",
+              "src": "899:423:0",
+              "statements": [
+                {
+                  "assignments": [
+                    82
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 82,
+                      "name": "FoundProcess",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 129,
+                      "src": "910:20:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Process_$375",
+                        "typeString": "contract Process"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 81,
+                        "name": "Process",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 375,
+                        "src": "910:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 83,
+                  "initialValue": null,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "910:20:0"
+                },
+                {
+                  "assignments": [
+                    85
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 85,
+                      "name": "result",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 129,
+                      "src": "941:33:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                        "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 84,
+                        "name": "ProcessSearchResult",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 135,
+                        "src": "941:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcessSearchResult_$135_storage_ptr",
+                          "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 90,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 87,
+                        "name": "FoundProcess",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 82,
+                        "src": "1011:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Process_$375",
+                          "typeString": "contract Process"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 88,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1033:5:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 86,
+                      "name": "ProcessSearchResult",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 135,
+                      "src": "977:19:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_ProcessSearchResult_$135_storage_ptr_$",
+                        "typeString": "type(struct CooperativeSignaling.ProcessSearchResult storage pointer)"
+                      }
+                    },
+                    "id": 89,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [
+                      "FoundProcess",
+                      "existing"
+                    ],
+                    "nodeType": "FunctionCall",
+                    "src": "977:63:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory",
+                      "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "941:99:0"
+                },
+                {
+                  "body": {
+                    "id": 125,
+                    "nodeType": "Block",
+                    "src": "1103:188:0",
+                    "statements": [
+                      {
+                        "condition": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 108,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "expression": {
+                                "argumentTypes": null,
+                                "baseExpression": {
+                                  "argumentTypes": null,
+                                  "id": 102,
+                                  "name": "CurrentProcesses",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 6,
+                                  "src": "1121:16:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage",
+                                    "typeString": "contract Process[] storage ref"
+                                  }
+                                },
+                                "id": 104,
+                                "indexExpression": {
+                                  "argumentTypes": null,
+                                  "id": 103,
+                                  "name": "i",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 92,
+                                  "src": "1138:1:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "IndexAccess",
+                                "src": "1121:19:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Process_$375",
+                                  "typeString": "contract Process"
+                                }
+                              },
+                              "id": 105,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "getAddress",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 276,
+                              "src": "1121:30:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                                "typeString": "function () view external returns (address)"
+                              }
+                            },
+                            "id": 106,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1121:32:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "id": 107,
+                            "name": "process",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 76,
+                            "src": "1155:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "1121:41:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": null,
+                        "id": 124,
+                        "nodeType": "IfStatement",
+                        "src": "1118:162:0",
+                        "trueBody": {
+                          "id": 123,
+                          "nodeType": "Block",
+                          "src": "1163:117:0",
+                          "statements": [
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 115,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 109,
+                                    "name": "result",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 85,
+                                    "src": "1182:6:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                                      "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                                    }
+                                  },
+                                  "id": 111,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "memberName": "FoundProcess",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 132,
+                                  "src": "1182:19:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_Process_$375",
+                                    "typeString": "contract Process"
+                                  }
+                                },
+                                "nodeType": "Assignment",
+                                "operator": "=",
+                                "rightHandSide": {
+                                  "argumentTypes": null,
+                                  "baseExpression": {
+                                    "argumentTypes": null,
+                                    "id": 112,
+                                    "name": "CurrentProcesses",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 6,
+                                    "src": "1204:16:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage",
+                                      "typeString": "contract Process[] storage ref"
+                                    }
+                                  },
+                                  "id": 114,
+                                  "indexExpression": {
+                                    "argumentTypes": null,
+                                    "id": 113,
+                                    "name": "i",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 92,
+                                    "src": "1221:1:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "IndexAccess",
+                                  "src": "1204:19:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_Process_$375",
+                                    "typeString": "contract Process"
+                                  }
+                                },
+                                "src": "1182:41:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Process_$375",
+                                  "typeString": "contract Process"
+                                }
+                              },
+                              "id": 116,
+                              "nodeType": "ExpressionStatement",
+                              "src": "1182:41:0"
+                            },
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 121,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 117,
+                                    "name": "result",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 85,
+                                    "src": "1242:6:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                                      "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                                    }
+                                  },
+                                  "id": 119,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "memberName": "existing",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 134,
+                                  "src": "1242:15:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  }
+                                },
+                                "nodeType": "Assignment",
+                                "operator": "=",
+                                "rightHandSide": {
+                                  "argumentTypes": null,
+                                  "hexValue": "74727565",
+                                  "id": 120,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "bool",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "1260:4:0",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  },
+                                  "value": "true"
+                                },
+                                "src": "1242:22:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              },
+                              "id": 122,
+                              "nodeType": "ExpressionStatement",
+                              "src": "1242:22:0"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 98,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 95,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 92,
+                      "src": "1069:1:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 96,
+                        "name": "CurrentProcesses",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6,
+                        "src": "1073:16:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Process_$375_$dyn_storage",
+                          "typeString": "contract Process[] storage ref"
+                        }
+                      },
+                      "id": 97,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1073:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1069:27:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 126,
+                  "initializationExpression": {
+                    "assignments": [
+                      92
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 92,
+                        "name": "i",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 126,
+                        "src": "1056:6:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 91,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1056:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "value": null,
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 94,
+                    "initialValue": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 93,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1065:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "1056:10:0"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 100,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "1098:3:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "id": 99,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 92,
+                        "src": "1098:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 101,
+                    "nodeType": "ExpressionStatement",
+                    "src": "1098:3:0"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "1051:240:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 127,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 85,
+                    "src": "1308:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                      "typeString": "struct CooperativeSignaling.ProcessSearchResult memory"
+                    }
+                  },
+                  "functionReturnParameters": 80,
+                  "id": 128,
+                  "nodeType": "Return",
+                  "src": "1301:13:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 130,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "findProcess",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 77,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 76,
+                  "name": "process",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 130,
+                  "src": "823:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 75,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "823:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "822:17:0"
+            },
+            "returnParameters": {
+              "id": 80,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 79,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 130,
+                  "src": "872:26:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ProcessSearchResult_$135_memory_ptr",
+                    "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 78,
+                    "name": "ProcessSearchResult",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 135,
+                    "src": "872:19:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ProcessSearchResult_$135_storage_ptr",
+                      "typeString": "struct CooperativeSignaling.ProcessSearchResult"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "871:28:0"
+            },
+            "scope": 136,
+            "src": "802:520:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "CooperativeSignaling.ProcessSearchResult",
+            "id": 135,
+            "members": [
+              {
+                "constant": false,
+                "id": 132,
+                "name": "FoundProcess",
+                "nodeType": "VariableDeclaration",
+                "scope": 135,
+                "src": "1367:20:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Process_$375",
+                  "typeString": "contract Process"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 131,
+                  "name": "Process",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 375,
+                  "src": "1367:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Process_$375",
+                    "typeString": "contract Process"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 134,
+                "name": "existing",
+                "nodeType": "VariableDeclaration",
+                "scope": 135,
+                "src": "1398:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 133,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1398:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ProcessSearchResult",
+            "nodeType": "StructDefinition",
+            "scope": 136,
+            "src": "1330:89:0",
+            "visibility": "public"
+          }
+        ],
+        "scope": 137,
+        "src": "89:1333:0"
+      }
+    ],
+    "src": "0:1422:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x8f7C1C0002EA7f10045b3946b8eDbC0d5e59019e",
+      "transactionHash": "0xbfa7746e87585c5b0b4ab7172b2fc9524c9067189da389dc39b3014e8b4ce1e7"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-21T21:43:53.103Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
