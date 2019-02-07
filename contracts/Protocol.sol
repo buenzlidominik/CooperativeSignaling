@@ -62,7 +62,7 @@ contract Protocol {
 		require(ownerIsActor(msg.sender),"Sender is not registered as an actor");
 		require(msg.sender!=_MitigatorOwner,"Sender and target cannot be the same");
 		IActor _Mitigator = IActor(getActor(_MitigatorOwner));
-        require(IActor(_Mitigator).isOfferAcceptable(_OfferedFunds,_NumberOfAddresses),"Funds too low");
+        require(_Mitigator.isOfferAcceptable(_OfferedFunds,_NumberOfAddresses),"Funds too low");
 		
         ProcessData newProcessData = new ProcessData(address(getActor(msg.sender)),address(_Mitigator),_DeadlineInterval,_OfferedFunds,_ListOfAddresses);
         CurrentProcesses.push(address(newProcessData));
