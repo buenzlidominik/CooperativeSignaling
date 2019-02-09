@@ -1,7 +1,9 @@
 pragma solidity ^0.5.0;
 
 import "./IActor.sol";
-import "./Evaluation.sol";
+import "./IEvaluation.sol";
+import "./EvaluationWithProof.sol";
+import "./EvaluationWithoutProof.sol";
 import "./Enums.sol";
 
 contract  ProcessData {
@@ -54,13 +56,22 @@ contract  ProcessData {
         return Target;
     }
 	
+	//Method is used to Instantiate the evaluation and get the address of the fund receiver and the end state that needs to be set
 	function executeEvaluation() public{
+		
 		require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
 		address actor;
 		Enums.State stateToSet;
-		Evaluation _Evaluation = new Evaluation(address(this),address(Target),address(Mitigator));
 		
-        (actor,stateToSet) = _Evaluation.evaluate(isProofProvided(),getTargetRating(), getMitigatorRating());
+		IEvaluation _Evaluation;
+		
+		if(isProofProvided()){
+			_Evaluation = new EvaluationWithProof(address(Target),address(Mitigator));
+		}else{
+			_Evaluation = new EvaluationWithoutProof(address(Target),address(Mitigator));
+		}
+
+        (actor,stateToSet) = _Evaluation.evaluate(getTargetRating(), getMitigatorRating());
 		
 		if(actor!=address(0)){
 			transferFunds(IActor(actor));

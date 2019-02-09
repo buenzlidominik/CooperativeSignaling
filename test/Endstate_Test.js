@@ -271,7 +271,7 @@ contract("Endstate_Test", async function(accounts) {
 		
 		var fundsMitigator = await web3.eth.getBalance(MitigatorOwner);
 	
-		await protocol.ratingByMitigator(process,2, {from: MitigatorOwner});
+		await protocol.ratingByMitigator(process,0, {from: MitigatorOwner});
 		
 		await ProcessData.at(process).then(async function (result){
 			await result.getStartAndEndTime().then( async function (response){
@@ -374,7 +374,7 @@ contract("Endstate_Test", async function(accounts) {
 		
 		var fundsMitigator = await web3.eth.getBalance(MitigatorOwner);
 		
-		await protocol.ratingByMitigator(process,2, {from: MitigatorOwner});
+		await protocol.ratingByMitigator(process,0, {from: MitigatorOwner});
 		
 		await ProcessData.at(process).then(async function (result){
 			await result.getStartAndEndTime().then( async function (response){
