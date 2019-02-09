@@ -124,19 +124,16 @@ contract  ProcessData {
         return ListOfAddresses;
     }
 	
+	//Finalized the process, sets the Target as a NextActor and sets an ending state. Also the Endtime gets specified.
 	function endProcess(Enums.State _State) public {
 		require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
+		require(_State>=Enums.State.COMPLETE,"Only and ending state can be set");
 		CurrentState = _State;
 		NextActor = Target;
 		EndTime= now;
     }
 
-    function setProof(string memory _Proof) public{
-		require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
-		require(bytes(_Proof).length > 0,"Empty string cannot be accepted as a proof");
-        Proof = _Proof;
-    }
-	
+	//Advances the current state, switches the NextActor, sets the next deadline and checks if the process needs to be finalized eventually
 	function advanceState() public {
 		require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
 		
@@ -159,7 +156,13 @@ contract  ProcessData {
 			setState(Enums.State(nextState));
 		}
 	}
-    
+	
+    function setProof(string memory _Proof) public{
+		require(msg.sender==OwnedByContract,"Action can only be performed by the owning contract");
+		require(bytes(_Proof).length > 0,"Empty string cannot be accepted as a proof");
+        Proof = _Proof;
+    }
+	
     function setState(Enums.State state) private{
         CurrentState = state;
     }

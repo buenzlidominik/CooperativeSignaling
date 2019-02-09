@@ -159,17 +159,21 @@ contract Protocol {
     and if deadline is exceeded*/
     function canSenderAdvance(address payable process,Enums.State stateOfOperation) 
     private 
-    view
     returns(bool){
         
 		require(isProcess(process),"Process not found");
         ProcessData CurrentProcess = getProcess(process);
 		
+		if(CurrentProcess.getState()>uint(Enums.State.FUNDING) && CurrentProcess.getState()<uint(Enums.State.COMPLETE)){
+			if(now>CurrentProcess.getDeadline()){
+				skipCurrentState(process);
+				revert("The current State has been skipped because the time exceeded, please try again");
+			}
+		}
+		
 		require(CurrentProcess.getNextActor().getOwner() == msg.sender,"NextActor != Sender");
 		require(uint(stateOfOperation)==CurrentProcess.getState(),"State of operation does not match");
-		if(CurrentProcess.getState()>uint(Enums.State.FUNDING)){
-			require(now<CurrentProcess.getDeadline(),"State > Funding && now > deadline, please skip the state");
-		}
+
         return true;
     }
 	

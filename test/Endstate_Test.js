@@ -71,8 +71,8 @@ contract("Endstate_Test", async function(accounts) {
 		});
 		
 		wait(3000);	
+		await  catchRevert(protocol.uploadProof(process,"I've done my job", {from: MitigatorOwner}));	
 		
-		await protocol.skipCurrentState(process,{from: TargetOwner});
 		await protocol.ratingByTarget(process,0, {from: TargetOwner});	
 		
 		await ProcessData.at(process).then(async function (result){
@@ -118,8 +118,8 @@ contract("Endstate_Test", async function(accounts) {
 		
 		wait(3000); 
 		
-		await protocol.skipCurrentState(process,{from: TargetOwner});
-	
+		await catchRevert(protocol.ratingByTarget(process,1, {from: TargetOwner}));
+		
 		await protocol.ratingByTarget(process,1, {from: TargetOwner});	
 		
 		await ProcessData.at(process).then(async function (result){
