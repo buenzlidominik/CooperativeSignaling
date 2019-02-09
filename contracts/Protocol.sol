@@ -167,7 +167,6 @@ contract Protocol {
 		if(CurrentProcess.getState()>uint(Enums.State.FUNDING) && CurrentProcess.getState()<uint(Enums.State.COMPLETE)){
 			if(now>CurrentProcess.getDeadline()){
 				skipCurrentState(process);
-				revert("The current State has been skipped because the time exceeded, please try again");
 			}
 		}
 		

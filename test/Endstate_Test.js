@@ -71,7 +71,6 @@ contract("Endstate_Test", async function(accounts) {
 		});
 		
 		wait(3000);	
-		await  catchRevert(protocol.uploadProof(process,"I've done my job", {from: MitigatorOwner}));	
 		
 		await protocol.ratingByTarget(process,0, {from: TargetOwner});	
 		
@@ -118,10 +117,8 @@ contract("Endstate_Test", async function(accounts) {
 		
 		wait(3000); 
 		
-		await catchRevert(protocol.ratingByTarget(process,1, {from: TargetOwner}));
-		
-		await protocol.ratingByTarget(process,1, {from: TargetOwner});	
-		
+		await protocol.ratingByTarget(process,1, {from: TargetOwner});
+				
 		await ProcessData.at(process).then(async function (result){
 			await result.getStartAndEndTime().then( async function (response){
 				console.log("Starttime:"+ response[0])
