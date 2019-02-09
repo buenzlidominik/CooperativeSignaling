@@ -16,7 +16,7 @@ contract IState {
     function canAdvance() public returns(bool){
         require(aborted!= true,"Process aborted");
         //require(getActorOfState().getOwner() == msg.sender,"not allowed");
-        if(now>IData(data).getDeadline()){return false;}
+        require(now>IData(data).getDeadline(),"Deadline exceeded");
         return true;
     }
     

@@ -1,5 +1,4 @@
 pragma solidity ^0.5.0;
-pragma experimental ABIEncoderV2;
 
 import "./IData.sol";
 import "./Enums.sol";
@@ -18,7 +17,7 @@ contract Process{
     IData data;
     constructor() public payable{}
     
-    function init(address payable T,address payable M,uint Interval,string memory listOfAddresses,uint256 amountOfAddresses) public returns(address){
+    function init(address payable T,address payable M,uint Interval,string memory listOfAddresses,uint256 amountOfAddresses) public{
         data = new IData(T,M,Interval,listOfAddresses,amountOfAddresses);
 		State =new StateStart(address(data));
         State.execute();
@@ -64,8 +63,8 @@ contract Process{
     
     function getState() 
     public view
-    returns (IState){
-        return State;
+    returns (address){
+        return address(State);
     }
     
 }

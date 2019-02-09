@@ -1,5 +1,4 @@
 pragma solidity ^0.5.0;
-pragma experimental ABIEncoderV2;
 
 import "./Process.sol";
 import "./IActor.sol";
@@ -17,13 +16,12 @@ contract Protocol {
 		emit FundsReceived(msg.value);
 	}
 
-    function registerActor(address payable _Owner,uint256 PricePerUnit,string memory NetworkName) public returns(address){
+    function registerActor(address payable _Owner,uint256 PricePerUnit,string memory NetworkName) public{
         require(!ownerIsActor(_Owner),"The provided address is already registered as an actor");
 		require(_Owner==msg.sender,"The sender is not the owner of the address");
 		IActor _Actor = new IActor(_Owner,PricePerUnit,NetworkName);
         Actors.push(address(_Actor));
 		emit ActorCreated(msg.sender,address(_Actor));
-        return address(_Actor);
     }
 	
 	function deleteActor(address payable _Owner) public{
@@ -40,8 +38,7 @@ contract Protocol {
 	}
 	
     function init(address payable _MitigatorOwner,uint _DeadlineInterval,uint256 _OfferedFunds,string memory _ListOfAddresses, uint _NumberOfAddresses) 
-    public 
-    returns (address){
+    public{
         
         require(bytes(_ListOfAddresses).length >0,"no addresses provided");
         require(ownerIsActor(_MitigatorOwner),"No registered actor");
@@ -55,67 +52,49 @@ contract Protocol {
         
         CurrentProcesses.push(address(newProcess));
 		
-		emit ProcessCreated(msg.sender,address(newProcess));
-		
-        return address(newProcess);
-        
+		emit ProcessCreated(msg.sender,address(newProcess)); 
     }
 
     function approve(address payable process,bool descision) 
-    public
-    payable
-    returns (address){
+    public{
         
         require(isProcess(process),"no process");
         Process(process).approve(descision);
-        
-        return process;
     }
     
     function sendFunds(address payable process) 
     public
-    payable
-    returns (address){
+	payable{
         
         require(isProcess(process),"no process");
         process.transfer(msg.value);
 		Process(process).sendFunds();
-        return process;
     }
     
     function uploadProof(address payable process,string memory proof) 
-    public
-    returns (address){
+    public{
         
         require(isProcess(process),"no process");
         Process(process).uploadProof(proof);
-        
-        return process;
     }
     
     function rateByMitigator(address payable process,uint rating) 
-    public
-    returns (address){
+    public{
         
         require(isProcess(process),"no process");
         Process(process).rateByMitigator(rating);
-        
-        return process;
     }
     
     function rateByTarget(address payable process,uint rating) 
-    public
-    returns (address){
+    public{
         
         require(isProcess(process),"no process");
         Process(process).rateByTarget(rating);
-        
-        return process;
     }
    
    
 	function skipCurrentState(address payable process) public{
-		
+		require(isProcess(process),"no process");
 	}
 
     function getProcesses() 

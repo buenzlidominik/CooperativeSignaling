@@ -1,5 +1,4 @@
 pragma solidity ^0.5.0;
-pragma experimental ABIEncoderV2;
 
 import "./Enums.sol";
 
@@ -43,6 +42,12 @@ contract IData {
     function getTarget() public view returns (address payable){ return Target;}
     
     function getProof() public view returns (string memory){return Proof;}
+	function isProofProvided() public view returns (bool){
+		if(bytes(Proof).length>0){
+			return true;
+		}
+		return false;
+	}
     function setProof(string memory _Proof) public {Proof = _Proof;}
 
     function getTargetRating()  public view returns (Enums.Rating){return TargetRating;}
