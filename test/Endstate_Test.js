@@ -198,7 +198,7 @@ contract("Endstate_Test", async function(accounts) {
 		
 		var fundsMitigator = await web3.eth.getBalance(MitigatorOwner);
 		
-		wait(1500); 
+		wait(2000); 
 		
 		await protocol.rateByMitigator(process,2, {from: TargetOwner});	
 		
