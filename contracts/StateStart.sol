@@ -8,12 +8,10 @@ contract StateStart is IState{
 	address payable owner;
 	bool internal executable = true;
 	bool internal aborted = false;
-	uint256 internal deadline;
 	
     constructor(address payable _data) public payable {
 		data = _data;
 		owner = IActor(IData(data).getTarget()).getOwner();
-		deadline = now + IData(data).getDeadlineInterval() * 1 seconds;
 	}	
 	
 	function execute() external returns(Enums.StateType){
