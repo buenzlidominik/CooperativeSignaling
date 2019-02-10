@@ -18,20 +18,24 @@ contract StateRatingByTarget is IState{
 	
 	function execute(uint256 value) external returns(Enums.StateType){
         require(executable,"Process not executable");
-		if(aborted){
-			executable=false;
-			return Enums.StateType.ABORT; 
-		}
-		if(!canBeSkipped()){
-			require(owner == tx.origin,"Error owner != tx.origin");
-		}else{
+		if(canBeSkipped()){
 			IData(data).setTargetRating(Enums.Rating.NA);
 			executable=false;
-			return Enums.StateType.RATE_M;
+			if(!IData(data).isProofProvided()){
+				return Enums.StateType.EVALUATION;
+			}else{
+				return Enums.StateType.RATE_M;
+			}
+		}else{
+			require(owner == tx.origin,"Error owner != tx.origin");			
 		}
 		IData(data).setTargetRating(Enums.Rating(value));
 		executable=false;
-		return Enums.StateType.RATE_M;
+		if(!IData(data).isProofProvided()){
+			return Enums.StateType.EVALUATION;
+		}else{
+			return Enums.StateType.RATE_M;
+		}
         
     } 
 	function execute(bool /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
@@ -39,15 +43,19 @@ contract StateRatingByTarget is IState{
     function execute(string calldata /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
         
 	function canBeSkipped() private view returns(bool){
-		if(deadline<now){return false;}
-		return true;
+		if(now>deadline){return true;}
+		return false;
 	}
 	
 	function abort() public returns(Enums.StateType){
 		require(owner == tx.origin,"Error owner != tx.origin"); 
 		aborted=true; 
-		return Enums.StateType.ABORT; 
+		executable = false;
+		IData(data).setTargetRating(Enums.Rating.NA);
+		return Enums.StateType.RATE_M; 
 	}
 		
-	function getOwnerOfState() external view returns(address payable){return owner;}  
+	function getOwnerOfState() external view returns(address payable){return owner;}
+
+function getStateType() external view returns(Enums.StateType){return Enums.StateType.RATE_T;}	
 }

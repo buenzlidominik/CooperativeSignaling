@@ -41,6 +41,6 @@ contract StateStart is IState{
 	
 	function getOwnerOfState() external view returns(address payable){return owner;}  
 	
-	
+	function getStateType() external view returns(Enums.StateType){return Enums.StateType.REQUEST;}
     
 }

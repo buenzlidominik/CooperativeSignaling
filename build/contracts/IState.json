@@ -85,22 +85,36 @@
       "payable": false,
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getStateType",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.5.0;\r\n\r\nimport \"./IData.sol\";\r\nimport \"./IActor.sol\";\r\nimport \"./Enums.sol\";\r\n\r\ninterface IState {\r\n            \r\n    function execute() external returns(Enums.StateType);\r\n    function execute(bool value) external returns(Enums.StateType);\r\n    function execute(uint256 value) external returns(Enums.StateType);\r\n    function execute(string calldata value) external returns(Enums.StateType);\r\n    \r\n    function getOwnerOfState() external view returns(address payable);\r\n  \r\n}",
+  "source": "pragma solidity ^0.5.0;\r\n\r\nimport \"./IData.sol\";\r\nimport \"./IActor.sol\";\r\nimport \"./Enums.sol\";\r\n\r\ninterface IState {\r\n            \r\n    function execute() external returns(Enums.StateType);\r\n    function execute(bool value) external returns(Enums.StateType);\r\n    function execute(uint256 value) external returns(Enums.StateType);\r\n    function execute(string calldata value) external returns(Enums.StateType);\r\n    \r\n    function getOwnerOfState() external view returns(address payable);\r\n\t\r\n\tfunction getStateType() external view returns(Enums.StateType);\r\n}",
   "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\IState.sol",
   "ast": {
     "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IState.sol",
     "exportedSymbols": {
       "IState": [
-        649
+        654
       ]
     },
-    "id": 650,
+    "id": 655,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -119,7 +133,7 @@
         "file": "./IData.sol",
         "id": 615,
         "nodeType": "ImportDirective",
-        "scope": 650,
+        "scope": 655,
         "sourceUnit": 598,
         "src": "27:21:7",
         "symbolAliases": [],
@@ -130,7 +144,7 @@
         "file": "./IActor.sol",
         "id": 616,
         "nodeType": "ImportDirective",
-        "scope": 650,
+        "scope": 655,
         "sourceUnit": 390,
         "src": "50:22:7",
         "symbolAliases": [],
@@ -141,7 +155,7 @@
         "file": "./Enums.sol",
         "id": 617,
         "nodeType": "ImportDirective",
-        "scope": 650,
+        "scope": 655,
         "sourceUnit": 21,
         "src": "74:21:7",
         "symbolAliases": [],
@@ -153,9 +167,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 649,
+        "id": 654,
         "linearizedBaseContracts": [
-          649
+          654
         ],
         "name": "IState",
         "nodeType": "ContractDefinition",
@@ -210,7 +224,7 @@
               ],
               "src": "172:17:7"
             },
-            "scope": 649,
+            "scope": 654,
             "src": "137:53:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -293,7 +307,7 @@
               ],
               "src": "241:17:7"
             },
-            "scope": 649,
+            "scope": 654,
             "src": "196:63:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -376,7 +390,7 @@
               ],
               "src": "313:17:7"
             },
-            "scope": 649,
+            "scope": 654,
             "src": "265:66:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -459,7 +473,7 @@
               ],
               "src": "393:17:7"
             },
-            "scope": 649,
+            "scope": 654,
             "src": "337:74:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -514,27 +528,83 @@
               ],
               "src": "471:17:7"
             },
-            "scope": 649,
+            "scope": 654,
             "src": "423:66:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 653,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStateType",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 649,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "516:2:7"
+            },
+            "returnParameters": {
+              "id": 652,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 651,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 653,
+                  "src": "541:15:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 650,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "541:15:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "540:17:7"
+            },
+            "scope": 654,
+            "src": "495:63:7",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 650,
-        "src": "99:397:7"
+        "scope": 655,
+        "src": "99:462:7"
       }
     ],
-    "src": "0:496:7"
+    "src": "0:561:7"
   },
   "legacyAST": {
     "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IState.sol",
     "exportedSymbols": {
       "IState": [
-        649
+        654
       ]
     },
-    "id": 650,
+    "id": 655,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -553,7 +623,7 @@
         "file": "./IData.sol",
         "id": 615,
         "nodeType": "ImportDirective",
-        "scope": 650,
+        "scope": 655,
         "sourceUnit": 598,
         "src": "27:21:7",
         "symbolAliases": [],
@@ -564,7 +634,7 @@
         "file": "./IActor.sol",
         "id": 616,
         "nodeType": "ImportDirective",
-        "scope": 650,
+        "scope": 655,
         "sourceUnit": 390,
         "src": "50:22:7",
         "symbolAliases": [],
@@ -575,7 +645,7 @@
         "file": "./Enums.sol",
         "id": 617,
         "nodeType": "ImportDirective",
-        "scope": 650,
+        "scope": 655,
         "sourceUnit": 21,
         "src": "74:21:7",
         "symbolAliases": [],
@@ -587,9 +657,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 649,
+        "id": 654,
         "linearizedBaseContracts": [
-          649
+          654
         ],
         "name": "IState",
         "nodeType": "ContractDefinition",
@@ -644,7 +714,7 @@
               ],
               "src": "172:17:7"
             },
-            "scope": 649,
+            "scope": 654,
             "src": "137:53:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -727,7 +797,7 @@
               ],
               "src": "241:17:7"
             },
-            "scope": 649,
+            "scope": 654,
             "src": "196:63:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -810,7 +880,7 @@
               ],
               "src": "313:17:7"
             },
-            "scope": 649,
+            "scope": 654,
             "src": "265:66:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -893,7 +963,7 @@
               ],
               "src": "393:17:7"
             },
-            "scope": 649,
+            "scope": 654,
             "src": "337:74:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -948,18 +1018,74 @@
               ],
               "src": "471:17:7"
             },
-            "scope": 649,
+            "scope": 654,
             "src": "423:66:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 653,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStateType",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 649,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "516:2:7"
+            },
+            "returnParameters": {
+              "id": 652,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 651,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 653,
+                  "src": "541:15:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 650,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "541:15:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "540:17:7"
+            },
+            "scope": 654,
+            "src": "495:63:7",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 650,
-        "src": "99:397:7"
+        "scope": 655,
+        "src": "99:462:7"
       }
     ],
-    "src": "0:496:7"
+    "src": "0:561:7"
   },
   "compiler": {
     "name": "solc",
@@ -967,7 +1093,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-02-10T15:13:47.099Z",
+  "updatedAt": "2019-02-10T16:05:26.498Z",
   "devdoc": {
     "methods": {}
   },

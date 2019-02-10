@@ -5,7 +5,8 @@ contract IActor {
     address payable private Owner;
     uint private PricePerUnit;
     string private Network;
-
+	event ReceivedIActor(uint256 value);
+	
     constructor (address payable _Owner,uint256 price, string memory net) 
 	payable
     public
@@ -22,8 +23,13 @@ contract IActor {
     }
 	
 	function() payable external {
-		Owner.transfer(address(this).balance);
+		emit ReceivedIActor(msg.value);
 	}
+	
+	function transferFunds() public {   
+		require(msg.sender==Owner,"Sender not able to withdraw");
+        Owner.transfer(address(this).balance);
+    }
 
     function isOfferAcceptable(uint256 offer,uint amountOfAddresses) 
     public view

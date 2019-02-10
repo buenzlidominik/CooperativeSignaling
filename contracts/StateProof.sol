@@ -22,15 +22,11 @@ contract StateProof is IState{
 	
     function execute(string calldata value) external returns(Enums.StateType){
         require(executable,"Process not executable");
-		if(aborted){
-			executable=false;
-			return Enums.StateType.ABORT; 
-		}
-		if(!canBeSkipped()){
-			require(owner == tx.origin,"Error owner != tx.origin");
-		}else{
+		if(canBeSkipped()){
 			executable=false;
 			return Enums.StateType.RATE_T;
+		}else{
+			require(owner == tx.origin,"Error owner != tx.origin");
 		}
         IData(data).setProof(value);
 		executable=false;
@@ -38,17 +34,19 @@ contract StateProof is IState{
     }
 
 	function canBeSkipped() private view returns(bool){
-		if(deadline<now){return false;}
-		return true;
+		if(now>deadline){return true;}
+		return false;
 	}
 	
 	function abort() public returns(Enums.StateType){
 		require(owner == tx.origin,"Error owner != tx.origin"); 
 		aborted=true; 
-		return Enums.StateType.ABORT; 
+		executable = false;
+		return Enums.StateType.RATE_T; 
 	}
-	
 
    function getOwnerOfState() external view returns(address payable){return owner;}
+   
+   function getStateType() external view returns(Enums.StateType){return Enums.StateType.PROOF;}
 
 }

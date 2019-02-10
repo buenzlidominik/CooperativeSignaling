@@ -20,7 +20,7 @@ contract StateEvaluation is IState{
 	
     function execute() external returns(Enums.StateType){
         require(executable,"Process not executable");
-		require(owner == msg.sender,"Error owner != tx.origin");
+		require(owner == msg.sender,"Error owner != msg.sender");
 
 		address payable actor;
 		Enums.StateType stateToSet;
@@ -45,4 +45,6 @@ contract StateEvaluation is IState{
     function execute(string calldata /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
     
 	function getOwnerOfState() external view returns(address payable){return owner;}  
+	
+	function getStateType() external view returns(Enums.StateType){return Enums.StateType.EVALUATION;}
 }

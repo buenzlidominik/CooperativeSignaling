@@ -1,6 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "./Enums.sol";
+import "./IActor.sol";
 
 contract IData {
     
@@ -35,8 +36,9 @@ contract IData {
 	}
 	
 	function transferFunds(address payable receiver) public {   
-        receiver.transfer(address(this).balance);
+        IActor(receiver).getOwner().transfer(address(this).balance);
     }
+	
 	function getOfferedFunds() public view returns (uint256){return OfferedFunds;}
 	
     function getMitigator() public view returns (address payable){return Mitigator;}

@@ -1,0 +1,2262 @@
+{
+  "contractName": "StateAbort",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "name": "_data",
+          "type": "address"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "execute",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "name": "execute",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "execute",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "execute",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getOwnerOfState",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getStateType",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060408190526000805460a060020a60ff021916905560208061033e8339810180604052602081101561003257600080fd5b505160008054600160a060020a03909216600160a060020a03199092169190911790556102da806100646000396000f3fe6080604052600436106100775763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166361461954811461007c5780636f7f0907146100b5578063972213ad146100f3578063991d1ca91461011f578063bd590d7e14610134578063fe0d94c1146101b1575b600080fd5b34801561008857600080fd5b506100916101d7565b604051808260098111156100a157fe5b60ff16815260200191505060405180910390f35b3480156100c157600080fd5b506100ca610240565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100ff57600080fd5b506100916004803603602081101561011657600080fd5b503515156101d7565b34801561012b57600080fd5b506100916102a9565b34801561014057600080fd5b506100916004803603602081101561015757600080fd5b81019060208101813564010000000081111561017257600080fd5b82018360208201111561018457600080fd5b803590602001918460018302840111640100000000831117156101a657600080fd5b5090925090506101d7565b3480156101bd57600080fd5b50610091600480360360208110156101d457600080fd5b50355b604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600f60248201527f4e6f7420696d706c656d656e74656400000000000000000000000000000000006044820152905160009181900360640190fd5b604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600860248201527f4e6f204f776e65720000000000000000000000000000000000000000000000006044820152905160009181900360640190fd5b60089056fea165627a7a72305820da224d1c5faf5f88deacb59e2d0fa5566faea9cc7d5eabe1106e3f35dff0ca720029",
+  "deployedBytecode": "0x6080604052600436106100775763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166361461954811461007c5780636f7f0907146100b5578063972213ad146100f3578063991d1ca91461011f578063bd590d7e14610134578063fe0d94c1146101b1575b600080fd5b34801561008857600080fd5b506100916101d7565b604051808260098111156100a157fe5b60ff16815260200191505060405180910390f35b3480156100c157600080fd5b506100ca610240565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100ff57600080fd5b506100916004803603602081101561011657600080fd5b503515156101d7565b34801561012b57600080fd5b506100916102a9565b34801561014057600080fd5b506100916004803603602081101561015757600080fd5b81019060208101813564010000000081111561017257600080fd5b82018360208201111561018457600080fd5b803590602001918460018302840111640100000000831117156101a657600080fd5b5090925090506101d7565b3480156101bd57600080fd5b50610091600480360360208110156101d457600080fd5b50355b604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600f60248201527f4e6f7420696d706c656d656e74656400000000000000000000000000000000006044820152905160009181900360640190fd5b604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600860248201527f4e6f204f776e65720000000000000000000000000000000000000000000000006044820152905160009181900360640190fd5b60089056fea165627a7a72305820da224d1c5faf5f88deacb59e2d0fa5566faea9cc7d5eabe1106e3f35dff0ca720029",
+  "sourceMap": "53:782:11:-;;;;;143:5;116:32;;-1:-1:-1;;;;;;116:32:11;;;158:72;;;53:782;158:72;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;158:72:11;213:4;:12;;-1:-1:-1;;;;;213:12:11;;;-1:-1:-1;;;;;;213:12:11;;;;;;;;;53:782;;;;;;",
+  "deployedSourceMap": "53:782:11:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;237:80;;8:9:-1;5:2;;;30:1;27;20:12;5:2;237:80:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;642:86;;8:9:-1;5:2;;;30:1;27;20:12;5:2;642:86:11;;;;;;;;;;;;;;;;;;;;;;;320:95;;8:9:-1;5:2;;;30:1;27;20:12;5:2;320:95:11;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;320:95:11;;;;;736:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;736:93:11;;;;525:106;;8:9:-1;5:2;;;30:1;27;20:12;5:2;525:106:11;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;525:106:11;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;525:106:11;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;525:106:11;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;525:106:11;;-1:-1:-1;525:106:11;-1:-1:-1;525:106:11;;421:98;;8:9:-1;5:2;;;30:1;27;20:12;5:2;421:98:11;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;421:98:11;237:80;290:25;;;;;;;;;;;;;;;;;;;;;;;273:15;;290:25;;;;;;;642:86;708:18;;;;;;;;;;;;;;;;;;;;;;;691:15;;708:18;;;;;;;736:93;806:21;736:93;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\nimport \"./IState.sol\";\r\n\r\ncontract StateAbort is IState{\r\n    \r\n\taddress payable data;\r\n\tbool internal executable = false;\r\n\t\r\n    constructor(address payable _data) public payable {\r\n\t\tdata = _data;\r\n\t}\t\r\n\t\r\n\tfunction execute() external returns(Enums.StateType){revert(\"Not implemented\");}\r\n\tfunction execute(bool /*value*/) external returns(Enums.StateType) {revert(\"Not implemented\");}\r\n    function execute(uint256 /*value*/) external returns(Enums.StateType) {revert(\"Not implemented\");}\r\n    function execute(string calldata /*value*/) external returns(Enums.StateType) {revert(\"Not implemented\");}     \r\n\t\r\n\tfunction getOwnerOfState() external view returns(address payable){revert(\"No Owner\");}  \r\n\t\r\n\tfunction getStateType() external view returns(Enums.StateType){return Enums.StateType.ABORT;}\r\n\t\r\n}",
+  "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\StateAbort.sol",
+  "ast": {
+    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/StateAbort.sol",
+    "exportedSymbols": {
+      "StateAbort": [
+        1680
+      ]
+    },
+    "id": 1681,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1595,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:11"
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IState.sol",
+        "file": "./IState.sol",
+        "id": 1596,
+        "nodeType": "ImportDirective",
+        "scope": 1681,
+        "sourceUnit": 655,
+        "src": "27:22:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1597,
+              "name": "IState",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 654,
+              "src": "76:6:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IState_$654",
+                "typeString": "contract IState"
+              }
+            },
+            "id": 1598,
+            "nodeType": "InheritanceSpecifier",
+            "src": "76:6:11"
+          }
+        ],
+        "contractDependencies": [
+          654
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1680,
+        "linearizedBaseContracts": [
+          1680,
+          654
+        ],
+        "name": "StateAbort",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1600,
+            "name": "data",
+            "nodeType": "VariableDeclaration",
+            "scope": 1680,
+            "src": "92:20:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 1599,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "92:15:11",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1603,
+            "name": "executable",
+            "nodeType": "VariableDeclaration",
+            "scope": 1680,
+            "src": "116:32:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 1601,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "116:4:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "66616c7365",
+              "id": 1602,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "143:5:11",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "false"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1612,
+              "nodeType": "Block",
+              "src": "208:22:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1610,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 1608,
+                      "name": "data",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1600,
+                      "src": "213:4:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1609,
+                      "name": "_data",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1605,
+                      "src": "220:5:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "213:12:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 1611,
+                  "nodeType": "ExpressionStatement",
+                  "src": "213:12:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1613,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1606,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1605,
+                  "name": "_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1613,
+                  "src": "170:21:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 1604,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "170:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "169:23:11"
+            },
+            "returnParameters": {
+              "id": 1607,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "208:0:11"
+            },
+            "scope": 1680,
+            "src": "158:72:11",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1622,
+              "nodeType": "Block",
+              "src": "289:28:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f7420696d706c656d656e746564",
+                        "id": 1619,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "297:17:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        },
+                        "value": "Not implemented"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        }
+                      ],
+                      "id": 1618,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3415,
+                        3416
+                      ],
+                      "referencedDeclaration": 3416,
+                      "src": "290:6:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1620,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "290:25:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1621,
+                  "nodeType": "ExpressionStatement",
+                  "src": "290:25:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1623,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "execute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1614,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "253:2:11"
+            },
+            "returnParameters": {
+              "id": 1617,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1616,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1623,
+                  "src": "273:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1615,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "273:15:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "272:17:11"
+            },
+            "scope": 1680,
+            "src": "237:80:11",
+            "stateMutability": "nonpayable",
+            "superFunction": 622,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1634,
+              "nodeType": "Block",
+              "src": "387:28:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f7420696d706c656d656e746564",
+                        "id": 1631,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "395:17:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        },
+                        "value": "Not implemented"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        }
+                      ],
+                      "id": 1630,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3415,
+                        3416
+                      ],
+                      "referencedDeclaration": 3416,
+                      "src": "388:6:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1632,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "388:25:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1633,
+                  "nodeType": "ExpressionStatement",
+                  "src": "388:25:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1635,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "execute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1626,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1625,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1635,
+                  "src": "337:4:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1624,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "337:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "336:16:11"
+            },
+            "returnParameters": {
+              "id": 1629,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1628,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1635,
+                  "src": "370:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1627,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "370:15:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "369:17:11"
+            },
+            "scope": 1680,
+            "src": "320:95:11",
+            "stateMutability": "nonpayable",
+            "superFunction": 629,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1646,
+              "nodeType": "Block",
+              "src": "491:28:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f7420696d706c656d656e746564",
+                        "id": 1643,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "499:17:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        },
+                        "value": "Not implemented"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        }
+                      ],
+                      "id": 1642,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3415,
+                        3416
+                      ],
+                      "referencedDeclaration": 3416,
+                      "src": "492:6:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1644,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "492:25:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1645,
+                  "nodeType": "ExpressionStatement",
+                  "src": "492:25:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1647,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "execute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1638,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1637,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1647,
+                  "src": "438:7:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1636,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "438:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "437:19:11"
+            },
+            "returnParameters": {
+              "id": 1641,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1640,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1647,
+                  "src": "474:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1639,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "474:15:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "473:17:11"
+            },
+            "scope": 1680,
+            "src": "421:98:11",
+            "stateMutability": "nonpayable",
+            "superFunction": 636,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1658,
+              "nodeType": "Block",
+              "src": "603:28:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f7420696d706c656d656e746564",
+                        "id": 1655,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "611:17:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        },
+                        "value": "Not implemented"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        }
+                      ],
+                      "id": 1654,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3415,
+                        3416
+                      ],
+                      "referencedDeclaration": 3416,
+                      "src": "604:6:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1656,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "604:25:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1657,
+                  "nodeType": "ExpressionStatement",
+                  "src": "604:25:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1659,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "execute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1650,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1649,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1659,
+                  "src": "542:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1648,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "542:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "541:27:11"
+            },
+            "returnParameters": {
+              "id": 1653,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1652,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1659,
+                  "src": "586:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1651,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "586:15:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "585:17:11"
+            },
+            "scope": 1680,
+            "src": "525:106:11",
+            "stateMutability": "nonpayable",
+            "superFunction": 643,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1668,
+              "nodeType": "Block",
+              "src": "707:21:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f204f776e6572",
+                        "id": 1665,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "715:10:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_bb7f28fe4407e7245b2f984fa06226302b218c0a9514bba6151d4229857efbee",
+                          "typeString": "literal_string \"No Owner\""
+                        },
+                        "value": "No Owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_bb7f28fe4407e7245b2f984fa06226302b218c0a9514bba6151d4229857efbee",
+                          "typeString": "literal_string \"No Owner\""
+                        }
+                      ],
+                      "id": 1664,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3415,
+                        3416
+                      ],
+                      "referencedDeclaration": 3416,
+                      "src": "708:6:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1666,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "708:18:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1667,
+                  "nodeType": "ExpressionStatement",
+                  "src": "708:18:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1669,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOwnerOfState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1660,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "666:2:11"
+            },
+            "returnParameters": {
+              "id": 1663,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1662,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1669,
+                  "src": "691:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 1661,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "691:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "690:17:11"
+            },
+            "scope": 1680,
+            "src": "642:86:11",
+            "stateMutability": "view",
+            "superFunction": 648,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1678,
+              "nodeType": "Block",
+              "src": "798:31:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1674,
+                        "name": "Enums",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20,
+                        "src": "806:5:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Enums_$20_$",
+                          "typeString": "type(contract Enums)"
+                        }
+                      },
+                      "id": 1675,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "StateType",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 19,
+                      "src": "806:15:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_enum$_StateType_$19_$",
+                        "typeString": "type(enum Enums.StateType)"
+                      }
+                    },
+                    "id": 1676,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "memberName": "ABORT",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "806:21:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "functionReturnParameters": 1673,
+                  "id": 1677,
+                  "nodeType": "Return",
+                  "src": "799:28:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1679,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStateType",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1670,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "757:2:11"
+            },
+            "returnParameters": {
+              "id": 1673,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1672,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1679,
+                  "src": "782:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1671,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "782:15:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "781:17:11"
+            },
+            "scope": 1680,
+            "src": "736:93:11",
+            "stateMutability": "view",
+            "superFunction": 653,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1681,
+        "src": "53:782:11"
+      }
+    ],
+    "src": "0:835:11"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/StateAbort.sol",
+    "exportedSymbols": {
+      "StateAbort": [
+        1680
+      ]
+    },
+    "id": 1681,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1595,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:11"
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IState.sol",
+        "file": "./IState.sol",
+        "id": 1596,
+        "nodeType": "ImportDirective",
+        "scope": 1681,
+        "sourceUnit": 655,
+        "src": "27:22:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1597,
+              "name": "IState",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 654,
+              "src": "76:6:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IState_$654",
+                "typeString": "contract IState"
+              }
+            },
+            "id": 1598,
+            "nodeType": "InheritanceSpecifier",
+            "src": "76:6:11"
+          }
+        ],
+        "contractDependencies": [
+          654
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1680,
+        "linearizedBaseContracts": [
+          1680,
+          654
+        ],
+        "name": "StateAbort",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1600,
+            "name": "data",
+            "nodeType": "VariableDeclaration",
+            "scope": 1680,
+            "src": "92:20:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 1599,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "92:15:11",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1603,
+            "name": "executable",
+            "nodeType": "VariableDeclaration",
+            "scope": 1680,
+            "src": "116:32:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 1601,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "116:4:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "66616c7365",
+              "id": 1602,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "143:5:11",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "false"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1612,
+              "nodeType": "Block",
+              "src": "208:22:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1610,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 1608,
+                      "name": "data",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1600,
+                      "src": "213:4:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1609,
+                      "name": "_data",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1605,
+                      "src": "220:5:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "213:12:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 1611,
+                  "nodeType": "ExpressionStatement",
+                  "src": "213:12:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1613,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1606,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1605,
+                  "name": "_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1613,
+                  "src": "170:21:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 1604,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "170:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "169:23:11"
+            },
+            "returnParameters": {
+              "id": 1607,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "208:0:11"
+            },
+            "scope": 1680,
+            "src": "158:72:11",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1622,
+              "nodeType": "Block",
+              "src": "289:28:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f7420696d706c656d656e746564",
+                        "id": 1619,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "297:17:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        },
+                        "value": "Not implemented"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        }
+                      ],
+                      "id": 1618,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3415,
+                        3416
+                      ],
+                      "referencedDeclaration": 3416,
+                      "src": "290:6:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1620,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "290:25:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1621,
+                  "nodeType": "ExpressionStatement",
+                  "src": "290:25:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1623,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "execute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1614,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "253:2:11"
+            },
+            "returnParameters": {
+              "id": 1617,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1616,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1623,
+                  "src": "273:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1615,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "273:15:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "272:17:11"
+            },
+            "scope": 1680,
+            "src": "237:80:11",
+            "stateMutability": "nonpayable",
+            "superFunction": 622,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1634,
+              "nodeType": "Block",
+              "src": "387:28:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f7420696d706c656d656e746564",
+                        "id": 1631,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "395:17:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        },
+                        "value": "Not implemented"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        }
+                      ],
+                      "id": 1630,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3415,
+                        3416
+                      ],
+                      "referencedDeclaration": 3416,
+                      "src": "388:6:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1632,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "388:25:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1633,
+                  "nodeType": "ExpressionStatement",
+                  "src": "388:25:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1635,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "execute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1626,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1625,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1635,
+                  "src": "337:4:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1624,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "337:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "336:16:11"
+            },
+            "returnParameters": {
+              "id": 1629,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1628,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1635,
+                  "src": "370:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1627,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "370:15:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "369:17:11"
+            },
+            "scope": 1680,
+            "src": "320:95:11",
+            "stateMutability": "nonpayable",
+            "superFunction": 629,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1646,
+              "nodeType": "Block",
+              "src": "491:28:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f7420696d706c656d656e746564",
+                        "id": 1643,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "499:17:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        },
+                        "value": "Not implemented"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        }
+                      ],
+                      "id": 1642,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3415,
+                        3416
+                      ],
+                      "referencedDeclaration": 3416,
+                      "src": "492:6:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1644,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "492:25:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1645,
+                  "nodeType": "ExpressionStatement",
+                  "src": "492:25:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1647,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "execute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1638,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1637,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1647,
+                  "src": "438:7:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1636,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "438:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "437:19:11"
+            },
+            "returnParameters": {
+              "id": 1641,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1640,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1647,
+                  "src": "474:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1639,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "474:15:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "473:17:11"
+            },
+            "scope": 1680,
+            "src": "421:98:11",
+            "stateMutability": "nonpayable",
+            "superFunction": 636,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1658,
+              "nodeType": "Block",
+              "src": "603:28:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f7420696d706c656d656e746564",
+                        "id": 1655,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "611:17:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        },
+                        "value": "Not implemented"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_9f5474d7a5849b3f79e8aee7ea2c60bcd36a60a08b4fa41f97e2fccf1c4df98b",
+                          "typeString": "literal_string \"Not implemented\""
+                        }
+                      ],
+                      "id": 1654,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3415,
+                        3416
+                      ],
+                      "referencedDeclaration": 3416,
+                      "src": "604:6:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1656,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "604:25:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1657,
+                  "nodeType": "ExpressionStatement",
+                  "src": "604:25:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1659,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "execute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1650,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1649,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1659,
+                  "src": "542:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1648,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "542:6:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "541:27:11"
+            },
+            "returnParameters": {
+              "id": 1653,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1652,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1659,
+                  "src": "586:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1651,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "586:15:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "585:17:11"
+            },
+            "scope": 1680,
+            "src": "525:106:11",
+            "stateMutability": "nonpayable",
+            "superFunction": 643,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1668,
+              "nodeType": "Block",
+              "src": "707:21:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f204f776e6572",
+                        "id": 1665,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "715:10:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_bb7f28fe4407e7245b2f984fa06226302b218c0a9514bba6151d4229857efbee",
+                          "typeString": "literal_string \"No Owner\""
+                        },
+                        "value": "No Owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_bb7f28fe4407e7245b2f984fa06226302b218c0a9514bba6151d4229857efbee",
+                          "typeString": "literal_string \"No Owner\""
+                        }
+                      ],
+                      "id": 1664,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3415,
+                        3416
+                      ],
+                      "referencedDeclaration": 3416,
+                      "src": "708:6:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1666,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "708:18:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1667,
+                  "nodeType": "ExpressionStatement",
+                  "src": "708:18:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1669,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOwnerOfState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1660,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "666:2:11"
+            },
+            "returnParameters": {
+              "id": 1663,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1662,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1669,
+                  "src": "691:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 1661,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "691:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "690:17:11"
+            },
+            "scope": 1680,
+            "src": "642:86:11",
+            "stateMutability": "view",
+            "superFunction": 648,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1678,
+              "nodeType": "Block",
+              "src": "798:31:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1674,
+                        "name": "Enums",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20,
+                        "src": "806:5:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Enums_$20_$",
+                          "typeString": "type(contract Enums)"
+                        }
+                      },
+                      "id": 1675,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "StateType",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 19,
+                      "src": "806:15:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_enum$_StateType_$19_$",
+                        "typeString": "type(enum Enums.StateType)"
+                      }
+                    },
+                    "id": 1676,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "memberName": "ABORT",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "806:21:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "functionReturnParameters": 1673,
+                  "id": 1677,
+                  "nodeType": "Return",
+                  "src": "799:28:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1679,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStateType",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1670,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "757:2:11"
+            },
+            "returnParameters": {
+              "id": 1673,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1672,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1679,
+                  "src": "782:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1671,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "782:15:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "781:17:11"
+            },
+            "scope": 1680,
+            "src": "736:93:11",
+            "stateMutability": "view",
+            "superFunction": 653,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1681,
+        "src": "53:782:11"
+      }
+    ],
+    "src": "0:835:11"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-02-10T16:05:26.491Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

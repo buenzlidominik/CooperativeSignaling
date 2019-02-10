@@ -9,6 +9,9 @@ import "./StateEvaluation.sol";
 import "./StateApprove.sol";
 import "./StateProof.sol";
 import "./StateRatingByTarget.sol";
+import "./StateComplete.sol";
+import "./StateAbort.sol";
+import "./StateEscalate.sol";
 
 library StateFactory{
     
@@ -30,6 +33,12 @@ library StateFactory{
 			return new StateRatingByMitigator(data);
 		}else if(_Type == Enums.StateType.EVALUATION){
 			return new StateEvaluation(data);
+		}else if(_Type == Enums.StateType.COMPLETE){
+			return new StateComplete(data);
+		}else if(_Type == Enums.StateType.ABORT){
+			return new StateAbort(data);
+		}else if(_Type == Enums.StateType.ESCALATE){
+			return new StateEscalate(data);
 		}else{
 			revert("Type not in StateFactory");
 		}

@@ -562,7 +562,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3023,
+                              "referencedDeclaration": 3433,
                               "src": "512:4:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_IActor_$389",
@@ -819,10 +819,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        3003,
-                        3004
+                        3413,
+                        3414
                       ],
-                      "referencedDeclaration": 3004,
+                      "referencedDeclaration": 3414,
                       "src": "652:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1608,7 +1608,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3023,
+                              "referencedDeclaration": 3433,
                               "src": "512:4:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_IActor_$389",
@@ -1865,10 +1865,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        3003,
-                        3004
+                        3413,
+                        3414
                       ],
-                      "referencedDeclaration": 3004,
+                      "referencedDeclaration": 3414,
                       "src": "652:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2195,7 +2195,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-02-10T15:13:47.105Z",
+  "updatedAt": "2019-02-10T16:05:26.503Z",
   "devdoc": {
     "methods": {}
   },

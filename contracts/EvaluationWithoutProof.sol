@@ -16,9 +16,9 @@ contract EvaluationWithoutProof is IEvaluation{
     function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){ 
 		
 		//used to silence warning for MitigatorRating
-		if(MitigatorRating==Enums.Rating.ACK){	}
+		if(MitigatorRating==Enums.Rating.POS){	}
 		
-		if(TargetRating==Enums.Rating.ACK){
+		if(TargetRating==Enums.Rating.NEG){
 			return(TargetAddress,Enums.StateType.COMPLETE);
         }else{
 			return(address(0),Enums.StateType.ABORT);

@@ -12,5 +12,6 @@ interface IState {
     function execute(string calldata value) external returns(Enums.StateType);
     
     function getOwnerOfState() external view returns(address payable);
-  
+	
+	function getStateType() external view returns(Enums.StateType);
 }

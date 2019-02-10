@@ -122,6 +122,7 @@ contract("Full Run Test", async function(accounts) {
 	
 	it("Rate By Mitigator", async function() {
 	
+		await protocol.rateByMitigator(process,2, {from: TargetOwner});
 		//await Process.at(process).then(async function (result){
 			//await result.getStartAndEndTime().then( async function (response){
 			//	console.log("Starttime:"+ response[0])

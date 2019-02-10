@@ -14,9 +14,9 @@ contract  EvaluationWithProof is IEvaluation{
 	}
 
     function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    
-        if(TargetRating==Enums.Rating.ACK){
+        if(TargetRating==Enums.Rating.POS){
             return acknowledged(MitigatorRating);
-        }else if(TargetRating==Enums.Rating.REJ){
+        }else if(TargetRating==Enums.Rating.NEG){
             return rejected(MitigatorRating);
         }else{
             return selfish(MitigatorRating);
@@ -24,7 +24,7 @@ contract  EvaluationWithProof is IEvaluation{
     }
 
     function acknowledged(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    
-        if(MitigatorRating==Enums.Rating.ACK){
+        if(MitigatorRating==Enums.Rating.POS){
 			return(MitigatorAddress,Enums.StateType.COMPLETE);
         }else{
             return(address(0),Enums.StateType.ABORT);
@@ -32,7 +32,7 @@ contract  EvaluationWithProof is IEvaluation{
     }
     
     function selfish(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    
-        if(MitigatorRating==Enums.Rating.REJ){
+        if(MitigatorRating==Enums.Rating.NEG){
             return(MitigatorAddress,Enums.StateType.COMPLETE);
         }else{
             return(address(0),Enums.StateType.ABORT);
@@ -40,7 +40,7 @@ contract  EvaluationWithProof is IEvaluation{
     }
     
     function rejected(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    
-        if(MitigatorRating==Enums.Rating.REJ){
+        if(MitigatorRating==Enums.Rating.NEG){
             return(address(0),Enums.StateType.ESCALATE);
         }else{
             return(TargetAddress,Enums.StateType.COMPLETE);
