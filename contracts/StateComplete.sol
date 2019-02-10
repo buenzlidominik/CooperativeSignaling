@@ -9,6 +9,7 @@ contract StateComplete is IState{
 	
     constructor(address payable _data) public payable {
 		data = _data;
+		IData(data).setEndTime();
 	}	
 	
 	function execute() external returns(Enums.StateType){revert("Not implemented");}

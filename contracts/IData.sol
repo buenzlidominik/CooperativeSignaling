@@ -41,6 +41,8 @@ contract IData {
 	
 	function getOfferedFunds() public view returns (uint256){return OfferedFunds;}
 	
+	function getListOfAddresses() public view returns (string memory){return ListOfAddresses;}
+	
     function getMitigator() public view returns (address payable){return Mitigator;}
     function getTarget() public view returns (address payable){ return Target;}
     
@@ -58,7 +60,8 @@ contract IData {
     
     function setTargetRating(Enums.Rating _Rating) public {TargetRating = _Rating;}
     function setMitigatorRating(Enums.Rating _Rating)  public {MitigatorRating = _Rating;}
-
+	
+	function setEndTime() public {EndTime=now;}
     function getStartTime() public view returns (uint256){return StartTime;}
 	function getEndTime() public view returns (uint256){return EndTime;}
     function getDeadlineInterval() public view returns (uint256){return DeadlineInterval;}

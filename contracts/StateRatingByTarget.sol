@@ -21,27 +21,27 @@ contract StateRatingByTarget is IState{
 		if(canBeSkipped()){
 			IData(data).setTargetRating(Enums.Rating.NA);
 			executable=false;
-			if(!IData(data).isProofProvided()){
-				return Enums.StateType.EVALUATION;
-			}else{
-				return Enums.StateType.RATE_M;
-			}
+			return checkForProof(IData(data).isProofProvided());
 		}else{
 			require(owner == tx.origin,"Error owner != tx.origin");			
 		}
 		IData(data).setTargetRating(Enums.Rating(value));
 		executable=false;
-		if(!IData(data).isProofProvided()){
+		return checkForProof(IData(data).isProofProvided());
+        
+    }	
+	function execute(bool /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
+    function execute() external returns(Enums.StateType) {revert("Not implemented");}
+    function execute(string calldata /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
+       
+	function checkForProof(bool isProvided) private pure returns (Enums.StateType){
+		if(!isProvided){
 			return Enums.StateType.EVALUATION;
 		}else{
 			return Enums.StateType.RATE_M;
 		}
-        
-    } 
-	function execute(bool /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
-    function execute() external returns(Enums.StateType) {revert("Not implemented");}
-    function execute(string calldata /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
-        
+	} 
+		
 	function canBeSkipped() private view returns(bool){
 		if(now>deadline){return true;}
 		return false;

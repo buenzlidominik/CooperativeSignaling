@@ -18,7 +18,18 @@ contract StateProof is IState{
 	
 	function execute(bool /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
     function execute(uint256 /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
-    function execute() external returns(Enums.StateType) {revert("Not implemented");}
+	
+    function execute() external returns(Enums.StateType) {
+		require(executable,"Process not executable");
+		if(canBeSkipped()){
+			executable=false;
+			return Enums.StateType.RATE_T;
+		}else{
+			require(owner == tx.origin,"Error owner != tx.origin");
+		}
+		executable=false;
+		return Enums.StateType.RATE_T;
+	}
 	
     function execute(string calldata value) external returns(Enums.StateType){
         require(executable,"Process not executable");
