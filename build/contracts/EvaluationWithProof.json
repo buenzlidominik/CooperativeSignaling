@@ -113,11 +113,11 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b506040516040806102f08339810180604052604081101561003057600080fd5b50805160209091015160008054600160a060020a03938416600160a060020a03199182161790915560018054939092169216919091179055610279806100776000396000f3fe6080604052600436106100615763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631250d06781146100665780639e39f364146100d4578063a87bf3b614610109578063e069bf2f14610136575b600080fd5b34801561007257600080fd5b506100936004803603602081101561008957600080fd5b503560ff16610163565b60405173ffffffffffffffffffffffffffffffffffffffff83168152602081018260098111156100bf57fe5b60ff1681526020019250505060405180910390f35b3480156100e057600080fd5b50610093600480360360408110156100f757600080fd5b5060ff813581169160200135166101a9565b34801561011557600080fd5b506100936004803603602081101561012c57600080fd5b503560ff166101ff565b34801561014257600080fd5b506100936004803603602081101561015957600080fd5b503560ff16610209565b600080805b83600281111561017457fe5b141561019c57505060015473ffffffffffffffffffffffffffffffffffffffff1660076101a4565b506000905060085b915091565b60008060028460028111156101ba57fe5b14156101d2576101c9836101ff565b915091506101f8565b60008460028111156101e057fe5b14156101ef576101c983610209565b6101c983610163565b9250929050565b6000806002610168565b6000808083600281111561021957fe5b141561022b57506000905060096101a4565b505060005473ffffffffffffffffffffffffffffffffffffffff1660076101a456fea165627a7a7230582089364f7669736eee061d5d731445f6bdefff160910fb9e311987036c6b8b423b0029",
-  "deployedBytecode": "0x6080604052600436106100615763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631250d06781146100665780639e39f364146100d4578063a87bf3b614610109578063e069bf2f14610136575b600080fd5b34801561007257600080fd5b506100936004803603602081101561008957600080fd5b503560ff16610163565b60405173ffffffffffffffffffffffffffffffffffffffff83168152602081018260098111156100bf57fe5b60ff1681526020019250505060405180910390f35b3480156100e057600080fd5b50610093600480360360408110156100f757600080fd5b5060ff813581169160200135166101a9565b34801561011557600080fd5b506100936004803603602081101561012c57600080fd5b503560ff166101ff565b34801561014257600080fd5b506100936004803603602081101561015957600080fd5b503560ff16610209565b600080805b83600281111561017457fe5b141561019c57505060015473ffffffffffffffffffffffffffffffffffffffff1660076101a4565b506000905060085b915091565b60008060028460028111156101ba57fe5b14156101d2576101c9836101ff565b915091506101f8565b60008460028111156101e057fe5b14156101ef576101c983610209565b6101c983610163565b9250929050565b6000806002610168565b6000808083600281111561021957fe5b141561022b57506000905060096101a4565b505060005473ffffffffffffffffffffffffffffffffffffffff1660076101a456fea165627a7a7230582089364f7669736eee061d5d731445f6bdefff160910fb9e311987036c6b8b423b0029",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516040806102f08339810180604052604081101561003057600080fd5b50805160209091015160008054600160a060020a03938416600160a060020a03199182161790915560018054939092169216919091179055610279806100776000396000f3fe6080604052600436106100615763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631250d06781146100665780639e39f364146100d4578063a87bf3b614610109578063e069bf2f14610136575b600080fd5b34801561007257600080fd5b506100936004803603602081101561008957600080fd5b503560ff16610163565b60405173ffffffffffffffffffffffffffffffffffffffff83168152602081018260098111156100bf57fe5b60ff1681526020019250505060405180910390f35b3480156100e057600080fd5b50610093600480360360408110156100f757600080fd5b5060ff813581169160200135166101a9565b34801561011557600080fd5b506100936004803603602081101561012c57600080fd5b503560ff166101ff565b34801561014257600080fd5b506100936004803603602081101561015957600080fd5b503560ff16610209565b600080805b83600281111561017457fe5b141561019c57505060015473ffffffffffffffffffffffffffffffffffffffff1660076101a4565b506000905060085b915091565b60008060028460028111156101ba57fe5b14156101d2576101c9836101ff565b915091506101f8565b60008460028111156101e057fe5b14156101ef576101c983610209565b6101c983610163565b9250929050565b6000806002610168565b6000808083600281111561021957fe5b141561022b57506000905060096101a4565b505060005473ffffffffffffffffffffffffffffffffffffffff1660076101a456fea165627a7a7230582079cbbe06810e3ec884f2548d6e5ff6e5ade777617a54c4c5507b8da5b0f64a900029",
+  "deployedBytecode": "0x6080604052600436106100615763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631250d06781146100665780639e39f364146100d4578063a87bf3b614610109578063e069bf2f14610136575b600080fd5b34801561007257600080fd5b506100936004803603602081101561008957600080fd5b503560ff16610163565b60405173ffffffffffffffffffffffffffffffffffffffff83168152602081018260098111156100bf57fe5b60ff1681526020019250505060405180910390f35b3480156100e057600080fd5b50610093600480360360408110156100f757600080fd5b5060ff813581169160200135166101a9565b34801561011557600080fd5b506100936004803603602081101561012c57600080fd5b503560ff166101ff565b34801561014257600080fd5b506100936004803603602081101561015957600080fd5b503560ff16610209565b600080805b83600281111561017457fe5b141561019c57505060015473ffffffffffffffffffffffffffffffffffffffff1660076101a4565b506000905060085b915091565b60008060028460028111156101ba57fe5b14156101d2576101c9836101ff565b915091506101f8565b60008460028111156101e057fe5b14156101ef576101c983610209565b6101c983610163565b9250929050565b6000806002610168565b6000808083600281111561021957fe5b141561022b57506000905060096101a4565b505060005473ffffffffffffffffffffffffffffffffffffffff1660076101a456fea165627a7a7230582079cbbe06810e3ec884f2548d6e5ff6e5ade777617a54c4c5507b8da5b0f64a900029",
   "sourceMap": "81:1669:2:-;;;222:163;8:9:-1;5:2;;;30:1;27;20:12;5:2;222:163:2;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;222:163:2;;;;;;;311:13;:29;;-1:-1:-1;;;;;311:29:2;;;-1:-1:-1;;;;;;311:29:2;;;;;;;;345:35;;;;;;;;;;;;;;81:1669;;;;;;",
   "deployedSourceMap": "81:1669:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1122:306;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1122:306:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1122:306:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;393:407;;8:9:-1;5:2;;;30:1;27;20:12;5:2;393:407:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;393:407:2;;;;;;;;;;;;808:302;;8:9:-1;5:2;;;30:1;27;20:12;5:2;808:302:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;808:302:2;;;;;1440:307;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1440:307:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1440:307:2;;;;;1122:306;1190:15;;;1240:33;:15;:33;;;;;;;;;1237:184;;;-1:-1:-1;;1296:16:2;;;;1313:24;1289:49;;1237:184;-1:-1:-1;1384:1:2;;-1:-1:-1;1387:21:2;1237:184;1122:306;;;:::o;393:407::-;489:15;;553:16;539:12;:30;;;;;;;;;536:257;;;592:29;605:15;592:12;:29::i;:::-;585:36;;;;;;536:257;655:16;641:12;:30;;;;;;;;;638:155;;;694:25;703:15;694:8;:25::i;638:155::-;757:24;765:15;757:7;:24::i;638:155::-;393:407;;;;;:::o;808:302::-;881:15;;948:16;931:33;;1440:307;1509:15;;;1559;:33;;;;;;;;;1556:184;;;-1:-1:-1;1623:1:2;;-1:-1:-1;1626:24:2;1608:43;;1556:184;-1:-1:-1;;1689:13:2;;;;1703:24;1682:46;",
-  "source": "pragma solidity ^0.5.0;\r\n\r\nimport \"./Enums.sol\";\r\nimport \"./IEvaluation.sol\";\r\n\r\ncontract  EvaluationWithProof is IEvaluation{\r\n\t\r\n\taddress payable internal TargetAddress;\r\n\taddress payable internal MitigatorAddress;\r\n\t\r\n\tconstructor(address payable _TargetAddress,address payable _MitigatorAddress) public{\r\n\t\tTargetAddress= _TargetAddress;\r\n\t\tMitigatorAddress= _MitigatorAddress;\r\n\t}\r\n\r\n    function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    \r\n        if(TargetRating==Enums.Rating.ACK){\r\n            return acknowledged(MitigatorRating);\r\n        }else if(TargetRating==Enums.Rating.REJ){\r\n            return rejected(MitigatorRating);\r\n        }else{\r\n            return selfish(MitigatorRating);\r\n        }\r\n    }\r\n\r\n    function acknowledged(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    \r\n        if(MitigatorRating==Enums.Rating.ACK){\r\n\t\t\treturn(MitigatorAddress,Enums.StateType.COMPLETE);\r\n        }else{\r\n            return(address(0),Enums.StateType.ABORT);\r\n        }\r\n    }\r\n    \r\n    function selfish(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    \r\n        if(MitigatorRating==Enums.Rating.REJ){\r\n            return(MitigatorAddress,Enums.StateType.COMPLETE);\r\n        }else{\r\n            return(address(0),Enums.StateType.ABORT);\r\n        }\r\n    }\r\n    \r\n    function rejected(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    \r\n        if(MitigatorRating==Enums.Rating.REJ){\r\n            return(address(0),Enums.StateType.ESCALATE);\r\n        }else{\r\n            return(TargetAddress,Enums.StateType.COMPLETE);\r\n        }\r\n    }\r\n}",
+  "source": "pragma solidity ^0.5.0;\r\n\r\nimport \"./Enums.sol\";\r\nimport \"./IEvaluation.sol\";\r\n\r\ncontract  EvaluationWithProof is IEvaluation{\r\n\t\r\n\taddress payable internal TargetAddress;\r\n\taddress payable internal MitigatorAddress;\r\n\t\r\n\tconstructor(address payable _TargetAddress,address payable _MitigatorAddress) public{\r\n\t\tTargetAddress= _TargetAddress;\r\n\t\tMitigatorAddress= _MitigatorAddress;\r\n\t}\r\n\r\n    function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    \r\n        if(TargetRating==Enums.Rating.POS){\r\n            return acknowledged(MitigatorRating);\r\n        }else if(TargetRating==Enums.Rating.NEG){\r\n            return rejected(MitigatorRating);\r\n        }else{\r\n            return selfish(MitigatorRating);\r\n        }\r\n    }\r\n\r\n    function acknowledged(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    \r\n        if(MitigatorRating==Enums.Rating.POS){\r\n\t\t\treturn(MitigatorAddress,Enums.StateType.COMPLETE);\r\n        }else{\r\n            return(address(0),Enums.StateType.ABORT);\r\n        }\r\n    }\r\n    \r\n    function selfish(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    \r\n        if(MitigatorRating==Enums.Rating.NEG){\r\n            return(MitigatorAddress,Enums.StateType.COMPLETE);\r\n        }else{\r\n            return(address(0),Enums.StateType.ABORT);\r\n        }\r\n    }\r\n    \r\n    function rejected(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    \r\n        if(MitigatorRating==Enums.Rating.NEG){\r\n            return(address(0),Enums.StateType.ESCALATE);\r\n        }else{\r\n            return(TargetAddress,Enums.StateType.COMPLETE);\r\n        }\r\n    }\r\n}",
   "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\EvaluationWithProof.sol",
   "ast": {
     "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/EvaluationWithProof.sol",
@@ -157,7 +157,7 @@
         "id": 74,
         "nodeType": "ImportDirective",
         "scope": 233,
-        "sourceUnit": 613,
+        "sourceUnit": 654,
         "src": "50:27:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -171,10 +171,10 @@
               "id": 75,
               "name": "IEvaluation",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 612,
+              "referencedDeclaration": 653,
               "src": "114:11:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IEvaluation_$612",
+                "typeIdentifier": "t_contract$_IEvaluation_$653",
                 "typeString": "contract IEvaluation"
               }
             },
@@ -184,7 +184,7 @@
           }
         ],
         "contractDependencies": [
-          612
+          653
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -192,7 +192,7 @@
         "id": 232,
         "linearizedBaseContracts": [
           232,
-          612
+          653
         ],
         "name": "EvaluationWithProof",
         "nodeType": "ContractDefinition",
@@ -500,7 +500,7 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "ACK",
+                      "memberName": "POS",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
                       "src": "553:16:2",
@@ -578,7 +578,7 @@
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberName": "REJ",
+                        "memberName": "NEG",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
                         "src": "655:16:2",
@@ -924,7 +924,7 @@
             "scope": 232,
             "src": "393:407:2",
             "stateMutability": "view",
-            "superFunction": 611,
+            "superFunction": 652,
             "visibility": "public"
           },
           {
@@ -996,7 +996,7 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "ACK",
+                      "memberName": "POS",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
                       "src": "948:16:2",
@@ -1415,7 +1415,7 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "REJ",
+                      "memberName": "NEG",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
                       "src": "1257:16:2",
@@ -1834,7 +1834,7 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "REJ",
+                      "memberName": "NEG",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
                       "src": "1576:16:2",
@@ -2229,7 +2229,7 @@
         "id": 74,
         "nodeType": "ImportDirective",
         "scope": 233,
-        "sourceUnit": 613,
+        "sourceUnit": 654,
         "src": "50:27:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2243,10 +2243,10 @@
               "id": 75,
               "name": "IEvaluation",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 612,
+              "referencedDeclaration": 653,
               "src": "114:11:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IEvaluation_$612",
+                "typeIdentifier": "t_contract$_IEvaluation_$653",
                 "typeString": "contract IEvaluation"
               }
             },
@@ -2256,7 +2256,7 @@
           }
         ],
         "contractDependencies": [
-          612
+          653
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -2264,7 +2264,7 @@
         "id": 232,
         "linearizedBaseContracts": [
           232,
-          612
+          653
         ],
         "name": "EvaluationWithProof",
         "nodeType": "ContractDefinition",
@@ -2572,7 +2572,7 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "ACK",
+                      "memberName": "POS",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
                       "src": "553:16:2",
@@ -2650,7 +2650,7 @@
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberName": "REJ",
+                        "memberName": "NEG",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
                         "src": "655:16:2",
@@ -2996,7 +2996,7 @@
             "scope": 232,
             "src": "393:407:2",
             "stateMutability": "view",
-            "superFunction": 611,
+            "superFunction": 652,
             "visibility": "public"
           },
           {
@@ -3068,7 +3068,7 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "ACK",
+                      "memberName": "POS",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
                       "src": "948:16:2",
@@ -3487,7 +3487,7 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "REJ",
+                      "memberName": "NEG",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
                       "src": "1257:16:2",
@@ -3906,7 +3906,7 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "REJ",
+                      "memberName": "NEG",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
                       "src": "1576:16:2",
@@ -4269,7 +4269,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-02-10T16:05:26.509Z",
+  "updatedAt": "2019-02-10T19:16:31.363Z",
   "devdoc": {
     "methods": {}
   },
