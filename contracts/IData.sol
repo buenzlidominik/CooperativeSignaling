@@ -7,37 +7,38 @@ contract IData {
     address payable private Target;
     address payable private Mitigator;
     
-    uint private DeadlineInterval;
-    uint256 private Deadline;
+    uint256 private DeadlineInterval;
     uint256 private StartTime = now;
-    
+    uint256 private EndTime;
+	
     string private ListOfAddresses;
     string private Proof ="";
-    uint private AmountOfAddresses;
-    
+    uint256 private OfferedFunds;
+	
     Enums.Rating private TargetRating;
     Enums.Rating private MitigatorRating;
-    event Received(uint256 value);
+    event ReceivedData(uint256 value);
 
-    constructor (address payable T,address payable M, uint256 Interval,string memory listOfAddresses,uint amount) 
+    constructor (address payable _Target,address payable _Mitigator, uint256 _Interval,string memory _ListOfAddresses,uint256 _OfferedFunds) 
     public
     payable
     {
-        Target = T;
-        Mitigator = M;
-        DeadlineInterval = Interval;
-        ListOfAddresses = listOfAddresses;
-        AmountOfAddresses = amount;
+        Target = _Target;
+        Mitigator = _Mitigator;
+        DeadlineInterval = _Interval;
+        ListOfAddresses = _ListOfAddresses;
+        OfferedFunds = _OfferedFunds;
     }
     
 	function() payable external {
-		emit Received(msg.value);
+		emit ReceivedData(msg.value);
 	}
 	
 	function transferFunds(address payable receiver) public {   
         receiver.transfer(address(this).balance);
     }
-
+	function getOfferedFunds() public view returns (uint256){return OfferedFunds;}
+	
     function getMitigator() public view returns (address payable){return Mitigator;}
     function getTarget() public view returns (address payable){ return Target;}
     
@@ -57,9 +58,8 @@ contract IData {
     function setMitigatorRating(Enums.Rating _Rating)  public {MitigatorRating = _Rating;}
 
     function getStartTime() public view returns (uint256){return StartTime;}
-    
-    function setDeadline()public {Deadline = now + DeadlineInterval * 1 seconds;}
-    function getDeadline() public view returns (uint256){return Deadline;}
+	function getEndTime() public view returns (uint256){return EndTime;}
+    function getDeadlineInterval() public view returns (uint256){return DeadlineInterval;}
     
 
 }

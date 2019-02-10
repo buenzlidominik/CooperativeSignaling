@@ -5,9 +5,15 @@ import "./IEvaluation.sol";
 
 contract  EvaluationWithProof is IEvaluation{
 	
-	constructor(address payable _TargetAddress,address payable _MitigatorAddress) public IEvaluation(_TargetAddress,_MitigatorAddress) {}
+	address payable internal TargetAddress;
+	address payable internal MitigatorAddress;
+	
+	constructor(address payable _TargetAddress,address payable _MitigatorAddress) public{
+		TargetAddress= _TargetAddress;
+		MitigatorAddress= _MitigatorAddress;
+	}
 
-    function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address payable,Enums.State){    
+    function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    
         if(TargetRating==Enums.Rating.ACK){
             return acknowledged(MitigatorRating);
         }else if(TargetRating==Enums.Rating.REJ){
@@ -17,27 +23,27 @@ contract  EvaluationWithProof is IEvaluation{
         }
     }
 
-    function acknowledged(Enums.Rating MitigatorRating) public view returns (address payable,Enums.State){    
+    function acknowledged(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    
         if(MitigatorRating==Enums.Rating.ACK){
-			return(MitigatorAddress,Enums.State.COMPLETE);
+			return(MitigatorAddress,Enums.StateType.COMPLETE);
         }else{
-            return(address(0),Enums.State.ABORT);
+            return(address(0),Enums.StateType.ABORT);
         }
     }
     
-    function selfish(Enums.Rating MitigatorRating) public view returns (address payable,Enums.State){    
+    function selfish(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    
         if(MitigatorRating==Enums.Rating.REJ){
-            return(MitigatorAddress,Enums.State.COMPLETE);
+            return(MitigatorAddress,Enums.StateType.COMPLETE);
         }else{
-            return(address(0),Enums.State.ABORT);
+            return(address(0),Enums.StateType.ABORT);
         }
     }
     
-    function rejected(Enums.Rating MitigatorRating) public view returns (address payable,Enums.State){    
+    function rejected(Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){    
         if(MitigatorRating==Enums.Rating.REJ){
-            return(address(0),Enums.State.ESCALATE);
+            return(address(0),Enums.StateType.ESCALATE);
         }else{
-            return(TargetAddress,Enums.State.COMPLETE);
+            return(TargetAddress,Enums.StateType.COMPLETE);
         }
     }
 }

@@ -1,20 +1,20 @@
 {
   "contractName": "Enums",
   "abi": [],
-  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058205b2eab8e9bb55bc11a1dafd8116e90f134d1b339ada2e81aecf68526af298f780029",
-  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058205b2eab8e9bb55bc11a1dafd8116e90f134d1b339ada2e81aecf68526af298f780029",
-  "sourceMap": "27:133:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:133:0;;;;;;;",
-  "deployedSourceMap": "27:133:0:-;;;;;",
-  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract  Enums {\r\n\r\n\tenum State {REQUEST,APPROVE,FUNDING,PROOF,TRATE,MRATE,COMPLETE,ABORT,ESCALATE}\r\n    enum Rating {REJ,NA,ACK}\r\n}",
-  "sourcePath": "C:\\Code\\Private\\MBM\\contracts\\Enums.sol",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a7230582020ac4010e7551bc396ad0c7e699c68de75f4abed8b260acaad3a3f641b3340d70029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a7230582020ac4010e7551bc396ad0c7e699c68de75f4abed8b260acaad3a3f641b3340d70029",
+  "sourceMap": "27:197:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:197:0;;;;;;;",
+  "deployedSourceMap": "27:197:0:-;;;;;",
+  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract  Enums {\r\n\r\n    enum Rating {REJ,NA,ACK}\r\n\tenum EvaluationType {WITHPROOF,WITHOUTPROOF}\r\n\tenum StateType {REQUEST,APPROVE,FUNDING,PROOF,RATE_T,RATE_M,EVALUATION,COMPLETE,ABORT,ESCALATE}\r\n}",
+  "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\Enums.sol",
   "ast": {
-    "absolutePath": "/C/Code/Private/MBM/contracts/Enums.sol",
+    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
     "exportedSymbols": {
       "Enums": [
-        16
+        20
       ]
     },
-    "id": 17,
+    "id": 21,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -34,118 +34,145 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 16,
+        "id": 20,
         "linearizedBaseContracts": [
-          16
+          20
         ],
         "name": "Enums",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "canonicalName": "Enums.State",
-            "id": 11,
+            "canonicalName": "Enums.Rating",
+            "id": 5,
             "members": [
               {
                 "id": 2,
-                "name": "REQUEST",
+                "name": "REJ",
                 "nodeType": "EnumValue",
-                "src": "61:7:0"
+                "src": "65:3:0"
               },
               {
                 "id": 3,
-                "name": "APPROVE",
+                "name": "NA",
                 "nodeType": "EnumValue",
-                "src": "69:7:0"
+                "src": "69:2:0"
               },
               {
                 "id": 4,
-                "name": "FUNDING",
-                "nodeType": "EnumValue",
-                "src": "77:7:0"
-              },
-              {
-                "id": 5,
-                "name": "PROOF",
-                "nodeType": "EnumValue",
-                "src": "85:5:0"
-              },
-              {
-                "id": 6,
-                "name": "TRATE",
-                "nodeType": "EnumValue",
-                "src": "91:5:0"
-              },
-              {
-                "id": 7,
-                "name": "MRATE",
-                "nodeType": "EnumValue",
-                "src": "97:5:0"
-              },
-              {
-                "id": 8,
-                "name": "COMPLETE",
-                "nodeType": "EnumValue",
-                "src": "103:8:0"
-              },
-              {
-                "id": 9,
-                "name": "ABORT",
-                "nodeType": "EnumValue",
-                "src": "112:5:0"
-              },
-              {
-                "id": 10,
-                "name": "ESCALATE",
-                "nodeType": "EnumValue",
-                "src": "118:8:0"
-              }
-            ],
-            "name": "State",
-            "nodeType": "EnumDefinition",
-            "src": "49:78:0"
-          },
-          {
-            "canonicalName": "Enums.Rating",
-            "id": 15,
-            "members": [
-              {
-                "id": 12,
-                "name": "REJ",
-                "nodeType": "EnumValue",
-                "src": "146:3:0"
-              },
-              {
-                "id": 13,
-                "name": "NA",
-                "nodeType": "EnumValue",
-                "src": "150:2:0"
-              },
-              {
-                "id": 14,
                 "name": "ACK",
                 "nodeType": "EnumValue",
-                "src": "153:3:0"
+                "src": "72:3:0"
               }
             ],
             "name": "Rating",
             "nodeType": "EnumDefinition",
-            "src": "133:24:0"
+            "src": "52:24:0"
+          },
+          {
+            "canonicalName": "Enums.EvaluationType",
+            "id": 8,
+            "members": [
+              {
+                "id": 6,
+                "name": "WITHPROOF",
+                "nodeType": "EnumValue",
+                "src": "100:9:0"
+              },
+              {
+                "id": 7,
+                "name": "WITHOUTPROOF",
+                "nodeType": "EnumValue",
+                "src": "110:12:0"
+              }
+            ],
+            "name": "EvaluationType",
+            "nodeType": "EnumDefinition",
+            "src": "79:44:0"
+          },
+          {
+            "canonicalName": "Enums.StateType",
+            "id": 19,
+            "members": [
+              {
+                "id": 9,
+                "name": "REQUEST",
+                "nodeType": "EnumValue",
+                "src": "142:7:0"
+              },
+              {
+                "id": 10,
+                "name": "APPROVE",
+                "nodeType": "EnumValue",
+                "src": "150:7:0"
+              },
+              {
+                "id": 11,
+                "name": "FUNDING",
+                "nodeType": "EnumValue",
+                "src": "158:7:0"
+              },
+              {
+                "id": 12,
+                "name": "PROOF",
+                "nodeType": "EnumValue",
+                "src": "166:5:0"
+              },
+              {
+                "id": 13,
+                "name": "RATE_T",
+                "nodeType": "EnumValue",
+                "src": "172:6:0"
+              },
+              {
+                "id": 14,
+                "name": "RATE_M",
+                "nodeType": "EnumValue",
+                "src": "179:6:0"
+              },
+              {
+                "id": 15,
+                "name": "EVALUATION",
+                "nodeType": "EnumValue",
+                "src": "186:10:0"
+              },
+              {
+                "id": 16,
+                "name": "COMPLETE",
+                "nodeType": "EnumValue",
+                "src": "197:8:0"
+              },
+              {
+                "id": 17,
+                "name": "ABORT",
+                "nodeType": "EnumValue",
+                "src": "206:5:0"
+              },
+              {
+                "id": 18,
+                "name": "ESCALATE",
+                "nodeType": "EnumValue",
+                "src": "212:8:0"
+              }
+            ],
+            "name": "StateType",
+            "nodeType": "EnumDefinition",
+            "src": "126:95:0"
           }
         ],
-        "scope": 17,
-        "src": "27:133:0"
+        "scope": 21,
+        "src": "27:197:0"
       }
     ],
-    "src": "0:160:0"
+    "src": "0:224:0"
   },
   "legacyAST": {
-    "absolutePath": "/C/Code/Private/MBM/contracts/Enums.sol",
+    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
     "exportedSymbols": {
       "Enums": [
-        16
+        20
       ]
     },
-    "id": 17,
+    "id": 21,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -165,109 +192,136 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 16,
+        "id": 20,
         "linearizedBaseContracts": [
-          16
+          20
         ],
         "name": "Enums",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "canonicalName": "Enums.State",
-            "id": 11,
+            "canonicalName": "Enums.Rating",
+            "id": 5,
             "members": [
               {
                 "id": 2,
-                "name": "REQUEST",
+                "name": "REJ",
                 "nodeType": "EnumValue",
-                "src": "61:7:0"
+                "src": "65:3:0"
               },
               {
                 "id": 3,
-                "name": "APPROVE",
+                "name": "NA",
                 "nodeType": "EnumValue",
-                "src": "69:7:0"
+                "src": "69:2:0"
               },
               {
                 "id": 4,
-                "name": "FUNDING",
-                "nodeType": "EnumValue",
-                "src": "77:7:0"
-              },
-              {
-                "id": 5,
-                "name": "PROOF",
-                "nodeType": "EnumValue",
-                "src": "85:5:0"
-              },
-              {
-                "id": 6,
-                "name": "TRATE",
-                "nodeType": "EnumValue",
-                "src": "91:5:0"
-              },
-              {
-                "id": 7,
-                "name": "MRATE",
-                "nodeType": "EnumValue",
-                "src": "97:5:0"
-              },
-              {
-                "id": 8,
-                "name": "COMPLETE",
-                "nodeType": "EnumValue",
-                "src": "103:8:0"
-              },
-              {
-                "id": 9,
-                "name": "ABORT",
-                "nodeType": "EnumValue",
-                "src": "112:5:0"
-              },
-              {
-                "id": 10,
-                "name": "ESCALATE",
-                "nodeType": "EnumValue",
-                "src": "118:8:0"
-              }
-            ],
-            "name": "State",
-            "nodeType": "EnumDefinition",
-            "src": "49:78:0"
-          },
-          {
-            "canonicalName": "Enums.Rating",
-            "id": 15,
-            "members": [
-              {
-                "id": 12,
-                "name": "REJ",
-                "nodeType": "EnumValue",
-                "src": "146:3:0"
-              },
-              {
-                "id": 13,
-                "name": "NA",
-                "nodeType": "EnumValue",
-                "src": "150:2:0"
-              },
-              {
-                "id": 14,
                 "name": "ACK",
                 "nodeType": "EnumValue",
-                "src": "153:3:0"
+                "src": "72:3:0"
               }
             ],
             "name": "Rating",
             "nodeType": "EnumDefinition",
-            "src": "133:24:0"
+            "src": "52:24:0"
+          },
+          {
+            "canonicalName": "Enums.EvaluationType",
+            "id": 8,
+            "members": [
+              {
+                "id": 6,
+                "name": "WITHPROOF",
+                "nodeType": "EnumValue",
+                "src": "100:9:0"
+              },
+              {
+                "id": 7,
+                "name": "WITHOUTPROOF",
+                "nodeType": "EnumValue",
+                "src": "110:12:0"
+              }
+            ],
+            "name": "EvaluationType",
+            "nodeType": "EnumDefinition",
+            "src": "79:44:0"
+          },
+          {
+            "canonicalName": "Enums.StateType",
+            "id": 19,
+            "members": [
+              {
+                "id": 9,
+                "name": "REQUEST",
+                "nodeType": "EnumValue",
+                "src": "142:7:0"
+              },
+              {
+                "id": 10,
+                "name": "APPROVE",
+                "nodeType": "EnumValue",
+                "src": "150:7:0"
+              },
+              {
+                "id": 11,
+                "name": "FUNDING",
+                "nodeType": "EnumValue",
+                "src": "158:7:0"
+              },
+              {
+                "id": 12,
+                "name": "PROOF",
+                "nodeType": "EnumValue",
+                "src": "166:5:0"
+              },
+              {
+                "id": 13,
+                "name": "RATE_T",
+                "nodeType": "EnumValue",
+                "src": "172:6:0"
+              },
+              {
+                "id": 14,
+                "name": "RATE_M",
+                "nodeType": "EnumValue",
+                "src": "179:6:0"
+              },
+              {
+                "id": 15,
+                "name": "EVALUATION",
+                "nodeType": "EnumValue",
+                "src": "186:10:0"
+              },
+              {
+                "id": 16,
+                "name": "COMPLETE",
+                "nodeType": "EnumValue",
+                "src": "197:8:0"
+              },
+              {
+                "id": 17,
+                "name": "ABORT",
+                "nodeType": "EnumValue",
+                "src": "206:5:0"
+              },
+              {
+                "id": 18,
+                "name": "ESCALATE",
+                "nodeType": "EnumValue",
+                "src": "212:8:0"
+              }
+            ],
+            "name": "StateType",
+            "nodeType": "EnumDefinition",
+            "src": "126:95:0"
           }
         ],
-        "scope": 17,
-        "src": "27:133:0"
+        "scope": 21,
+        "src": "27:197:0"
       }
     ],
-    "src": "0:160:0"
+    "src": "0:224:0"
   },
   "compiler": {
     "name": "solc",
@@ -275,7 +329,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-02-07T21:19:52.010Z",
+  "updatedAt": "2019-02-10T15:13:47.097Z",
   "devdoc": {
     "methods": {}
   },

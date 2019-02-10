@@ -4,15 +4,50 @@ import "./IState.sol";
 
 contract StateRatingByTarget is IState{
 
-	constructor(address payable _data) IState(_data) public payable {}
-
-    function execute(uint256 value) public{
-        if(!canAdvance()){
-            revert("Can't advance");
-        }
-        IData(data).setTargetRating(Enums.Rating(value));
-    }
-    
-    function getActorOfState() public view returns(address){return IData(data).getTarget();}
-    
+	address payable data;
+	address payable owner;
+	bool internal executable = true;
+	bool internal aborted = false;
+	uint256 internal deadline;
+	
+    constructor(address payable _data) public payable {
+		data = _data;
+		owner = IActor(IData(data).getTarget()).getOwner();
+		deadline = now + IData(data).getDeadlineInterval() * 1 seconds;
+	}		
+	
+	function execute(uint256 value) external returns(Enums.StateType){
+        require(executable,"Process not executable");
+		if(aborted){
+			executable=false;
+			return Enums.StateType.ABORT; 
+		}
+		if(!canBeSkipped()){
+			require(owner == tx.origin,"Error owner != tx.origin");
+		}else{
+			IData(data).setTargetRating(Enums.Rating.NA);
+			executable=false;
+			return Enums.StateType.RATE_M;
+		}
+		IData(data).setTargetRating(Enums.Rating(value));
+		executable=false;
+		return Enums.StateType.RATE_M;
+        
+    } 
+	function execute(bool /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
+    function execute() external returns(Enums.StateType) {revert("Not implemented");}
+    function execute(string calldata /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
+        
+	function canBeSkipped() private view returns(bool){
+		if(deadline<now){return false;}
+		return true;
+	}
+	
+	function abort() public returns(Enums.StateType){
+		require(owner == tx.origin,"Error owner != tx.origin"); 
+		aborted=true; 
+		return Enums.StateType.ABORT; 
+	}
+		
+	function getOwnerOfState() external view returns(address payable){return owner;}  
 }

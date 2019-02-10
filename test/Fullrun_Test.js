@@ -69,17 +69,19 @@ contract("Full Run Test", async function(accounts) {
 		
 		await protocol.approve(process,true, {from: MitigatorOwner});
 		await Process.at(process).then(async function (result){
+			/*
 			await IState.at(await result.getState()).then(async function (response){
 				console.log(await response.getName());
 			});
+			*/
 		});
 
     });
 	
 	it("Send Funds", async function() {
-		
+	
 		var fundsTarget = await web3.eth.getBalance(TargetOwner);
-
+		
 		//Will work
 		await protocol.sendFunds(process, {from: TargetOwner,value: await web3.utils.toWei('2.0', "ether")});	
 		

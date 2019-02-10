@@ -1,0 +1,435 @@
+{
+  "contractName": "IEvaluation",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "TargetRating",
+          "type": "uint8"
+        },
+        {
+          "name": "MitigatorRating",
+          "type": "uint8"
+        }
+      ],
+      "name": "evaluate",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.0;\r\n\r\nimport \"./Enums.sol\";\r\n\r\ninterface  IEvaluation {\r\n\r\n    function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) external view returns (address payable,Enums.StateType);\r\n}",
+  "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\IEvaluation.sol",
+  "ast": {
+    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IEvaluation.sol",
+    "exportedSymbols": {
+      "IEvaluation": [
+        612
+      ]
+    },
+    "id": 613,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 599,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:6"
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+        "file": "./Enums.sol",
+        "id": 600,
+        "nodeType": "ImportDirective",
+        "scope": 613,
+        "sourceUnit": 21,
+        "src": "27:21:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 612,
+        "linearizedBaseContracts": [
+          612
+        ],
+        "name": "IEvaluation",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 611,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "evaluate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 605,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 602,
+                  "name": "TargetRating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 611,
+                  "src": "102:25:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Rating_$5",
+                    "typeString": "enum Enums.Rating"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 601,
+                    "name": "Enums.Rating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "102:12:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 604,
+                  "name": "MitigatorRating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 611,
+                  "src": "129:28:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Rating_$5",
+                    "typeString": "enum Enums.Rating"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 603,
+                    "name": "Enums.Rating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "129:12:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "101:57:6"
+            },
+            "returnParameters": {
+              "id": 610,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 607,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 611,
+                  "src": "182:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 606,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "182:15:6",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 609,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 611,
+                  "src": "198:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 608,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "198:15:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "181:33:6"
+            },
+            "scope": 612,
+            "src": "84:131:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 613,
+        "src": "52:166:6"
+      }
+    ],
+    "src": "0:218:6"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IEvaluation.sol",
+    "exportedSymbols": {
+      "IEvaluation": [
+        612
+      ]
+    },
+    "id": 613,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 599,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:6"
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+        "file": "./Enums.sol",
+        "id": 600,
+        "nodeType": "ImportDirective",
+        "scope": 613,
+        "sourceUnit": 21,
+        "src": "27:21:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 612,
+        "linearizedBaseContracts": [
+          612
+        ],
+        "name": "IEvaluation",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 611,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "evaluate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 605,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 602,
+                  "name": "TargetRating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 611,
+                  "src": "102:25:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Rating_$5",
+                    "typeString": "enum Enums.Rating"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 601,
+                    "name": "Enums.Rating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "102:12:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 604,
+                  "name": "MitigatorRating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 611,
+                  "src": "129:28:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Rating_$5",
+                    "typeString": "enum Enums.Rating"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 603,
+                    "name": "Enums.Rating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "129:12:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "101:57:6"
+            },
+            "returnParameters": {
+              "id": 610,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 607,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 611,
+                  "src": "182:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 606,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "182:15:6",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 609,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 611,
+                  "src": "198:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 608,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "198:15:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "181:33:6"
+            },
+            "scope": 612,
+            "src": "84:131:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 613,
+        "src": "52:166:6"
+      }
+    ],
+    "src": "0:218:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-02-10T15:13:47.098Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

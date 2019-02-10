@@ -4,20 +4,43 @@ import "./IState.sol";
 
 contract StateStart is IState{
     
-	constructor(address payable _data) IState(_data) public payable {}
+	address payable data;
+	address payable owner;
+	bool internal executable = true;
+	bool internal aborted = false;
+	uint256 internal deadline;
 	
-    function canAdvance() public returns(bool){
-        require(aborted!= true,"Process has been aborted");
-        //require(getActorOfState().getOwner() == caller,"Error proceed in Start");
-        return true;
+    constructor(address payable _data) public payable {
+		data = _data;
+		owner = IActor(IData(data).getTarget()).getOwner();
+		deadline = now + IData(data).getDeadlineInterval() * 1 seconds;
+	}	
+	
+	function execute() external returns(Enums.StateType){
+        require(executable,"Process not executable");
+		if(aborted){
+			executable=false;
+			return Enums.StateType.ABORT; 
+		}
+
+		require(owner == tx.origin,"Error owner != tx.origin");
+		
+		executable=false;
+		return Enums.StateType.APPROVE;
     }
-    
-    function execute() public{
-        if(!canAdvance()){
-            revert("Can't advance");
-        }
-    }
-    
-    function getActorOfState() public view returns(address){return IData(data).getTarget();}
+	
+	function execute(bool /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
+    function execute(uint256 /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
+    function execute(string calldata /*value*/) external returns(Enums.StateType) {revert("Not implemented");}     
+
+	function abort() public returns(Enums.StateType){
+		require(owner == tx.origin,"Error owner != tx.origin"); 
+		aborted=true; 
+		return Enums.StateType.ABORT; 
+	}
+	
+	function getOwnerOfState() external view returns(address payable){return owner;}  
+	
+	
     
 }

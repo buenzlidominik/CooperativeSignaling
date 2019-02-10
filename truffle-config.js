@@ -47,7 +47,8 @@ module.exports = {
       port: 7545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
 	  websockets: true ,
-	  gas: 10500000,
+	  gas: 8500000,
+	  gasPrice: 20000000000
     },
 
     // Another network with more advanced options...
@@ -94,7 +95,7 @@ module.exports = {
           enabled: true,
           runs: 200
         },
-       evmVersion: "byzantium"
+       //evmVersion: "byzantium"
        }
     }
   }

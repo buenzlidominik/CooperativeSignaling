@@ -2,9 +2,10 @@ pragma solidity ^0.5.0;
 
 import "./Process.sol";
 import "./IActor.sol";
+import "./IData.sol";
 
 contract Protocol {
-
+	
     address payable[] private Actors;
     address payable[] private CurrentProcesses;
 
@@ -26,6 +27,7 @@ contract Protocol {
 	
 	function deleteActor(address payable _Owner) public{
 		require(_Owner == msg.sender,"The sender is not the owner of the actor");
+		require(ownerIsActor(_Owner),"Owner is not an actor");
 		require(notInActiveProcesses(_Owner),"The sender is involved in an active process");
 		uint id = getActorIndexFromOwner(_Owner);
 		require(CurrentProcesses.length > 0,"Empty actor list");
@@ -34,6 +36,18 @@ contract Protocol {
     }
 	
 	function notInActiveProcesses(address payable _Owner) private view returns(bool){
+
+		for (uint i = 0 ; i < CurrentProcesses.length; i++) {
+			IData Data = IData(Process(CurrentProcesses[i]).getData());
+			if(!Process(CurrentProcesses[i]).isFinished()){
+				if(Data.getTarget()==getActor(_Owner)){
+					return false;
+				}
+				if(Data.getMitigator()==getActor(_Owner)){
+					return false;
+				}
+			} 
+        }
 		return true;
 	}
 	
@@ -48,7 +62,7 @@ contract Protocol {
         require(_Mitigator.isOfferAcceptable(_OfferedFunds,_NumberOfAddresses),"Funds too low");
         
         Process newProcess = new Process();
-        newProcess.init(getActor(msg.sender),getActor(_MitigatorOwner),_DeadlineInterval,_ListOfAddresses,_NumberOfAddresses);
+        newProcess.init(getActor(msg.sender),getActor(_MitigatorOwner),_DeadlineInterval,_ListOfAddresses,_OfferedFunds);
         
         CurrentProcesses.push(address(newProcess));
 		
@@ -91,11 +105,6 @@ contract Protocol {
         require(isProcess(process),"no process");
         Process(process).rateByTarget(rating);
     }
-   
-   
-	function skipCurrentState(address payable process) public{
-		require(isProcess(process),"no process");
-	}
 
     function getProcesses() 
     public view 

@@ -1,0 +1,1776 @@
+{
+  "contractName": "EvaluationWithoutProof",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "name": "_TargetAddress",
+          "type": "address"
+        },
+        {
+          "name": "_MitigatorAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "TargetRating",
+          "type": "uint8"
+        },
+        {
+          "name": "MitigatorRating",
+          "type": "uint8"
+        }
+      ],
+      "name": "evaluate",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506040516040806101b68339810180604052604081101561003057600080fd5b50805160209091015160008054600160a060020a03938416600160a060020a0319918216179091556001805493909216921691909117905561013f806100776000396000f3fe6080604052600436106100405763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416639e39f3648114610045575b600080fd5b34801561005157600080fd5b5061007a6004803603604081101561006857600080fd5b5060ff813581169160200135166100bb565b60405173ffffffffffffffffffffffffffffffffffffffff83168152602081018260098111156100a657fe5b60ff1681526020019250505060405180910390f35b60008060028360028111156100cc57fe5b505060028460028111156100dc57fe5b141561010457505060005473ffffffffffffffffffffffffffffffffffffffff16600761010c565b506000905060085b925092905056fea165627a7a72305820ca634d12c539e9797014ec2e920291e92ebfab5a7d02f71fbcadbb400647198f0029",
+  "deployedBytecode": "0x6080604052600436106100405763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416639e39f3648114610045575b600080fd5b34801561005157600080fd5b5061007a6004803603604081101561006857600080fd5b5060ff813581169160200135166100bb565b60405173ffffffffffffffffffffffffffffffffffffffff83168152602081018260098111156100a657fe5b60ff1681526020019250505060405180910390f35b60008060028360028111156100cc57fe5b505060028460028111156100dc57fe5b141561010457505060005473ffffffffffffffffffffffffffffffffffffffff16600761010c565b506000905060085b925092905056fea165627a7a72305820ca634d12c539e9797014ec2e920291e92ebfab5a7d02f71fbcadbb400647198f0029",
+  "sourceMap": "81:717:3:-;;;223:163;8:9:-1;5:2;;;30:1;27;20:12;5:2;223:163:3;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;223:163:3;;;;;;;312:13;:29;;-1:-1:-1;;;;;312:29:3;;;-1:-1:-1;;;;;;312:29:3;;;;;;;;346:35;;;;;;;;;;;;;;81:717;;;;;;",
+  "deployedSourceMap": "81:717:3:-;;;;;;;;;;;;;;;;;;;;;;;394:396;;8:9:-1;5:2;;;30:1;27;20:12;5:2;394:396:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;394:396:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;490:15;;601:16;584:15;:33;;;;;;;;;;646:16;632:12;:30;;;;;;;;;629:154;;;-1:-1:-1;;676:13:3;;;;690:24;669:46;;629:154;-1:-1:-1;752:1:3;;-1:-1:-1;755:21:3;629:154;394:396;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\nimport \"./Enums.sol\";\r\nimport \"./IEvaluation.sol\";\r\n\r\ncontract EvaluationWithoutProof is IEvaluation{\r\n\r\n\taddress payable internal TargetAddress;\r\n\taddress payable internal MitigatorAddress;\r\n\t\r\n\tconstructor(address payable _TargetAddress,address payable _MitigatorAddress) public{\r\n\t\tTargetAddress= _TargetAddress;\r\n\t\tMitigatorAddress= _MitigatorAddress;\r\n\t}\r\n\r\n    function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address payable,Enums.StateType){ \r\n\t\t\r\n\t\t//used to silence warning for MitigatorRating\r\n\t\tif(MitigatorRating==Enums.Rating.ACK){\t}\r\n\t\t\r\n\t\tif(TargetRating==Enums.Rating.ACK){\r\n\t\t\treturn(TargetAddress,Enums.StateType.COMPLETE);\r\n        }else{\r\n\t\t\treturn(address(0),Enums.StateType.ABORT);\r\n\t\t}\r\n    }\r\n   \r\n}",
+  "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\EvaluationWithoutProof.sol",
+  "ast": {
+    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/EvaluationWithoutProof.sol",
+    "exportedSymbols": {
+      "EvaluationWithoutProof": [
+        300
+      ]
+    },
+    "id": 301,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 234,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+        "file": "./Enums.sol",
+        "id": 235,
+        "nodeType": "ImportDirective",
+        "scope": 301,
+        "sourceUnit": 21,
+        "src": "27:21:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IEvaluation.sol",
+        "file": "./IEvaluation.sol",
+        "id": 236,
+        "nodeType": "ImportDirective",
+        "scope": 301,
+        "sourceUnit": 613,
+        "src": "50:27:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 237,
+              "name": "IEvaluation",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 612,
+              "src": "116:11:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IEvaluation_$612",
+                "typeString": "contract IEvaluation"
+              }
+            },
+            "id": 238,
+            "nodeType": "InheritanceSpecifier",
+            "src": "116:11:3"
+          }
+        ],
+        "contractDependencies": [
+          612
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 300,
+        "linearizedBaseContracts": [
+          300,
+          612
+        ],
+        "name": "EvaluationWithoutProof",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 240,
+            "name": "TargetAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 300,
+            "src": "133:38:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 239,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "133:15:3",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 242,
+            "name": "MitigatorAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 300,
+            "src": "175:41:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 241,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "175:15:3",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 257,
+              "nodeType": "Block",
+              "src": "307:79:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 251,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 249,
+                      "name": "TargetAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 240,
+                      "src": "312:13:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 250,
+                      "name": "_TargetAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 244,
+                      "src": "327:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "312:29:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 252,
+                  "nodeType": "ExpressionStatement",
+                  "src": "312:29:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 255,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 253,
+                      "name": "MitigatorAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 242,
+                      "src": "346:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 254,
+                      "name": "_MitigatorAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 246,
+                      "src": "364:17:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "346:35:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 256,
+                  "nodeType": "ExpressionStatement",
+                  "src": "346:35:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 258,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 247,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 244,
+                  "name": "_TargetAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 258,
+                  "src": "235:30:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 243,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:15:3",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 246,
+                  "name": "_MitigatorAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 258,
+                  "src": "266:33:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 245,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "266:15:3",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:66:3"
+            },
+            "returnParameters": {
+              "id": 248,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "307:0:3"
+            },
+            "scope": 300,
+            "src": "223:163:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 298,
+              "nodeType": "Block",
+              "src": "522:268:3",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    },
+                    "id": 273,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 269,
+                      "name": "MitigatorRating",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 262,
+                      "src": "584:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Rating_$5",
+                        "typeString": "enum Enums.Rating"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 270,
+                          "name": "Enums",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 20,
+                          "src": "601:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_Enums_$20_$",
+                            "typeString": "type(contract Enums)"
+                          }
+                        },
+                        "id": 271,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "Rating",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 5,
+                        "src": "601:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Rating_$5_$",
+                          "typeString": "type(enum Enums.Rating)"
+                        }
+                      },
+                      "id": 272,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "ACK",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "601:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Rating_$5",
+                        "typeString": "enum Enums.Rating"
+                      }
+                    },
+                    "src": "584:33:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 275,
+                  "nodeType": "IfStatement",
+                  "src": "581:40:3",
+                  "trueBody": {
+                    "id": 274,
+                    "nodeType": "Block",
+                    "src": "618:3:3",
+                    "statements": []
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    },
+                    "id": 280,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 276,
+                      "name": "TargetRating",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 260,
+                      "src": "632:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Rating_$5",
+                        "typeString": "enum Enums.Rating"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 277,
+                          "name": "Enums",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 20,
+                          "src": "646:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_Enums_$20_$",
+                            "typeString": "type(contract Enums)"
+                          }
+                        },
+                        "id": 278,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "Rating",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 5,
+                        "src": "646:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Rating_$5_$",
+                          "typeString": "type(enum Enums.Rating)"
+                        }
+                      },
+                      "id": 279,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "ACK",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "646:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Rating_$5",
+                        "typeString": "enum Enums.Rating"
+                      }
+                    },
+                    "src": "632:30:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "id": 296,
+                    "nodeType": "Block",
+                    "src": "731:52:3",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "components": [
+                            {
+                              "argumentTypes": null,
+                              "arguments": [
+                                {
+                                  "argumentTypes": null,
+                                  "hexValue": "30",
+                                  "id": 289,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "number",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "752:1:3",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_0_by_1",
+                                    "typeString": "int_const 0"
+                                  },
+                                  "value": "0"
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_rational_0_by_1",
+                                    "typeString": "int_const 0"
+                                  }
+                                ],
+                                "id": 288,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "nodeType": "ElementaryTypeNameExpression",
+                                "src": "744:7:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_address_$",
+                                  "typeString": "type(address)"
+                                },
+                                "typeName": "address"
+                              },
+                              "id": 290,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "744:10:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 291,
+                                  "name": "Enums",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 20,
+                                  "src": "755:5:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_Enums_$20_$",
+                                    "typeString": "type(contract Enums)"
+                                  }
+                                },
+                                "id": 292,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "StateType",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 19,
+                                "src": "755:15:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_enum$_StateType_$19_$",
+                                  "typeString": "type(enum Enums.StateType)"
+                                }
+                              },
+                              "id": 293,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberName": "ABORT",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "755:21:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_StateType_$19",
+                                "typeString": "enum Enums.StateType"
+                              }
+                            }
+                          ],
+                          "id": 294,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "TupleExpression",
+                          "src": "743:34:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_address_payable_$_t_enum$_StateType_$19_$",
+                            "typeString": "tuple(address payable,enum Enums.StateType)"
+                          }
+                        },
+                        "functionReturnParameters": 268,
+                        "id": 295,
+                        "nodeType": "Return",
+                        "src": "737:40:3"
+                      }
+                    ]
+                  },
+                  "id": 297,
+                  "nodeType": "IfStatement",
+                  "src": "629:154:3",
+                  "trueBody": {
+                    "id": 287,
+                    "nodeType": "Block",
+                    "src": "663:64:3",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "components": [
+                            {
+                              "argumentTypes": null,
+                              "id": 281,
+                              "name": "TargetAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 240,
+                              "src": "676:13:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 282,
+                                  "name": "Enums",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 20,
+                                  "src": "690:5:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_Enums_$20_$",
+                                    "typeString": "type(contract Enums)"
+                                  }
+                                },
+                                "id": 283,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "StateType",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 19,
+                                "src": "690:15:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_enum$_StateType_$19_$",
+                                  "typeString": "type(enum Enums.StateType)"
+                                }
+                              },
+                              "id": 284,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberName": "COMPLETE",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "690:24:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_StateType_$19",
+                                "typeString": "enum Enums.StateType"
+                              }
+                            }
+                          ],
+                          "id": 285,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "TupleExpression",
+                          "src": "675:40:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_address_payable_$_t_enum$_StateType_$19_$",
+                            "typeString": "tuple(address payable,enum Enums.StateType)"
+                          }
+                        },
+                        "functionReturnParameters": 268,
+                        "id": 286,
+                        "nodeType": "Return",
+                        "src": "669:46:3"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 299,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "evaluate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 263,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 260,
+                  "name": "TargetRating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 299,
+                  "src": "412:25:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Rating_$5",
+                    "typeString": "enum Enums.Rating"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 259,
+                    "name": "Enums.Rating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "412:12:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 262,
+                  "name": "MitigatorRating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 299,
+                  "src": "439:28:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Rating_$5",
+                    "typeString": "enum Enums.Rating"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 261,
+                    "name": "Enums.Rating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "439:12:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "411:57:3"
+            },
+            "returnParameters": {
+              "id": 268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 265,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 299,
+                  "src": "490:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 264,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "490:15:3",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 267,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 299,
+                  "src": "506:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 266,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "506:15:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "489:33:3"
+            },
+            "scope": 300,
+            "src": "394:396:3",
+            "stateMutability": "view",
+            "superFunction": 611,
+            "visibility": "public"
+          }
+        ],
+        "scope": 301,
+        "src": "81:717:3"
+      }
+    ],
+    "src": "0:798:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/EvaluationWithoutProof.sol",
+    "exportedSymbols": {
+      "EvaluationWithoutProof": [
+        300
+      ]
+    },
+    "id": 301,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 234,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+        "file": "./Enums.sol",
+        "id": 235,
+        "nodeType": "ImportDirective",
+        "scope": 301,
+        "sourceUnit": 21,
+        "src": "27:21:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IEvaluation.sol",
+        "file": "./IEvaluation.sol",
+        "id": 236,
+        "nodeType": "ImportDirective",
+        "scope": 301,
+        "sourceUnit": 613,
+        "src": "50:27:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 237,
+              "name": "IEvaluation",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 612,
+              "src": "116:11:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IEvaluation_$612",
+                "typeString": "contract IEvaluation"
+              }
+            },
+            "id": 238,
+            "nodeType": "InheritanceSpecifier",
+            "src": "116:11:3"
+          }
+        ],
+        "contractDependencies": [
+          612
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 300,
+        "linearizedBaseContracts": [
+          300,
+          612
+        ],
+        "name": "EvaluationWithoutProof",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 240,
+            "name": "TargetAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 300,
+            "src": "133:38:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 239,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "133:15:3",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 242,
+            "name": "MitigatorAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 300,
+            "src": "175:41:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 241,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "175:15:3",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 257,
+              "nodeType": "Block",
+              "src": "307:79:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 251,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 249,
+                      "name": "TargetAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 240,
+                      "src": "312:13:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 250,
+                      "name": "_TargetAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 244,
+                      "src": "327:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "312:29:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 252,
+                  "nodeType": "ExpressionStatement",
+                  "src": "312:29:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 255,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 253,
+                      "name": "MitigatorAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 242,
+                      "src": "346:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 254,
+                      "name": "_MitigatorAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 246,
+                      "src": "364:17:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "346:35:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 256,
+                  "nodeType": "ExpressionStatement",
+                  "src": "346:35:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 258,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 247,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 244,
+                  "name": "_TargetAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 258,
+                  "src": "235:30:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 243,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:15:3",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 246,
+                  "name": "_MitigatorAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 258,
+                  "src": "266:33:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 245,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "266:15:3",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:66:3"
+            },
+            "returnParameters": {
+              "id": 248,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "307:0:3"
+            },
+            "scope": 300,
+            "src": "223:163:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 298,
+              "nodeType": "Block",
+              "src": "522:268:3",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    },
+                    "id": 273,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 269,
+                      "name": "MitigatorRating",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 262,
+                      "src": "584:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Rating_$5",
+                        "typeString": "enum Enums.Rating"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 270,
+                          "name": "Enums",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 20,
+                          "src": "601:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_Enums_$20_$",
+                            "typeString": "type(contract Enums)"
+                          }
+                        },
+                        "id": 271,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "Rating",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 5,
+                        "src": "601:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Rating_$5_$",
+                          "typeString": "type(enum Enums.Rating)"
+                        }
+                      },
+                      "id": 272,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "ACK",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "601:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Rating_$5",
+                        "typeString": "enum Enums.Rating"
+                      }
+                    },
+                    "src": "584:33:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 275,
+                  "nodeType": "IfStatement",
+                  "src": "581:40:3",
+                  "trueBody": {
+                    "id": 274,
+                    "nodeType": "Block",
+                    "src": "618:3:3",
+                    "statements": []
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    },
+                    "id": 280,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 276,
+                      "name": "TargetRating",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 260,
+                      "src": "632:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Rating_$5",
+                        "typeString": "enum Enums.Rating"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 277,
+                          "name": "Enums",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 20,
+                          "src": "646:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_Enums_$20_$",
+                            "typeString": "type(contract Enums)"
+                          }
+                        },
+                        "id": 278,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "Rating",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 5,
+                        "src": "646:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Rating_$5_$",
+                          "typeString": "type(enum Enums.Rating)"
+                        }
+                      },
+                      "id": 279,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "ACK",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "646:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Rating_$5",
+                        "typeString": "enum Enums.Rating"
+                      }
+                    },
+                    "src": "632:30:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "id": 296,
+                    "nodeType": "Block",
+                    "src": "731:52:3",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "components": [
+                            {
+                              "argumentTypes": null,
+                              "arguments": [
+                                {
+                                  "argumentTypes": null,
+                                  "hexValue": "30",
+                                  "id": 289,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "number",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "752:1:3",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_0_by_1",
+                                    "typeString": "int_const 0"
+                                  },
+                                  "value": "0"
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_rational_0_by_1",
+                                    "typeString": "int_const 0"
+                                  }
+                                ],
+                                "id": 288,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "nodeType": "ElementaryTypeNameExpression",
+                                "src": "744:7:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_address_$",
+                                  "typeString": "type(address)"
+                                },
+                                "typeName": "address"
+                              },
+                              "id": 290,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "744:10:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 291,
+                                  "name": "Enums",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 20,
+                                  "src": "755:5:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_Enums_$20_$",
+                                    "typeString": "type(contract Enums)"
+                                  }
+                                },
+                                "id": 292,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "StateType",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 19,
+                                "src": "755:15:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_enum$_StateType_$19_$",
+                                  "typeString": "type(enum Enums.StateType)"
+                                }
+                              },
+                              "id": 293,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberName": "ABORT",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "755:21:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_StateType_$19",
+                                "typeString": "enum Enums.StateType"
+                              }
+                            }
+                          ],
+                          "id": 294,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "TupleExpression",
+                          "src": "743:34:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_address_payable_$_t_enum$_StateType_$19_$",
+                            "typeString": "tuple(address payable,enum Enums.StateType)"
+                          }
+                        },
+                        "functionReturnParameters": 268,
+                        "id": 295,
+                        "nodeType": "Return",
+                        "src": "737:40:3"
+                      }
+                    ]
+                  },
+                  "id": 297,
+                  "nodeType": "IfStatement",
+                  "src": "629:154:3",
+                  "trueBody": {
+                    "id": 287,
+                    "nodeType": "Block",
+                    "src": "663:64:3",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "components": [
+                            {
+                              "argumentTypes": null,
+                              "id": 281,
+                              "name": "TargetAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 240,
+                              "src": "676:13:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 282,
+                                  "name": "Enums",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 20,
+                                  "src": "690:5:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_Enums_$20_$",
+                                    "typeString": "type(contract Enums)"
+                                  }
+                                },
+                                "id": 283,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "StateType",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 19,
+                                "src": "690:15:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_enum$_StateType_$19_$",
+                                  "typeString": "type(enum Enums.StateType)"
+                                }
+                              },
+                              "id": 284,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberName": "COMPLETE",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "690:24:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_StateType_$19",
+                                "typeString": "enum Enums.StateType"
+                              }
+                            }
+                          ],
+                          "id": 285,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "TupleExpression",
+                          "src": "675:40:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_address_payable_$_t_enum$_StateType_$19_$",
+                            "typeString": "tuple(address payable,enum Enums.StateType)"
+                          }
+                        },
+                        "functionReturnParameters": 268,
+                        "id": 286,
+                        "nodeType": "Return",
+                        "src": "669:46:3"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 299,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "evaluate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 263,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 260,
+                  "name": "TargetRating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 299,
+                  "src": "412:25:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Rating_$5",
+                    "typeString": "enum Enums.Rating"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 259,
+                    "name": "Enums.Rating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "412:12:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 262,
+                  "name": "MitigatorRating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 299,
+                  "src": "439:28:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Rating_$5",
+                    "typeString": "enum Enums.Rating"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 261,
+                    "name": "Enums.Rating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "439:12:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Rating_$5",
+                      "typeString": "enum Enums.Rating"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "411:57:3"
+            },
+            "returnParameters": {
+              "id": 268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 265,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 299,
+                  "src": "490:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 264,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "490:15:3",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 267,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 299,
+                  "src": "506:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateType_$19",
+                    "typeString": "enum Enums.StateType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 266,
+                    "name": "Enums.StateType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "506:15:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateType_$19",
+                      "typeString": "enum Enums.StateType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "489:33:3"
+            },
+            "scope": 300,
+            "src": "394:396:3",
+            "stateMutability": "view",
+            "superFunction": 611,
+            "visibility": "public"
+          }
+        ],
+        "scope": 301,
+        "src": "81:717:3"
+      }
+    ],
+    "src": "0:798:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-02-10T15:13:47.102Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
