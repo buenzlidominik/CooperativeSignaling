@@ -34,9 +34,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\r\n\r\nimport \"./Enums.sol\";\r\n\r\ninterface  IEvaluation {\r\n\r\n    function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) external view returns (address payable,Enums.StateType);\r\n}",
-  "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\IEvaluation.sol",
+  "sourcePath": "C:\\Users\\Dominik Bünzli\\Documents\\GitHub\\CooperativeSignaling\\contracts\\IEvaluation.sol",
   "ast": {
-    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IEvaluation.sol",
+    "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/IEvaluation.sol",
     "exportedSymbols": {
       "IEvaluation": [
         653
@@ -57,7 +57,7 @@
         "src": "0:23:6"
       },
       {
-        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+        "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/Enums.sol",
         "file": "./Enums.sol",
         "id": 641,
         "nodeType": "ImportDirective",
@@ -228,7 +228,7 @@
     "src": "0:218:6"
   },
   "legacyAST": {
-    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IEvaluation.sol",
+    "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/IEvaluation.sol",
     "exportedSymbols": {
       "IEvaluation": [
         653
@@ -249,7 +249,7 @@
         "src": "0:23:6"
       },
       {
-        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+        "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/Enums.sol",
         "file": "./Enums.sol",
         "id": 641,
         "nodeType": "ImportDirective",
@@ -425,7 +425,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-02-10T19:16:31.346Z",
+  "updatedAt": "2019-02-10T22:12:09.269Z",
   "devdoc": {
     "methods": {}
   },

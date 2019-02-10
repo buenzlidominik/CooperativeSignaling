@@ -1,14 +1,14 @@
 {
   "contractName": "Enums",
   "abi": [],
-  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058208dacaccb109b89ed09eb14c8ec99ab9fa1f55308ab4f23a6d35b908fe9b9f7400029",
-  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058208dacaccb109b89ed09eb14c8ec99ab9fa1f55308ab4f23a6d35b908fe9b9f7400029",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820d6d8b1a06fc88c578b691afabc011310c6e957ca3f4d2e7a166d73f00d3226ee0029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820d6d8b1a06fc88c578b691afabc011310c6e957ca3f4d2e7a166d73f00d3226ee0029",
   "sourceMap": "27:197:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:197:0;;;;;;;",
   "deployedSourceMap": "27:197:0:-;;;;;",
   "source": "pragma solidity ^0.5.0;\r\n\r\ncontract  Enums {\r\n\r\n    enum Rating {NEG,NA,POS}\r\n\tenum EvaluationType {WITHPROOF,WITHOUTPROOF}\r\n\tenum StateType {REQUEST,APPROVE,FUNDING,PROOF,RATE_T,RATE_M,EVALUATION,COMPLETE,ABORT,ESCALATE}\r\n}",
-  "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\Enums.sol",
+  "sourcePath": "C:\\Users\\Dominik Bünzli\\Documents\\GitHub\\CooperativeSignaling\\contracts\\Enums.sol",
   "ast": {
-    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+    "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/Enums.sol",
     "exportedSymbols": {
       "Enums": [
         20
@@ -166,7 +166,7 @@
     "src": "0:224:0"
   },
   "legacyAST": {
-    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+    "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/Enums.sol",
     "exportedSymbols": {
       "Enums": [
         20
@@ -329,7 +329,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-02-10T19:16:31.357Z",
+  "updatedAt": "2019-02-10T22:12:09.267Z",
   "devdoc": {
     "methods": {}
   },

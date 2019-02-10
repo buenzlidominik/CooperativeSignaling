@@ -69,7 +69,7 @@ contract("Endstate_Test", async function(accounts) {
 		
 		await catchRevert(protocol.uploadProof(process,"",{from: TargetOwner}));
 		
-		wait(1500);	
+		wait(2000);	
 		
 		await protocol.uploadProof(process,"",{from: TargetOwner});
 		
@@ -110,7 +110,7 @@ contract("Endstate_Test", async function(accounts) {
 			assert.equal(isAtMost(await web3.eth.getBalance(TargetOwner),subtraction(fundsTarget,await web3.utils.toWei('2.0', "ether"))),true, "Target Funding not correct");
 		});
 		
-		wait(1500); 
+		wait(2000); 
 		
 		await protocol.uploadProof(process,"",{from: TargetOwner});
 	
@@ -376,7 +376,7 @@ contract("Endstate_Test", async function(accounts) {
 		
 		var fundsMitigator = await web3.eth.getBalance(MitigatorOwner);
 		
-		wait(1500); 
+		wait(2000); 
 		
 		await protocol.rateByMitigator(process,2,{from: TargetOwner});
 		

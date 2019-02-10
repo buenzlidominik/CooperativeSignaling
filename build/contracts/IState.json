@@ -106,9 +106,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\r\n\r\nimport \"./IData.sol\";\r\nimport \"./IActor.sol\";\r\nimport \"./Enums.sol\";\r\n\r\ninterface IState {\r\n            \r\n    function execute() external returns(Enums.StateType);\r\n    function execute(bool value) external returns(Enums.StateType);\r\n    function execute(uint256 value) external returns(Enums.StateType);\r\n    function execute(string calldata value) external returns(Enums.StateType);\r\n    \r\n    function getOwnerOfState() external view returns(address payable);\r\n\t\r\n\tfunction getStateType() external view returns(Enums.StateType);\r\n}",
-  "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\IState.sol",
+  "sourcePath": "C:\\Users\\Dominik Bünzli\\Documents\\GitHub\\CooperativeSignaling\\contracts\\IState.sol",
   "ast": {
-    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IState.sol",
+    "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/IState.sol",
     "exportedSymbols": {
       "IState": [
         695
@@ -129,7 +129,7 @@
         "src": "0:23:7"
       },
       {
-        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IData.sol",
+        "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/IData.sol",
         "file": "./IData.sol",
         "id": 656,
         "nodeType": "ImportDirective",
@@ -140,7 +140,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IActor.sol",
+        "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/IActor.sol",
         "file": "./IActor.sol",
         "id": 657,
         "nodeType": "ImportDirective",
@@ -151,7 +151,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+        "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/Enums.sol",
         "file": "./Enums.sol",
         "id": 658,
         "nodeType": "ImportDirective",
@@ -598,7 +598,7 @@
     "src": "0:561:7"
   },
   "legacyAST": {
-    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IState.sol",
+    "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/IState.sol",
     "exportedSymbols": {
       "IState": [
         695
@@ -619,7 +619,7 @@
         "src": "0:23:7"
       },
       {
-        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IData.sol",
+        "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/IData.sol",
         "file": "./IData.sol",
         "id": 656,
         "nodeType": "ImportDirective",
@@ -630,7 +630,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IActor.sol",
+        "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/IActor.sol",
         "file": "./IActor.sol",
         "id": 657,
         "nodeType": "ImportDirective",
@@ -641,7 +641,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+        "absolutePath": "/C/Users/Dominik Bünzli/Documents/GitHub/CooperativeSignaling/contracts/Enums.sol",
         "file": "./Enums.sol",
         "id": 658,
         "nodeType": "ImportDirective",
@@ -1093,7 +1093,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-02-10T19:16:31.346Z",
+  "updatedAt": "2019-02-10T22:12:09.273Z",
   "devdoc": {
     "methods": {}
   },
