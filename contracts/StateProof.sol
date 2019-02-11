@@ -17,9 +17,9 @@ contract StateProof is IState{
 	}	
 	
 	function execute(bool /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
-    function execute(uint256 /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
+	function execute(uint256 /*value*/) external returns(Enums.StateType) {revert("Not implemented");}
 	
-    function execute() external returns(Enums.StateType) {
+	function execute() external returns(Enums.StateType) {
 		require(executable,"Process not executable");
 		if(canBeSkipped()){
 			executable=false;
@@ -31,7 +31,7 @@ contract StateProof is IState{
 		return Enums.StateType.RATE_T;
 	}
 	
-    function execute(string calldata value) external returns(Enums.StateType){
+	function execute(string calldata value) external returns(Enums.StateType){
         require(executable,"Process not executable");
 		if(canBeSkipped()){
 			executable=false;
