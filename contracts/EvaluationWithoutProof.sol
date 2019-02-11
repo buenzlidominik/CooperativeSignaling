@@ -5,12 +5,18 @@ import "./IEvaluation.sol";
 
 contract EvaluationWithoutProof is IEvaluation{
 
-	constructor(address _TargetAddress,address _MitigatorAddress) public IEvaluation(_TargetAddress,_MitigatorAddress){}
+	address internal TargetAddress;
+	address internal MitigatorAddress;
+	
+	constructor(address _TargetAddress,address  _MitigatorAddress) public{
+		TargetAddress= _TargetAddress;
+		MitigatorAddress= _MitigatorAddress;
+	}
 
-    function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address,Enums.State){ 
+    function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address ,Enums.State){ 
 		
 		//used to silence warning for MitigatorRating
-		if(MitigatorRating==Enums.Rating.NEG){	}
+		if(MitigatorRating==Enums.Rating.POS){	}
 		
 		if(TargetRating==Enums.Rating.NEG){
 			return(TargetAddress,Enums.State.COMPLETE);

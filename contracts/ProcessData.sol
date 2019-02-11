@@ -1,9 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "./IActor.sol";
-import "./IEvaluation.sol";
-import "./EvaluationWithProof.sol";
-import "./EvaluationWithoutProof.sol";
+import "./EvaluationFactory.sol";
 import "./Enums.sol";
 
 contract  ProcessData {
@@ -66,9 +64,9 @@ contract  ProcessData {
 		IEvaluation _Evaluation;
 		
 		if(isProofProvided()){
-			_Evaluation = new EvaluationWithProof(address(Target),address(Mitigator));
+			_Evaluation = EvaluationFactory.create(Enums.EvaluationType.WITHPROOF,address(Target),address(Mitigator));
 		}else{
-			_Evaluation = new EvaluationWithoutProof(address(Target),address(Mitigator));
+			_Evaluation = EvaluationFactory.create(Enums.EvaluationType.WITHOUTPROOF,address(Target),address(Mitigator));
 		}
 
         (actor,stateToSet) = _Evaluation.evaluate(getTargetRating(), getMitigatorRating());

@@ -1,0 +1,1359 @@
+{
+  "contractName": "EvaluationFactory",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_Type",
+          "type": "Enums.EvaluationType"
+        },
+        {
+          "name": "_TargetAddress",
+          "type": "address"
+        },
+        {
+          "name": "_MitigatorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "create",
+      "outputs": [
+        {
+          "name": "",
+          "type": "IEvaluation"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x67ec1e16"
+    }
+  ],
+  "bytecode": "0x6106bb610030600b82828239805160001a6073146000811461002057610022565bfe5b5030600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106100575763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166367ec1e16811461005c575b600080fd5b81801561006857600080fd5b506100ad6004803603606081101561007f57600080fd5b5060ff8135169073ffffffffffffffffffffffffffffffffffffffff602082013581169160400135166100d6565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b6000808460018111156100e557fe5b141561013d5782826100f56101c9565b73ffffffffffffffffffffffffffffffffffffffff928316815291166020820152604080519182900301906000f080158015610135573d6000803e3d6000fd5b5090506101c2565b600184600181111561014b57fe5b141561015b5782826100f56101d9565b604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f54797065206e6f7420696e204576616c756174696f6e466163746f7279000000604482015290519081900360640190fd5b9392505050565b6040516102f0806101ea83390190565b6040516101b6806104da8339019056fe608060405234801561001057600080fd5b506040516040806102f08339810180604052604081101561003057600080fd5b50805160209091015160008054600160a060020a03938416600160a060020a03199182161790915560018054939092169216919091179055610279806100776000396000f3fe6080604052600436106100615763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631250d06781146100665780639e39f364146100d4578063a87bf3b614610109578063e069bf2f14610136575b600080fd5b34801561007257600080fd5b506100936004803603602081101561008957600080fd5b503560ff16610163565b60405173ffffffffffffffffffffffffffffffffffffffff83168152602081018260088111156100bf57fe5b60ff1681526020019250505060405180910390f35b3480156100e057600080fd5b50610093600480360360408110156100f757600080fd5b5060ff813581169160200135166101a9565b34801561011557600080fd5b506100936004803603602081101561012c57600080fd5b503560ff166101ff565b34801561014257600080fd5b506100936004803603602081101561015957600080fd5b503560ff16610209565b600080805b83600281111561017457fe5b141561019c57505060015473ffffffffffffffffffffffffffffffffffffffff1660066101a4565b506000905060075b915091565b60008060028460028111156101ba57fe5b14156101d2576101c9836101ff565b915091506101f8565b60008460028111156101e057fe5b14156101ef576101c983610209565b6101c983610163565b9250929050565b6000806002610168565b6000808083600281111561021957fe5b141561022b57506000905060086101a4565b505060005473ffffffffffffffffffffffffffffffffffffffff1660066101a456fea165627a7a72305820d8f4d85209a5067acbf5f96770e47dcb079df4828376466b688177f9da5d00d70029608060405234801561001057600080fd5b506040516040806101b68339810180604052604081101561003057600080fd5b50805160209091015160008054600160a060020a03938416600160a060020a0319918216179091556001805493909216921691909117905561013f806100776000396000f3fe6080604052600436106100405763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416639e39f3648114610045575b600080fd5b34801561005157600080fd5b5061007a6004803603604081101561006857600080fd5b5060ff813581169160200135166100bb565b60405173ffffffffffffffffffffffffffffffffffffffff83168152602081018260088111156100a657fe5b60ff1681526020019250505060405180910390f35b60008060028360028111156100cc57fe5b505060008460028111156100dc57fe5b141561010457505060005473ffffffffffffffffffffffffffffffffffffffff16600661010c565b506000905060075b925092905056fea165627a7a7230582032c8759e9ed6f1e0a344151404bed362f15cd7e1e7d5babafe7d598b64d09a160029a165627a7a723058207f79f11e37d5952fbaa1b6263c16523984a938c5df97fdcb62ea32c23687a1e50029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600436106100575763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166367ec1e16811461005c575b600080fd5b81801561006857600080fd5b506100ad6004803603606081101561007f57600080fd5b5060ff8135169073ffffffffffffffffffffffffffffffffffffffff602082013581169160400135166100d6565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b6000808460018111156100e557fe5b141561013d5782826100f56101c9565b73ffffffffffffffffffffffffffffffffffffffff928316815291166020820152604080519182900301906000f080158015610135573d6000803e3d6000fd5b5090506101c2565b600184600181111561014b57fe5b141561015b5782826100f56101d9565b604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f54797065206e6f7420696e204576616c756174696f6e466163746f7279000000604482015290519081900360640190fd5b9392505050565b6040516102f0806101ea83390190565b6040516101b6806104da8339019056fe608060405234801561001057600080fd5b506040516040806102f08339810180604052604081101561003057600080fd5b50805160209091015160008054600160a060020a03938416600160a060020a03199182161790915560018054939092169216919091179055610279806100776000396000f3fe6080604052600436106100615763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631250d06781146100665780639e39f364146100d4578063a87bf3b614610109578063e069bf2f14610136575b600080fd5b34801561007257600080fd5b506100936004803603602081101561008957600080fd5b503560ff16610163565b60405173ffffffffffffffffffffffffffffffffffffffff83168152602081018260088111156100bf57fe5b60ff1681526020019250505060405180910390f35b3480156100e057600080fd5b50610093600480360360408110156100f757600080fd5b5060ff813581169160200135166101a9565b34801561011557600080fd5b506100936004803603602081101561012c57600080fd5b503560ff166101ff565b34801561014257600080fd5b506100936004803603602081101561015957600080fd5b503560ff16610209565b600080805b83600281111561017457fe5b141561019c57505060015473ffffffffffffffffffffffffffffffffffffffff1660066101a4565b506000905060075b915091565b60008060028460028111156101ba57fe5b14156101d2576101c9836101ff565b915091506101f8565b60008460028111156101e057fe5b14156101ef576101c983610209565b6101c983610163565b9250929050565b6000806002610168565b6000808083600281111561021957fe5b141561022b57506000905060086101a4565b505060005473ffffffffffffffffffffffffffffffffffffffff1660066101a456fea165627a7a72305820d8f4d85209a5067acbf5f96770e47dcb079df4828376466b688177f9da5d00d70029608060405234801561001057600080fd5b506040516040806101b68339810180604052604081101561003057600080fd5b50805160209091015160008054600160a060020a03938416600160a060020a0319918216179091556001805493909216921691909117905561013f806100776000396000f3fe6080604052600436106100405763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416639e39f3648114610045575b600080fd5b34801561005157600080fd5b5061007a6004803603604081101561006857600080fd5b5060ff813581169160200135166100bb565b60405173ffffffffffffffffffffffffffffffffffffffff83168152602081018260088111156100a657fe5b60ff1681526020019250505060405180910390f35b60008060028360028111156100cc57fe5b505060008460028111156100dc57fe5b141561010457505060005473ffffffffffffffffffffffffffffffffffffffff16600661010c565b506000905060075b925092905056fea165627a7a7230582032c8759e9ed6f1e0a344151404bed362f15cd7e1e7d5babafe7d598b64d09a160029a165627a7a723058207f79f11e37d5952fbaa1b6263c16523984a938c5df97fdcb62ea32c23687a1e50029",
+  "sourceMap": "160:499:1:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
+  "deployedSourceMap": "160:499:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;198:452;;8:9:-1;5:2;;;30:1;27;20:12;5:2;198:452:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;198:452:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;315:11;;345:5;:39;;;;;;;;;342:304;;;422:14;437:17;398:57;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;398:57:1;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;398:57:1;391:64;;;;342:304;478:33;469:5;:42;;;;;;;;;466:180;;;552:14;567:17;525:60;;:::i;466:180::-;601:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;466:180;198:452;;;;;:::o;160:499::-;;;;;;;;;;:::o;:::-;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\nimport \"./Enums.sol\";\r\nimport \"./IEvaluation.sol\";\r\nimport \"./EvaluationWithProof.sol\";\r\nimport \"./EvaluationWithoutProof.sol\";\r\n\r\n\r\nlibrary EvaluationFactory{\r\n    \r\n    function create(Enums.EvaluationType _Type,address _TargetAddress,address _MitigatorAddress) \r\n    public\r\n\treturns (IEvaluation){\r\n        \r\n\t\tif(_Type == Enums.EvaluationType.WITHPROOF){\r\n\t\t\treturn new EvaluationWithProof(_TargetAddress,_MitigatorAddress);\r\n\t\t}else if(_Type == Enums.EvaluationType.WITHOUTPROOF){\r\n\t\t\treturn new EvaluationWithoutProof(_TargetAddress,_MitigatorAddress);\r\n\t\t}else{\r\n\t\t\trevert(\"Type not in EvaluationFactory\");\r\n\t\t}\r\n\t}\r\n    \r\n}",
+  "sourcePath": "C:\\Code\\Private\\CooperativeSignaling\\contracts\\EvaluationFactory.sol",
+  "ast": {
+    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/EvaluationFactory.sol",
+    "exportedSymbols": {
+      "EvaluationFactory": [
+        69
+      ]
+    },
+    "id": 70,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 21,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+        "file": "./Enums.sol",
+        "id": 22,
+        "nodeType": "ImportDirective",
+        "scope": 70,
+        "sourceUnit": 20,
+        "src": "27:21:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IEvaluation.sol",
+        "file": "./IEvaluation.sol",
+        "id": 23,
+        "nodeType": "ImportDirective",
+        "scope": 70,
+        "sourceUnit": 391,
+        "src": "50:27:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/EvaluationWithProof.sol",
+        "file": "./EvaluationWithProof.sol",
+        "id": 24,
+        "nodeType": "ImportDirective",
+        "scope": 70,
+        "sourceUnit": 232,
+        "src": "79:35:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/EvaluationWithoutProof.sol",
+        "file": "./EvaluationWithoutProof.sol",
+        "id": 25,
+        "nodeType": "ImportDirective",
+        "scope": 70,
+        "sourceUnit": 300,
+        "src": "116:38:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          231,
+          299
+        ],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 69,
+        "linearizedBaseContracts": [
+          69
+        ],
+        "name": "EvaluationFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 67,
+              "nodeType": "Block",
+              "src": "327:323:1",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_EvaluationType_$18",
+                      "typeString": "enum Enums.EvaluationType"
+                    },
+                    "id": 40,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 36,
+                      "name": "_Type",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 27,
+                      "src": "345:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_EvaluationType_$18",
+                        "typeString": "enum Enums.EvaluationType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 37,
+                          "name": "Enums",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 19,
+                          "src": "354:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_Enums_$19_$",
+                            "typeString": "type(contract Enums)"
+                          }
+                        },
+                        "id": 38,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "EvaluationType",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 18,
+                        "src": "354:20:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_EvaluationType_$18_$",
+                          "typeString": "type(enum Enums.EvaluationType)"
+                        }
+                      },
+                      "id": 39,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "WITHPROOF",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "354:30:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_EvaluationType_$18",
+                        "typeString": "enum Enums.EvaluationType"
+                      }
+                    },
+                    "src": "345:39:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "condition": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_enum$_EvaluationType_$18",
+                        "typeString": "enum Enums.EvaluationType"
+                      },
+                      "id": 52,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 48,
+                        "name": "_Type",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 27,
+                        "src": "469:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_EvaluationType_$18",
+                          "typeString": "enum Enums.EvaluationType"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 49,
+                            "name": "Enums",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19,
+                            "src": "478:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Enums_$19_$",
+                              "typeString": "type(contract Enums)"
+                            }
+                          },
+                          "id": 50,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "EvaluationType",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 18,
+                          "src": "478:20:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_EvaluationType_$18_$",
+                            "typeString": "type(enum Enums.EvaluationType)"
+                          }
+                        },
+                        "id": 51,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "WITHOUTPROOF",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "478:33:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_EvaluationType_$18",
+                          "typeString": "enum Enums.EvaluationType"
+                        }
+                      },
+                      "src": "469:42:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "falseBody": {
+                      "id": 64,
+                      "nodeType": "Block",
+                      "src": "595:51:1",
+                      "statements": [
+                        {
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "hexValue": "54797065206e6f7420696e204576616c756174696f6e466163746f7279",
+                                "id": 61,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "string",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "608:31:1",
+                                "subdenomination": null,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_stringliteral_54d6c4416c7eca12b99396ba50fcf81cb99a3357d5bac803161e2aab0d15a15c",
+                                  "typeString": "literal_string \"Type not in EvaluationFactory\""
+                                },
+                                "value": "Type not in EvaluationFactory"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_54d6c4416c7eca12b99396ba50fcf81cb99a3357d5bac803161e2aab0d15a15c",
+                                  "typeString": "literal_string \"Type not in EvaluationFactory\""
+                                }
+                              ],
+                              "id": 60,
+                              "name": "revert",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [
+                                2057,
+                                2058
+                              ],
+                              "referencedDeclaration": 2058,
+                              "src": "601:6:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                                "typeString": "function (string memory) pure"
+                              }
+                            },
+                            "id": 62,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "601:39:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_tuple$__$",
+                              "typeString": "tuple()"
+                            }
+                          },
+                          "id": 63,
+                          "nodeType": "ExpressionStatement",
+                          "src": "601:39:1"
+                        }
+                      ]
+                    },
+                    "id": 65,
+                    "nodeType": "IfStatement",
+                    "src": "466:180:1",
+                    "trueBody": {
+                      "id": 59,
+                      "nodeType": "Block",
+                      "src": "512:79:1",
+                      "statements": [
+                        {
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 55,
+                                "name": "_TargetAddress",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 29,
+                                "src": "552:14:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              },
+                              {
+                                "argumentTypes": null,
+                                "id": 56,
+                                "name": "_MitigatorAddress",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 31,
+                                "src": "567:17:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "id": 54,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "NewExpression",
+                              "src": "525:26:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_address_$returns$_t_contract$_EvaluationWithoutProof_$299_$",
+                                "typeString": "function (address,address) returns (contract EvaluationWithoutProof)"
+                              },
+                              "typeName": {
+                                "contractScope": null,
+                                "id": 53,
+                                "name": "EvaluationWithoutProof",
+                                "nodeType": "UserDefinedTypeName",
+                                "referencedDeclaration": 299,
+                                "src": "529:22:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_EvaluationWithoutProof_$299",
+                                  "typeString": "contract EvaluationWithoutProof"
+                                }
+                              }
+                            },
+                            "id": 57,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "525:60:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_EvaluationWithoutProof_$299",
+                              "typeString": "contract EvaluationWithoutProof"
+                            }
+                          },
+                          "functionReturnParameters": 35,
+                          "id": 58,
+                          "nodeType": "Return",
+                          "src": "518:67:1"
+                        }
+                      ]
+                    }
+                  },
+                  "id": 66,
+                  "nodeType": "IfStatement",
+                  "src": "342:304:1",
+                  "trueBody": {
+                    "id": 47,
+                    "nodeType": "Block",
+                    "src": "385:76:1",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 43,
+                              "name": "_TargetAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 29,
+                              "src": "422:14:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "id": 44,
+                              "name": "_MitigatorAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 31,
+                              "src": "437:17:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 42,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "NewExpression",
+                            "src": "398:23:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_address_$returns$_t_contract$_EvaluationWithProof_$231_$",
+                              "typeString": "function (address,address) returns (contract EvaluationWithProof)"
+                            },
+                            "typeName": {
+                              "contractScope": null,
+                              "id": 41,
+                              "name": "EvaluationWithProof",
+                              "nodeType": "UserDefinedTypeName",
+                              "referencedDeclaration": 231,
+                              "src": "402:19:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_EvaluationWithProof_$231",
+                                "typeString": "contract EvaluationWithProof"
+                              }
+                            }
+                          },
+                          "id": 45,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "398:57:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_EvaluationWithProof_$231",
+                            "typeString": "contract EvaluationWithProof"
+                          }
+                        },
+                        "functionReturnParameters": 35,
+                        "id": 46,
+                        "nodeType": "Return",
+                        "src": "391:64:1"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 68,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "create",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27,
+                  "name": "_Type",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 68,
+                  "src": "214:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_EvaluationType_$18",
+                    "typeString": "enum Enums.EvaluationType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 26,
+                    "name": "Enums.EvaluationType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 18,
+                    "src": "214:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_EvaluationType_$18",
+                      "typeString": "enum Enums.EvaluationType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29,
+                  "name": "_TargetAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 68,
+                  "src": "241:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "241:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 31,
+                  "name": "_MitigatorAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 68,
+                  "src": "264:25:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 30,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "264:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "213:77:1"
+            },
+            "returnParameters": {
+              "id": 35,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 68,
+                  "src": "315:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IEvaluation_$390",
+                    "typeString": "contract IEvaluation"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 33,
+                    "name": "IEvaluation",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 390,
+                    "src": "315:11:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IEvaluation_$390",
+                      "typeString": "contract IEvaluation"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "314:13:1"
+            },
+            "scope": 69,
+            "src": "198:452:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 70,
+        "src": "160:499:1"
+      }
+    ],
+    "src": "0:659:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/EvaluationFactory.sol",
+    "exportedSymbols": {
+      "EvaluationFactory": [
+        69
+      ]
+    },
+    "id": 70,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 21,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/Enums.sol",
+        "file": "./Enums.sol",
+        "id": 22,
+        "nodeType": "ImportDirective",
+        "scope": 70,
+        "sourceUnit": 20,
+        "src": "27:21:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/IEvaluation.sol",
+        "file": "./IEvaluation.sol",
+        "id": 23,
+        "nodeType": "ImportDirective",
+        "scope": 70,
+        "sourceUnit": 391,
+        "src": "50:27:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/EvaluationWithProof.sol",
+        "file": "./EvaluationWithProof.sol",
+        "id": 24,
+        "nodeType": "ImportDirective",
+        "scope": 70,
+        "sourceUnit": 232,
+        "src": "79:35:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Code/Private/CooperativeSignaling/contracts/EvaluationWithoutProof.sol",
+        "file": "./EvaluationWithoutProof.sol",
+        "id": 25,
+        "nodeType": "ImportDirective",
+        "scope": 70,
+        "sourceUnit": 300,
+        "src": "116:38:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          231,
+          299
+        ],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 69,
+        "linearizedBaseContracts": [
+          69
+        ],
+        "name": "EvaluationFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 67,
+              "nodeType": "Block",
+              "src": "327:323:1",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_EvaluationType_$18",
+                      "typeString": "enum Enums.EvaluationType"
+                    },
+                    "id": 40,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 36,
+                      "name": "_Type",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 27,
+                      "src": "345:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_EvaluationType_$18",
+                        "typeString": "enum Enums.EvaluationType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 37,
+                          "name": "Enums",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 19,
+                          "src": "354:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_Enums_$19_$",
+                            "typeString": "type(contract Enums)"
+                          }
+                        },
+                        "id": 38,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "EvaluationType",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 18,
+                        "src": "354:20:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_EvaluationType_$18_$",
+                          "typeString": "type(enum Enums.EvaluationType)"
+                        }
+                      },
+                      "id": 39,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "WITHPROOF",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "354:30:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_EvaluationType_$18",
+                        "typeString": "enum Enums.EvaluationType"
+                      }
+                    },
+                    "src": "345:39:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "condition": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_enum$_EvaluationType_$18",
+                        "typeString": "enum Enums.EvaluationType"
+                      },
+                      "id": 52,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 48,
+                        "name": "_Type",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 27,
+                        "src": "469:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_EvaluationType_$18",
+                          "typeString": "enum Enums.EvaluationType"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 49,
+                            "name": "Enums",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19,
+                            "src": "478:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Enums_$19_$",
+                              "typeString": "type(contract Enums)"
+                            }
+                          },
+                          "id": 50,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "EvaluationType",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 18,
+                          "src": "478:20:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_EvaluationType_$18_$",
+                            "typeString": "type(enum Enums.EvaluationType)"
+                          }
+                        },
+                        "id": 51,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "WITHOUTPROOF",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "478:33:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_EvaluationType_$18",
+                          "typeString": "enum Enums.EvaluationType"
+                        }
+                      },
+                      "src": "469:42:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "falseBody": {
+                      "id": 64,
+                      "nodeType": "Block",
+                      "src": "595:51:1",
+                      "statements": [
+                        {
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "hexValue": "54797065206e6f7420696e204576616c756174696f6e466163746f7279",
+                                "id": 61,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "string",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "608:31:1",
+                                "subdenomination": null,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_stringliteral_54d6c4416c7eca12b99396ba50fcf81cb99a3357d5bac803161e2aab0d15a15c",
+                                  "typeString": "literal_string \"Type not in EvaluationFactory\""
+                                },
+                                "value": "Type not in EvaluationFactory"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_54d6c4416c7eca12b99396ba50fcf81cb99a3357d5bac803161e2aab0d15a15c",
+                                  "typeString": "literal_string \"Type not in EvaluationFactory\""
+                                }
+                              ],
+                              "id": 60,
+                              "name": "revert",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [
+                                2057,
+                                2058
+                              ],
+                              "referencedDeclaration": 2058,
+                              "src": "601:6:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                                "typeString": "function (string memory) pure"
+                              }
+                            },
+                            "id": 62,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "601:39:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_tuple$__$",
+                              "typeString": "tuple()"
+                            }
+                          },
+                          "id": 63,
+                          "nodeType": "ExpressionStatement",
+                          "src": "601:39:1"
+                        }
+                      ]
+                    },
+                    "id": 65,
+                    "nodeType": "IfStatement",
+                    "src": "466:180:1",
+                    "trueBody": {
+                      "id": 59,
+                      "nodeType": "Block",
+                      "src": "512:79:1",
+                      "statements": [
+                        {
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 55,
+                                "name": "_TargetAddress",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 29,
+                                "src": "552:14:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              },
+                              {
+                                "argumentTypes": null,
+                                "id": 56,
+                                "name": "_MitigatorAddress",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 31,
+                                "src": "567:17:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "id": 54,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "NewExpression",
+                              "src": "525:26:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_address_$returns$_t_contract$_EvaluationWithoutProof_$299_$",
+                                "typeString": "function (address,address) returns (contract EvaluationWithoutProof)"
+                              },
+                              "typeName": {
+                                "contractScope": null,
+                                "id": 53,
+                                "name": "EvaluationWithoutProof",
+                                "nodeType": "UserDefinedTypeName",
+                                "referencedDeclaration": 299,
+                                "src": "529:22:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_EvaluationWithoutProof_$299",
+                                  "typeString": "contract EvaluationWithoutProof"
+                                }
+                              }
+                            },
+                            "id": 57,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "525:60:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_EvaluationWithoutProof_$299",
+                              "typeString": "contract EvaluationWithoutProof"
+                            }
+                          },
+                          "functionReturnParameters": 35,
+                          "id": 58,
+                          "nodeType": "Return",
+                          "src": "518:67:1"
+                        }
+                      ]
+                    }
+                  },
+                  "id": 66,
+                  "nodeType": "IfStatement",
+                  "src": "342:304:1",
+                  "trueBody": {
+                    "id": 47,
+                    "nodeType": "Block",
+                    "src": "385:76:1",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 43,
+                              "name": "_TargetAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 29,
+                              "src": "422:14:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "id": 44,
+                              "name": "_MitigatorAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 31,
+                              "src": "437:17:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 42,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "NewExpression",
+                            "src": "398:23:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_address_$returns$_t_contract$_EvaluationWithProof_$231_$",
+                              "typeString": "function (address,address) returns (contract EvaluationWithProof)"
+                            },
+                            "typeName": {
+                              "contractScope": null,
+                              "id": 41,
+                              "name": "EvaluationWithProof",
+                              "nodeType": "UserDefinedTypeName",
+                              "referencedDeclaration": 231,
+                              "src": "402:19:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_EvaluationWithProof_$231",
+                                "typeString": "contract EvaluationWithProof"
+                              }
+                            }
+                          },
+                          "id": 45,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "398:57:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_EvaluationWithProof_$231",
+                            "typeString": "contract EvaluationWithProof"
+                          }
+                        },
+                        "functionReturnParameters": 35,
+                        "id": 46,
+                        "nodeType": "Return",
+                        "src": "391:64:1"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 68,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "create",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27,
+                  "name": "_Type",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 68,
+                  "src": "214:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_EvaluationType_$18",
+                    "typeString": "enum Enums.EvaluationType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 26,
+                    "name": "Enums.EvaluationType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 18,
+                    "src": "214:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_EvaluationType_$18",
+                      "typeString": "enum Enums.EvaluationType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29,
+                  "name": "_TargetAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 68,
+                  "src": "241:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "241:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 31,
+                  "name": "_MitigatorAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 68,
+                  "src": "264:25:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 30,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "264:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "213:77:1"
+            },
+            "returnParameters": {
+              "id": 35,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 68,
+                  "src": "315:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IEvaluation_$390",
+                    "typeString": "contract IEvaluation"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 33,
+                    "name": "IEvaluation",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 390,
+                    "src": "315:11:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IEvaluation_$390",
+                      "typeString": "contract IEvaluation"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "314:13:1"
+            },
+            "scope": 69,
+            "src": "198:452:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 70,
+        "src": "160:499:1"
+      }
+    ],
+    "src": "0:659:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x95729e66cFF44A2455149eF451f9b4D195900a28",
+      "transactionHash": "0x874b93b9e5a6e5c167170c68559b105b1deea16962a2b429ac02fff0a8736431"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-02-11T14:52:12.911Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

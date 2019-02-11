@@ -5,7 +5,13 @@ import "./IEvaluation.sol";
 
 contract  EvaluationWithProof is IEvaluation{
 	
-	constructor(address _TargetAddress,address _MitigatorAddress) public IEvaluation(_TargetAddress,_MitigatorAddress) {}
+	address internal TargetAddress;
+	address internal MitigatorAddress;
+	
+	constructor(address _TargetAddress,address _MitigatorAddress) public{
+		TargetAddress= _TargetAddress;
+		MitigatorAddress= _MitigatorAddress;
+	}
 
     function evaluate(Enums.Rating TargetRating, Enums.Rating MitigatorRating) public view returns (address,Enums.State){    
         if(TargetRating==Enums.Rating.POS){
@@ -17,7 +23,7 @@ contract  EvaluationWithProof is IEvaluation{
         }
     }
 
-    function acknowledged(Enums.Rating MitigatorRating) public view returns (address,Enums.State){    
+    function acknowledged(Enums.Rating MitigatorRating) public view returns (address ,Enums.State){    
         if(MitigatorRating==Enums.Rating.POS){
 			return(MitigatorAddress,Enums.State.COMPLETE);
         }else{
@@ -25,7 +31,7 @@ contract  EvaluationWithProof is IEvaluation{
         }
     }
     
-    function selfish(Enums.Rating MitigatorRating) public view returns (address,Enums.State){    
+    function selfish(Enums.Rating MitigatorRating) public view returns (address ,Enums.State){    
         if(MitigatorRating==Enums.Rating.NEG){
             return(MitigatorAddress,Enums.State.COMPLETE);
         }else{
@@ -33,7 +39,7 @@ contract  EvaluationWithProof is IEvaluation{
         }
     }
     
-    function rejected(Enums.Rating MitigatorRating) public view returns (address,Enums.State){    
+    function rejected(Enums.Rating MitigatorRating) public view returns (address ,Enums.State){    
         if(MitigatorRating==Enums.Rating.NEG){
             return(address(0),Enums.State.ESCALATE);
         }else{
