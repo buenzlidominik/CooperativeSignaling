@@ -11,12 +11,10 @@ contract("Full Run Test", async function(accounts) {
 	var listOfAddresses = "Network1,Network2";
 	var protocol;
 	
-	
-  
 	it("Instantiation", async function() {
-		  
+		
 		protocol = await Protocol.new();
-
+ 
 		await protocol.init(MitigatorOwner,120,await web3.utils.toWei('2.0', "ether"),listOfAddresses, {from: TargetOwner});
 			
 		assert.equal(await protocol.getCurrentState(), 1, "State is wrong");
@@ -69,8 +67,16 @@ contract("Full Run Test", async function(accounts) {
 		assert.equal(await protocol.getMitigatorRating(), 2, "Proof is wrong");
 		assert.equal(isAtMost(await web3.eth.getBalance(protocol.address),0),true, "Funds not taken away from Contract");
 		assert.equal(isAtMost(await web3.eth.getBalance(MitigatorOwner),addition(fundsMitigator,await web3.utils.toWei('2.0', "ether"))),true, "Funds not taken away from Target");
-    });
 
+    });
+	it("Time", async function() {
+		
+		console.log("StartTime: "+await protocol.getStartTime());
+		console.log("EndTime: "+await protocol.getEndTime());
+		console.log("Duration: "+subtraction(await protocol.getEndTime(),await protocol.getStartTime()));
+    });
+	
+	
 });
 
 function isBiggerOrEqualThan(a,b){
