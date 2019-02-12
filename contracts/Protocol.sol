@@ -67,6 +67,7 @@ contract Protocol {
 		if(now>Deadline){
 			CurrentState = Enums.State.RATE_T;
 			setNewDeadline();
+			return;
 		}
 		
         require(msg.sender==Mitigator,"sender is not required actor");
@@ -86,9 +87,10 @@ contract Protocol {
 			CurrentState = Enums.State.RATE_M;
 			setNewDeadline();
 			
-			if(bytes(Proof).length>0){
+			if(bytes(Proof).length==0){
 				return endProcess();
 			}
+			return;
 		}
 		require(msg.sender==Target,"sender is not required actor");
         TargetRating = Enums.Rating(_Rating);
@@ -157,7 +159,7 @@ contract Protocol {
     }
     
     function selfish() private view returns (address payable,Enums.State){    
-        if(MitigatorRating==Enums.Rating.POS){
+        if(MitigatorRating==Enums.Rating.NEG){
             return(Mitigator,Enums.State.COMPLETE);
         }else{
             return(address(0),Enums.State.ABORT);
@@ -165,7 +167,7 @@ contract Protocol {
     }
     
     function dissatisfied() private view returns (address payable,Enums.State){    
-        if(MitigatorRating==Enums.Rating.POS){
+        if(MitigatorRating==Enums.Rating.NEG){
             return(address(0),Enums.State.ESCALATE);
         }else{
             return(Target,Enums.State.COMPLETE);
