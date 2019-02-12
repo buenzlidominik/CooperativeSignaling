@@ -40,7 +40,7 @@ contract("Full Run Test", async function(accounts) {
 		});
     });
 	
-	it("Time To Finish", async function() {
+	it("Fullrun", async function() {
 		var event = protocol.ProcessDataCreated(function(error, response) {
 			if (!error) {
 				process = response.args.addr;
@@ -55,17 +55,19 @@ contract("Full Run Test", async function(accounts) {
 		await protocol.uploadProof(process,"I've done my job", {from: MitigatorOwner});	
 		await protocol.ratingByTarget(process,2, {from: TargetOwner});	
 		await protocol.ratingByMitigator(process,2, {from: MitigatorOwner});	
-		
+    });
+	
+	it("Time", async function() {
+	
 		await ProcessData.at(process).then(async function (result){
 			await result.getStartAndEndTime().then( async function (response){
-				console.log("Starttime:"+ response[0])
-				console.log("Endtime:"+ response[1]);
-				assert.equal(isBiggerOrEqualThan(response[1],response[0]),true, "StartTime >= Endtime");
+				console.log("StartTime: "+response[0]);
+				console.log("EndTime: "+response[1]);
+				console.log("Duration: "+subtraction(response[1],response[0]));
 			});
-		});
-
-    });
-
+			
+		});	
+	});	
 });
 
 function isBiggerOrEqualThan(a,b){
@@ -73,4 +75,8 @@ function isBiggerOrEqualThan(a,b){
 		return true;
 	}	
 	return false;
+}
+
+function subtraction(a,b){
+	return parseInt(a)-parseInt(b);
 }
