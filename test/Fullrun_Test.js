@@ -162,7 +162,18 @@ contract("Full Run Test", async function(accounts) {
 			});
 		});	
     });
+	it("Time", async function() {
+	
+		return await Process.at(process).then(async function (result){
+			await IData.at(await result.getData()).then(async function (data){
+					console.log("StartTime: "+await data.getStartTime());
+					console.log("EndTime: "+await data.getEndTime());
+					console.log("Duration: "+subtraction(await data.getEndTime(),await data.getStartTime()));
+			});
+		});	
 
+    });
+	
 	
 });
 
